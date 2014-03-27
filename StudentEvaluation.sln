@@ -1,5 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{38D7AA58-C95B-449B-86C6-A8073A56E11F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{53995DBB-9836-4647-AD22-865884FDEB9E}"
@@ -11,48 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "DBUtility\DBUtility.csproj", "{0988C62E-247F-471F-A183-DB509C7A3839}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{E3D8759A-C5EB-402D-9F10-F5C6029A8D1A}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "matrix-admin00", "matrix-admin00\", "{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/matrix-admin00"
-		Debug.AspNetCompiler.PhysicalPath = "matrix-admin00\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\matrix-admin00\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/matrix-admin00"
-		Release.AspNetCompiler.PhysicalPath = "matrix-admin00\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\matrix-admin00\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1401"
-	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "eva", "http://localhost:1995", "{6552148C-DC37-4E19-8C0F-B6215B651007}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_1995"
-		Debug.AspNetCompiler.PhysicalPath = "eva\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1995\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_1995"
-		Release.AspNetCompiler.PhysicalPath = "eva\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1995\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "eva\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,26 +82,6 @@ Global
 		{E3D8759A-C5EB-402D-9F10-F5C6029A8D1A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3D8759A-C5EB-402D-9F10-F5C6029A8D1A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E3D8759A-C5EB-402D-9F10-F5C6029A8D1A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Debug|.NET.ActiveCfg = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Release|.NET.ActiveCfg = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{14E40D6E-FFFA-4F56-AB9F-AD83DE6C18C6}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Debug|.NET.ActiveCfg = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Release|.NET.ActiveCfg = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{6552148C-DC37-4E19-8C0F-B6215B651007}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

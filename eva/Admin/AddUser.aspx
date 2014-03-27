@@ -6,7 +6,6 @@
     <div id="content">
          <div id="content-header">
             <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a> <a href="#" class="current">Tables</a> </div>
-            <h1>Tables</h1>
         </div>
         <div class="container-fluid">
             <hr>
@@ -15,24 +14,24 @@
                     <div class="widget-box">
                         <div class="widget-title">
                             <span class="icon"><i class="icon-align-justify"></i></span>
-                            <h5>Personal-info</h5>
+                            <h5>添加用户</h5>
                         </div>
                         <div class="widget-content nopadding">
                             <form action="#" method="get" class="form-horizontal">
                                 <div class="control-group">
-                                    <label class="control-label">First Name :</label>
+                                    <label class="control-label">用户名 :</label>
                                     <div class="controls">
-                                        <input type="text" class="span6" placeholder="First name" />
+                                        <input type="text" class="span6" placeholder="用户名" />
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Last Name :</label>
+                                    <label class="control-label">真实姓名 :</label>
                                     <div class="controls">
-                                        <input type="text" class="span6" placeholder="Last name" />
+                                        <input type="text" class="span6" placeholder="真实姓名" />
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Password input</label>
+                                    <label class="control-label">密码</label>
                                     <div class="controls">
                                         <input type="password" class="span6" placeholder="Enter Password" />
                                     </div>
