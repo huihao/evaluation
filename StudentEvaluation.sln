@@ -32,25 +32,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "matrix-admin00", "matrix-ad
 		VWDPort = "1401"
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "eva", "eva\", "{7FDB59EC-EC42-446E-B540-09EEE47F67FD}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/eva"
-		Debug.AspNetCompiler.PhysicalPath = "eva\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\eva\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/eva"
-		Release.AspNetCompiler.PhysicalPath = "eva\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\eva\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1287"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evaluation", "Evaluation\Evaluation.csproj", "{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,16 +114,16 @@ Global
 		{68C04FD1-BB5B-4FE1-B32B-CAC9746DEA0A}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{68C04FD1-BB5B-4FE1-B32B-CAC9746DEA0A}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{68C04FD1-BB5B-4FE1-B32B-CAC9746DEA0A}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Debug|.NET.ActiveCfg = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Release|.NET.ActiveCfg = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{7FDB59EC-EC42-446E-B540-09EEE47F67FD}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Release|.NET.ActiveCfg = Release|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

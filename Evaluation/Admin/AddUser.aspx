@@ -1,0 +1,67 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Admin.Master" AutoEventWireup="true"
+    CodeBehind="AddUser.aspx.cs" Inherits="Eva.Evaluation.Admin.AddUser" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb">
+                <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a>
+                <a href="#" class="current">Tables</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <hr>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-title">
+                            <span class="icon"><i class="icon-align-justify"></i></span>
+                            <h5>
+                                添加用户</h5>
+                        </div>
+                        <div class="widget-content nopadding">
+                            <form action="#" method="get" class="form-horizontal" runat="server">
+                            <div class="control-group">
+                                <label class="control-label">
+                                    真实姓名 :</label>
+                                <div class="controls">
+                                    <asp:TextBox ID="txtName" runat="server" class="span6" placeholder="真实姓名"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">
+                                    密码</label>
+                                <div class="controls">
+                                    <asp:TextBox id="txtPassWord" runat="server" class="span6" placeholder="密码" TextMode="Password">
+                                    </asp:TextBox>
+                                </div>
+                            </div>
+                             <div class="control-group">
+                                <label class="control-label">
+                                    重复密码</label>
+                                <div class="controls">
+                                    <asp:TextBox id="txtPassWordC" runat="server" class="span6" placeholder="重复密码" TextMode="Password">
+                                    </asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">
+                                    身份证</label>
+                                <div class="controls">
+		                            <asp:TextBox id="txtIdCard" runat="server" class="span11" placeholder="Company name"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <asp:Button ID="Save" runat="server" Text="保存" class="btn btn-success" 
+                                    onclick="Save_Click" />
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
