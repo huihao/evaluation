@@ -41,14 +41,14 @@
                                 </ItemTemplate>
                             </asp:TemplateField> 
                             
-		<asp:BoundField DataField="CourseId" HeaderText="CourseId" SortExpression="CourseId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="EvalutionId" HeaderText="EvalutionId" SortExpression="EvalutionId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Score" HeaderText="Score" SortExpression="Score" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="BonusPoint" HeaderText="BonusPoint" SortExpression="BonusPoint" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="AcademicYear" HeaderText="AcademicYear" SortExpression="AcademicYear" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="SchoolTerm" HeaderText="SchoolTerm" SortExpression="SchoolTerm" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="CheckStep" HeaderText="CheckStep" SortExpression="CheckStep" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="CourseId" HeaderText="课程ID" SortExpression="CourseId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="StudentId" HeaderText="学生ID" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="EvalutionId" HeaderText="所属评测表ID" SortExpression="EvalutionId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Score" HeaderText="分数" SortExpression="Score" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="BonusPoint" HeaderText="加分" SortExpression="BonusPoint" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="AcademicYear" HeaderText="学年" SortExpression="AcademicYear" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="SchoolTerm" HeaderText="学期" SortExpression="SchoolTerm" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="CheckStep" HeaderText="加分审核" SortExpression="CheckStep" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"
                                 Text="详细"  />

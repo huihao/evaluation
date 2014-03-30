@@ -26,35 +26,35 @@ namespace Eva.Web.Mark
 			string strErr="";
 			if(!PageValidate.IsNumber(txtCourseId.Text))
 			{
-				strErr+="CourseId格式错误！\\n";	
+				strErr+="课程ID格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtStudentId.Text))
 			{
-				strErr+="StudentId格式错误！\\n";	
+				strErr+="学生ID格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtEvalutionId.Text))
 			{
-				strErr+="EvalutionId格式错误！\\n";	
+				strErr+="所属评测表ID格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtScore.Text))
 			{
-				strErr+="Score格式错误！\\n";	
+				strErr+="分数格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtBonusPoint.Text))
 			{
-				strErr+="BonusPoint格式错误！\\n";	
+				strErr+="加分格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtAcademicYear.Text))
 			{
-				strErr+="AcademicYear格式错误！\\n";	
+				strErr+="学年格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtSchoolTerm.Text))
 			{
-				strErr+="SchoolTerm格式错误！\\n";	
+				strErr+="学期格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtCheckStep.Text))
 			{
-				strErr+="CheckStep格式错误！\\n";	
+				strErr+="加分审核格式错误！\\n";	
 			}
 
 			if(strErr!="")

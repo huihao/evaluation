@@ -26,47 +26,51 @@ namespace Eva.Web.WebUser
 			string strErr="";
 			if(this.txtLoginId.Text.Trim().Length==0)
 			{
-				strErr+="LoginId不能为空！\\n";	
+				strErr+="登录名不能为空！\\n";	
 			}
 			if(this.txtPassWord.Text.Trim().Length==0)
 			{
-				strErr+="PassWord不能为空！\\n";	
+				strErr+="密码不能为空！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtAuthorityId.Text))
 			{
-				strErr+="AuthorityId格式错误！\\n";	
+				strErr+="权限格式错误！\\n";	
 			}
 			if(this.txtName.Text.Trim().Length==0)
 			{
-				strErr+="Name不能为空！\\n";	
+				strErr+="真实姓名不能为空！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtStudentId.Text))
 			{
-				strErr+="StudentId格式错误！\\n";	
+				strErr+="学号格式错误！\\n";	
 			}
 			if(this.txtSex.Text.Trim().Length==0)
 			{
-				strErr+="Sex不能为空！\\n";	
+				strErr+="性别不能为空！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtCollegeId.Text))
 			{
-				strErr+="CollegeId格式错误！\\n";	
+				strErr+="学院ID格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtClassId.Text))
 			{
-				strErr+="ClassId格式错误！\\n";	
+				strErr+="班级ID格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtMajorId.Text))
 			{
-				strErr+="MajorId格式错误！\\n";	
+				strErr+="专业ID格式错误！\\n";	
 			}
 			if(this.txtIdCard.Text.Trim().Length==0)
 			{
-				strErr+="IdCard不能为空！\\n";	
+				strErr+="身份证号码不能为空！\\n";	
 			}
 			if(this.txtAddress.Text.Trim().Length==0)
 			{
-				strErr+="Address不能为空！\\n";	
+				strErr+="联系地址不能为空！\\n";	
+			}
+			if(this.txtPhone.Text.Trim().Length==0)
+			{
+				strErr+="电话号码不能为空！\\n";	
 			}
 
 			if(strErr!="")
@@ -85,6 +89,7 @@ namespace Eva.Web.WebUser
 			int MajorId=int.Parse(this.txtMajorId.Text);
 			string IdCard=this.txtIdCard.Text;
 			string Address=this.txtAddress.Text;
+			string Phone=this.txtPhone.Text;
 
 			Eva.Model.WebUser model=new Eva.Model.WebUser();
 			model.LoginId=LoginId;
@@ -98,6 +103,7 @@ namespace Eva.Web.WebUser
 			model.MajorId=MajorId;
 			model.IdCard=IdCard;
 			model.Address=Address;
+			model.Phone=Phone;
 
 			Eva.BLL.WebUser bll=new Eva.BLL.WebUser();
 			bll.Add(model);

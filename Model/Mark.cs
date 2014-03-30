@@ -14,7 +14,7 @@ namespace Eva.Model
 		private int? _courseid;
 		private int? _studentid;
 		private int? _evalutionid;
-		private decimal _score;
+		private decimal? _score;
 		private decimal? _bonuspoint;
 		private int? _academicyear;
 		private int? _schoolterm;
@@ -28,7 +28,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 
+		/// 课程ID
 		/// </summary>
 		public int? CourseId
 		{
@@ -36,7 +36,7 @@ namespace Eva.Model
 			get{return _courseid;}
 		}
 		/// <summary>
-		/// 
+		/// 学生ID
 		/// </summary>
 		public int? StudentId
 		{
@@ -44,7 +44,7 @@ namespace Eva.Model
 			get{return _studentid;}
 		}
 		/// <summary>
-		/// 
+		/// 所属评测表ID
 		/// </summary>
 		public int? EvalutionId
 		{
@@ -52,15 +52,15 @@ namespace Eva.Model
 			get{return _evalutionid;}
 		}
 		/// <summary>
-		/// 
+		/// 分数
 		/// </summary>
-		public decimal Score
+		public decimal? Score
 		{
 			set{ _score=value;}
 			get{return _score;}
 		}
 		/// <summary>
-		/// 
+		/// 加分
 		/// </summary>
 		public decimal? BonusPoint
 		{
@@ -68,7 +68,7 @@ namespace Eva.Model
 			get{return _bonuspoint;}
 		}
 		/// <summary>
-		/// 
+		/// 学年
 		/// </summary>
 		public int? AcademicYear
 		{
@@ -76,7 +76,7 @@ namespace Eva.Model
 			get{return _academicyear;}
 		}
 		/// <summary>
-		/// 
+		/// 学期
 		/// </summary>
 		public int? SchoolTerm
 		{
@@ -84,7 +84,7 @@ namespace Eva.Model
 			get{return _schoolterm;}
 		}
 		/// <summary>
-		/// 
+		/// 加分审核
 		/// </summary>
 		public int? CheckStep
 		{

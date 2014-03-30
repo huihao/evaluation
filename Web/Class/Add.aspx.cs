@@ -26,7 +26,7 @@ namespace Eva.Web.Class
 			string strErr="";
 			if(!PageValidate.IsNumber(txtName.Text))
 			{
-				strErr+="Name格式错误！\\n";	
+				strErr+="班级名称格式错误！\\n";	
 			}
 
 			if(strErr!="")

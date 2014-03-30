@@ -50,35 +50,35 @@ namespace Eva.Web.Evaluation
 			string strErr="";
 			if(!PageValidate.IsNumber(txtStudentId.Text))
 			{
-				strErr+="StudentId格式错误！\\n";	
+				strErr+="学生编号格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtAcademicYear.Text))
 			{
-				strErr+="AcademicYear格式错误！\\n";	
+				strErr+="学年格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtGpa.Text))
 			{
-				strErr+="Gpa格式错误！\\n";	
+				strErr+="平均绩点格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtAve.Text))
 			{
-				strErr+="Ave格式错误！\\n";	
+				strErr+="平均分格式错误！\\n";	
 			}
 			if(this.txtTeacherEvaluation.Text.Trim().Length==0)
 			{
-				strErr+="TeacherEvaluation不能为空！\\n";	
+				strErr+="教师评价不能为空！\\n";	
 			}
 			if(this.txtSelfEvaluation.Text.Trim().Length==0)
 			{
-				strErr+="SelfEvaluation不能为空！\\n";	
+				strErr+="学生自评不能为空！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtTeacherId.Text))
 			{
-				strErr+="TeacherId格式错误！\\n";	
+				strErr+="教师ID格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtSchoolTerm.Text))
 			{
-				strErr+="SchoolTerm格式错误！\\n";	
+				strErr+="学期格式错误！\\n";	
 			}
 
 			if(strErr!="")

@@ -163,6 +163,10 @@ namespace Eva.BLL
 					{
 					model.Address=dt.Rows[n]["Address"].ToString();
 					}
+					if(dt.Rows[n]["Phone"]!=null && dt.Rows[n]["Phone"].ToString()!="")
+					{
+					model.Phone=dt.Rows[n]["Phone"].ToString();
+					}
 					modelList.Add(model);
 				}
 			}

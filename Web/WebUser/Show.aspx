@@ -16,80 +16,87 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		LoginId
+		登录名
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblLoginId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		PassWord
+		密码
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblPassWord" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		AuthorityId
+		权限
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblAuthorityId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		Name
+		真实姓名
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblName" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		StudentId
+		学号
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblStudentId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		Sex
+		性别
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblSex" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		CollegeId
+		学院ID
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblCollegeId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		ClassId
+		班级ID
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblClassId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		MajorId
+		专业ID
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblMajorId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		IdCard
+		身份证号码
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblIdCard" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		Address
+		联系地址
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblAddress" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		电话号码
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblPhone" runat="server"></asp:Label>
 	</td></tr>
 </table>
 

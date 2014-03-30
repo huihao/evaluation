@@ -11,7 +11,7 @@
 <table cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
 	<td height="25" width="30%" align="right">
-		Name
+		班级名称
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtName" runat="server" Width="200px"></asp:TextBox>

@@ -43,6 +43,7 @@ namespace Eva.Web.WebUser
 		this.lblMajorId.Text=model.MajorId.ToString();
 		this.lblIdCard.Text=model.IdCard;
 		this.lblAddress.Text=model.Address;
+		this.lblPhone.Text=model.Phone;
 
 	}
 

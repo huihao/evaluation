@@ -43,7 +43,7 @@ namespace Eva.Web.College
 			string strErr="";
 			if(this.txtName.Text.Trim().Length==0)
 			{
-				strErr+="Name不能为空！\\n";	
+				strErr+="学院名称不能为空！\\n";	
 			}
 
 			if(strErr!="")

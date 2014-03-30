@@ -23,9 +23,9 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into WebUser(");
-			strSql.Append("LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address)");
+			strSql.Append("LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address,Phone)");
 			strSql.Append(" values (");
-			strSql.Append("@LoginId,@PassWord,@AuthorityId,@Name,@StudentId,@Sex,@CollegeId,@ClassId,@MajorId,@IdCard,@Address)");
+			strSql.Append("@LoginId,@PassWord,@AuthorityId,@Name,@StudentId,@Sex,@CollegeId,@ClassId,@MajorId,@IdCard,@Address,@Phone)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@LoginId", SqlDbType.NVarChar,50),
@@ -38,7 +38,8 @@ namespace Eva.DAL
 					new SqlParameter("@ClassId", SqlDbType.Int,4),
 					new SqlParameter("@MajorId", SqlDbType.Int,4),
 					new SqlParameter("@IdCard", SqlDbType.NVarChar,50),
-					new SqlParameter("@Address", SqlDbType.NVarChar)};
+					new SqlParameter("@Address", SqlDbType.NVarChar),
+					new SqlParameter("@Phone", SqlDbType.NVarChar,50)};
 			parameters[0].Value = model.LoginId;
 			parameters[1].Value = model.PassWord;
 			parameters[2].Value = model.AuthorityId;
@@ -50,6 +51,7 @@ namespace Eva.DAL
 			parameters[8].Value = model.MajorId;
 			parameters[9].Value = model.IdCard;
 			parameters[10].Value = model.Address;
+			parameters[11].Value = model.Phone;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -78,7 +80,8 @@ namespace Eva.DAL
 			strSql.Append("ClassId=@ClassId,");
 			strSql.Append("MajorId=@MajorId,");
 			strSql.Append("IdCard=@IdCard,");
-			strSql.Append("Address=@Address");
+			strSql.Append("Address=@Address,");
+			strSql.Append("Phone=@Phone");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@LoginId", SqlDbType.NVarChar,50),
@@ -92,6 +95,7 @@ namespace Eva.DAL
 					new SqlParameter("@MajorId", SqlDbType.Int,4),
 					new SqlParameter("@IdCard", SqlDbType.NVarChar,50),
 					new SqlParameter("@Address", SqlDbType.NVarChar),
+					new SqlParameter("@Phone", SqlDbType.NVarChar,50),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.LoginId;
 			parameters[1].Value = model.PassWord;
@@ -104,7 +108,8 @@ namespace Eva.DAL
 			parameters[8].Value = model.MajorId;
 			parameters[9].Value = model.IdCard;
 			parameters[10].Value = model.Address;
-			parameters[11].Value = model.Id;
+			parameters[11].Value = model.Phone;
+			parameters[12].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -168,7 +173,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address from WebUser ");
+			strSql.Append("select  top 1 Id,LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address,Phone from WebUser ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -227,6 +232,10 @@ namespace Eva.DAL
 				{
 					model.Address=ds.Tables[0].Rows[0]["Address"].ToString();
 				}
+				if(ds.Tables[0].Rows[0]["Phone"]!=null && ds.Tables[0].Rows[0]["Phone"].ToString()!="")
+				{
+					model.Phone=ds.Tables[0].Rows[0]["Phone"].ToString();
+				}
 				return model;
 			}
 			else
@@ -241,7 +250,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address ");
+			strSql.Append("select Id,LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address,Phone ");
 			strSql.Append(" FROM WebUser ");
 			if(strWhere.Trim()!="")
 			{
@@ -261,7 +270,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address ");
+			strSql.Append(" Id,LoginId,PassWord,AuthorityId,Name,StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address,Phone ");
 			strSql.Append(" FROM WebUser ");
 			if(strWhere.Trim()!="")
 			{

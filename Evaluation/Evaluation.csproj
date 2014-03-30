@@ -51,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddUser.aspx" />
+    <Content Include="Admin\EditInfo.aspx" />
+    <Content Include="Admin\ImportUser.aspx" />
+    <Content Include="Admin\ListUser.aspx" />
+    <Content Include="Admin\ShowMark.aspx" />
     <Content Include="css\bootstrap-responsive.min.css" />
     <Content Include="css\bootstrap-wysihtml5.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -149,6 +153,34 @@
     <Compile Include="Admin\AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditInfo.aspx.cs">
+      <DependentUpon>EditInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditInfo.aspx.designer.cs">
+      <DependentUpon>EditInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ImportUser.aspx.cs">
+      <DependentUpon>ImportUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportUser.aspx.designer.cs">
+      <DependentUpon>ImportUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListUser.aspx.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListUser.aspx.designer.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowMark.aspx.cs">
+      <DependentUpon>ShowMark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowMark.aspx.designer.cs">
+      <DependentUpon>ShowMark.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -163,10 +195,26 @@
     <Compile Include="Master\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Master\Student.Master.cs">
+      <DependentUpon>Student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Student.Master.designer.cs">
+      <DependentUpon>Student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Teacher.Master.cs">
+      <DependentUpon>Teacher.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Teacher.Master.designer.cs">
+      <DependentUpon>Teacher.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Student\" />
+    <Folder Include="Teacher\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
@@ -184,6 +232,8 @@
     <None Include="img\demo\Descr.WD3" />
     <None Include="img\Descr.WD3" />
     <None Include="img\gallery\Descr.WD3" />
+    <Content Include="Master\Student.Master" />
+    <Content Include="Master\Teacher.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

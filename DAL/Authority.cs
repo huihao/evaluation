@@ -28,7 +28,7 @@ namespace Eva.DAL
 			strSql.Append("@Name)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Name", SqlDbType.NVarChar,50)};
+					new SqlParameter("@Name", SqlDbType.NVarChar)};
 			parameters[0].Value = model.Name;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
@@ -51,7 +51,7 @@ namespace Eva.DAL
 			strSql.Append("Name=@Name");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Name", SqlDbType.NVarChar,50),
+					new SqlParameter("@Name", SqlDbType.NVarChar),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Id;

@@ -29,6 +29,7 @@ namespace Eva.Web.WebUser {
 		protected global::System.Web.UI.WebControls.TextBox txtMajorId;
 		protected global::System.Web.UI.WebControls.TextBox txtIdCard;
 		protected global::System.Web.UI.WebControls.TextBox txtAddress;
+		protected global::System.Web.UI.WebControls.TextBox txtPhone;
 	protected global::System.Web.UI.WebControls.Button btnSave;
 	protected global::System.Web.UI.WebControls.Button btnCancel;
 

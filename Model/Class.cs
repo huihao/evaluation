@@ -21,7 +21,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 
+		/// 班级名称
 		/// </summary>
 		public int Name
 		{
