@@ -68,18 +68,19 @@
     <div id="sidebar">
         <a href="#" class="visible-phone"><i class="icon icon-th"></i>Tables</a>
         <ul>
-            <li><a href="index.html"><i class="icon icon-home"></i><span>用户权限管理</span></a>
+            <li><a href="LisrUser.aspx"><i class="icon icon-home"></i><span>用户权限管理</span></a>
             </li>
-            <li><a href="charts.html"><i class="icon icon-signal"></i><span>学生列表</span></a>
+            <li><a href="ListStudent.aspx"><i class="icon icon-signal"></i><span>学生成绩查询</span></a>
             </li>
-            <li><a href="widgets.html"><i class="icon icon-inbox"></i><span>用户批量导入</span></a>
+            <li><a href="ImportUser.aspx"><i class="icon icon-inbox"></i><span>用户批量导入</span></a>
             </li>
-            <li><a href="grid.html"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
-            <li class="submenu"><a href="#"><i class="icon icon-th-list"></i><span>Forms</span>
+            <li><a href="EditInfo.aspx"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
+            <li class="submenu"><a href="#"><i class="icon icon-th-list"></i><span>其他信息管理</span>
                 <ul>
-                    <li><a href="form-common.html">道道地地</a></li>
-                    <li><a href="form-validation.html">Form with Validation</a></li>
-                    <li><a href="form-wizard.html">Form with Wizard</a></li>
+                    <li><a href="form-common.html">课程管理</a></li>
+                    <li><a href="form-validation.html">班级管理</a></li>
+                    <li><a href="form-wizard.html">专业管理</a></li>
+                    <li><a href="form-wizard.html">学院管理</a></li>
                 </ul>
             </li>
         </ul>

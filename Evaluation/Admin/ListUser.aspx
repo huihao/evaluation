@@ -24,11 +24,12 @@
                                 用户列表</h5>
                         </div>
                         <div class="widget-content nopadding">
+                            <form runat="server">
                             <table class="table table-bordered data-table">
                                 <thead>
                                     <tr>
                                         <th>
-                                           真实姓名
+                                            真实姓名
                                         </th>
                                         <th>
                                             权限
@@ -42,22 +43,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="gradeX">
-                                        <td>
-                                            Trident
-                                        </td>
-                                        <td>
-                                            Internet Explorer 4.0
-                                        </td>
-                                        <td>
-                                            Win 95+
-                                        </td>
-                                        <td class="center">
-                                            4
-                                        </td>
-                                    </tr>
+                                    <asp:Repeater ID="UserRepeater" runat="server" 
+                                        onitemcommand="UserRepeater_ItemCommand">
+                                        <ItemTemplate>
+                                            <tr class="gradeX">
+                                                <td>
+                                                    <%# Eval("Name") %>
+                                                </td>
+                                                <td>
+                                                    <%# Eval("AuthorityId") %>
+                                                </td>
+                                                <td>
+                                                   <%# Eval("Sex") %>
+                                                </td>
+                                                <td class="center">
+                                                  <asp:Button ID="BtnInfo" runat="server" Text="信息修改" class="btn btn-info btn-mini" />
+                                                  <asp:Button ID="BtnAu" runat="server" Text="权限修改" class="btn btn-primary btn-mini" />
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </tbody>
                             </table>
+                            </form>
                         </div>
                     </div>
                 </div>

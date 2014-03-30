@@ -53,6 +53,7 @@
     <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\EditInfo.aspx" />
     <Content Include="Admin\ImportUser.aspx" />
+    <Content Include="Admin\ListStudent.aspx" />
     <Content Include="Admin\ListUser.aspx" />
     <Content Include="Admin\ShowMark.aspx" />
     <Content Include="css\bootstrap-responsive.min.css" />
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="Admin\ImportUser.aspx.designer.cs">
       <DependentUpon>ImportUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListStudent.aspx.cs">
+      <DependentUpon>ListStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListStudent.aspx.designer.cs">
+      <DependentUpon>ListStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListUser.aspx.cs">
       <DependentUpon>ListUser.aspx</DependentUpon>
