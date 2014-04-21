@@ -138,6 +138,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -149,6 +151,7 @@
     <Compile Include="Evaluation.cs" />
     <Compile Include="Major.cs" />
     <Compile Include="Mark.cs" />
+    <Compile Include="Teach.cs" />
     <Compile Include="WebUser.cs" />
   </ItemGroup>
   <ItemGroup>

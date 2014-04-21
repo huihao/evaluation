@@ -7,8 +7,8 @@
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
-                <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a>
-                <a href="#" class="current">Tables</a>
+                <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>主页</a>
+                <a href="#" class="current">添加用户</a>
             </div>
         </div>
         <div class="container-fluid">

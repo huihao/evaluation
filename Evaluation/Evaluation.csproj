@@ -138,6 +138,11 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Teacher\ApplyList.aspx" />
+    <Content Include="Teacher\Evaluation.aspx" />
+    <Content Include="Teacher\Info.aspx" />
+    <Content Include="Teacher\ScoreList.aspx" />
+    <Content Include="Teacher\StudentList.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -218,11 +223,45 @@
       <DependentUpon>Teacher.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teacher\ApplyList.aspx.cs">
+      <DependentUpon>ApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\ApplyList.aspx.designer.cs">
+      <DependentUpon>ApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Evaluation.aspx.cs">
+      <DependentUpon>Evaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\Evaluation.aspx.designer.cs">
+      <DependentUpon>Evaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\ScoreList.aspx.cs">
+      <DependentUpon>ScoreList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\ScoreList.aspx.designer.cs">
+      <DependentUpon>ScoreList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\StudentList.aspx.cs">
+      <DependentUpon>StudentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\StudentList.aspx.designer.cs">
+      <DependentUpon>StudentList.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Student\" />
-    <Folder Include="Teacher\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />

@@ -21,7 +21,7 @@
     <!--Header-part-->
     <div id="header">
         <h1>
-            <a href="dashboard.html">Matrix Admin</a></h1>
+            <a href="dashboard.html">学生综合评价系统</a></h1>
     </div>
     <!--close-Header-part-->
     <!--top-Header-menu-->
