@@ -12,5 +12,12 @@ namespace Evaluation
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Eva.BLL.WebUser ww = new Eva.BLL.WebUser();
+            Session["user"] = ww.GetModel(1);
+            Response.Redirect("Teacher/Info.aspx");
+        }
     }
 }
