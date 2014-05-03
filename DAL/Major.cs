@@ -23,13 +23,15 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Major(");
-			strSql.Append("Name)");
+			strSql.Append("Name,CollegeId)");
 			strSql.Append(" values (");
-			strSql.Append("@Name)");
+			strSql.Append("@Name,@CollegeId)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Name", SqlDbType.NVarChar)};
+					new SqlParameter("@Name", SqlDbType.NVarChar),
+					new SqlParameter("@CollegeId", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
+			parameters[1].Value = model.CollegeId;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -48,13 +50,16 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update Major set ");
-			strSql.Append("Name=@Name");
+			strSql.Append("Name=@Name,");
+			strSql.Append("CollegeId=@CollegeId");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar),
+					new SqlParameter("@CollegeId", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
-			parameters[1].Value = model.Id;
+			parameters[1].Value = model.CollegeId;
+			parameters[2].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -118,7 +123,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,Name from Major ");
+			strSql.Append("select  top 1 Id,Name,CollegeId from Major ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -137,6 +142,10 @@ namespace Eva.DAL
 				{
 					model.Name=ds.Tables[0].Rows[0]["Name"].ToString();
 				}
+				if(ds.Tables[0].Rows[0]["CollegeId"]!=null && ds.Tables[0].Rows[0]["CollegeId"].ToString()!="")
+				{
+					model.CollegeId=int.Parse(ds.Tables[0].Rows[0]["CollegeId"].ToString());
+				}
 				return model;
 			}
 			else
@@ -151,7 +160,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,Name ");
+			strSql.Append("select Id,Name,CollegeId ");
 			strSql.Append(" FROM Major ");
 			if(strWhere.Trim()!="")
 			{
@@ -171,7 +180,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,Name ");
+			strSql.Append(" Id,Name,CollegeId ");
 			strSql.Append(" FROM Major ");
 			if(strWhere.Trim()!="")
 			{

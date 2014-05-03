@@ -26,7 +26,11 @@ namespace Eva.Web.Major
 			string strErr="";
 			if(this.txtName.Text.Trim().Length==0)
 			{
-				strErr+="专业名称不能为空！\\n";	
+				strErr+="Name不能为空！\\n";	
+			}
+			if(!PageValidate.IsNumber(txtCollegeId.Text))
+			{
+				strErr+="CollegeId格式错误！\\n";	
 			}
 
 			if(strErr!="")
@@ -35,9 +39,11 @@ namespace Eva.Web.Major
 				return;
 			}
 			string Name=this.txtName.Text;
+			int CollegeId=int.Parse(this.txtCollegeId.Text);
 
 			Eva.Model.Major model=new Eva.Model.Major();
 			model.Name=Name;
+			model.CollegeId=CollegeId;
 
 			Eva.BLL.Major bll=new Eva.BLL.Major();
 			bll.Add(model);

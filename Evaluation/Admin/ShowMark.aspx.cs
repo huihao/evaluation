@@ -9,9 +9,48 @@ namespace Eva.Evaluation.Admin
 {
     public partial class ShowMark : System.Web.UI.Page
     {
+        BLL.Mark markBll = BLL.BLLFactory.GetMarkBLLInstance();
+        BLL.WebUser userBll = BLL.BLLFactory.GetWebUserBLLInstance();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                SetDate();
+                MarkBind();
+            }
+        }
 
+        protected void SetDate()
+        {
+            YearList.Items.Add(new ListItem("",""));
+            for (int i = 1991; i < 2020; i++)
+            {
+                YearList.Items.Add(new ListItem(i.ToString(),i.ToString()));
+            }
+
+            Termlist.Items.Add(new ListItem("", ""));
+            for (int i = 1; i < 3; i++)
+            {
+                Termlist.Items.Add(new ListItem(i.ToString(), i.ToString()));
+            }
+        }
+
+        protected void MarkBind()
+        {
+            //int id = int.Parse(Request["id"]);
+            var set = markBll.GetListByStudentId(1, YearList.SelectedItem.Text, Termlist.SelectedItem.Text);
+            MarkRepeater.DataSource = set;
+            MarkRepeater.DataBind();
+        }
+
+        protected void YearList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MarkBind();
+        }
+
+        protected void Termlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MarkBind();
         }
     }
 }

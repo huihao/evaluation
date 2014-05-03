@@ -116,9 +116,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Utils.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemList.cs" />
+    <Compile Include="MyBLL\Authority.cs" />
     <Compile Include="MyBLL\BLLFactory.cs" />
+    <Compile Include="MyBLL\Class.cs" />
+    <Compile Include="MyBLL\College.cs" />
+    <Compile Include="MyBLL\Major.cs" />
+    <Compile Include="MyBLL\Mark.cs" />
+    <Compile Include="MyBLL\WebUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

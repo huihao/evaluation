@@ -2,16 +2,28 @@
     CodeBehind="Evaluation.aspx.cs" Inherits="Eva.Evaluation.Teacher.Evaluation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script src="../js/jquery.min.js"></script> 
+<script src="../js/jquery.ui.custom.js"></script> 
+<script src="../js/bootstrap.min.js"></script> 
+<script src="../js/jquery.validate.js"></script> 
+<script src="../js/jquery.wizard.js"></script> 
+<script src="../js/matrix.js"></script> 
+<script src="../js/matrix.wizard.js"></script>
+<script>
+    $(function () {
+        alert("dfef");
+    })
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
-                <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>
-                    首页</a> <a href="#">综合评价</a> 
+                <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a>
+                <a href="#">Form elements</a> <a href="#" class="current">Form wizard</a>
             </div>
             <h1>
-                学生综合评价</h1>
+                Form wizard</h1>
         </div>
         <div class="container-fluid">
             <hr>
@@ -19,23 +31,23 @@
                 <div class="span12">
                     <div class="widget-box">
                         <div class="widget-title">
-                            <span class="icon"><i class="icon-info-sign"></i></span>
+                            <span class="icon"><i class="icon-pencil"></i></span>
                             <h5>
-                                评价表格填写</h5>
+                                Form wizard &amp; validation</h5>
                         </div>
                         <div class="widget-content nopadding">
-                            <form class="form-horizontal" method="post" action="#" >
-                            <div class="control-group">
-                                <label class="control-label">
-                                    评价指标</label>
-                                <div class="controls">
-                                    <select>
-                                    <option>思想品德</option>
-                                    <option>社会实践</option>
-                                    </select>
+                            <form id="formwizard" class="form-horizontal" method="post" runat="server">
+                            <asp:Repeater ID="ItemRepeater" runat="server">
+                            <ItemTemplate>
+                            <div id="formwizard-<%#Eval("Id") %>" class="step">
+                                <div class="control-group">
+                                    <label class="control-label">
+                                        评价指标</label>
+                                    <div class="controls">
+                                        <%#Eval("Name") %>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="control-group">
+                                <div class="control-group">
                                 <label class="control-label">
                                     评价分数</label>
                                 <div class="controls">
@@ -49,9 +61,16 @@
                                     <textarea id="TextArea1" cols="20" rows="3"></textarea>
                                 </div>
                             </div>
-                       
+                            </div>
+                            </ItemTemplate>
+                            </asp:Repeater>
                             <div class="form-actions">
-                                <input type="submit" value="确定" class="btn btn-success">
+                                <input id="back" class="btn btn-primary" type="reset" value="Back" />
+                                <input id="next" class="btn btn-primary" type="submit" value="Next" />
+                                <div id="status">
+                                </div>
+                            </div>
+                            <div id="submitted">
                             </div>
                             </form>
                         </div>
@@ -59,4 +78,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>

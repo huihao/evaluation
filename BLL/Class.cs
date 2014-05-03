@@ -121,7 +121,11 @@ namespace Eva.BLL
 					}
 					if(dt.Rows[n]["Name"]!=null && dt.Rows[n]["Name"].ToString()!="")
 					{
-						model.Name=int.Parse(dt.Rows[n]["Name"].ToString());
+					model.Name=dt.Rows[n]["Name"].ToString();
+					}
+					if(dt.Rows[n]["MajorId"]!=null && dt.Rows[n]["MajorId"].ToString()!="")
+					{
+						model.MajorId=int.Parse(dt.Rows[n]["MajorId"].ToString());
 					}
 					modelList.Add(model);
 				}
