@@ -33,6 +33,7 @@ namespace Eva.Web.Major
 		Eva.Model.Major model=bll.GetModel(Id);
 		this.lblId.Text=model.Id.ToString();
 		this.lblName.Text=model.Name;
+		this.lblCollegeId.Text=model.CollegeId.ToString();
 
 	}
 

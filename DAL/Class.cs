@@ -23,13 +23,15 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Class(");
-			strSql.Append("Name)");
+			strSql.Append("Name,MajorId)");
 			strSql.Append(" values (");
-			strSql.Append("@Name)");
+			strSql.Append("@Name,@MajorId)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Name", SqlDbType.Int,4)};
+					new SqlParameter("@Name", SqlDbType.NVarChar),
+					new SqlParameter("@MajorId", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
+			parameters[1].Value = model.MajorId;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -48,13 +50,16 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update Class set ");
-			strSql.Append("Name=@Name");
+			strSql.Append("Name=@Name,");
+			strSql.Append("MajorId=@MajorId");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
-					new SqlParameter("@Name", SqlDbType.Int,4),
+					new SqlParameter("@Name", SqlDbType.NVarChar),
+					new SqlParameter("@MajorId", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
-			parameters[1].Value = model.Id;
+			parameters[1].Value = model.MajorId;
+			parameters[2].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -118,7 +123,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,Name from Class ");
+			strSql.Append("select  top 1 Id,Name,MajorId from Class ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -135,7 +140,11 @@ namespace Eva.DAL
 				}
 				if(ds.Tables[0].Rows[0]["Name"]!=null && ds.Tables[0].Rows[0]["Name"].ToString()!="")
 				{
-					model.Name=int.Parse(ds.Tables[0].Rows[0]["Name"].ToString());
+					model.Name=ds.Tables[0].Rows[0]["Name"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["MajorId"]!=null && ds.Tables[0].Rows[0]["MajorId"].ToString()!="")
+				{
+					model.MajorId=int.Parse(ds.Tables[0].Rows[0]["MajorId"].ToString());
 				}
 				return model;
 			}
@@ -151,7 +160,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,Name ");
+			strSql.Append("select Id,Name,MajorId ");
 			strSql.Append(" FROM Class ");
 			if(strWhere.Trim()!="")
 			{
@@ -171,7 +180,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,Name ");
+			strSql.Append(" Id,Name,MajorId ");
 			strSql.Append(" FROM Class ");
 			if(strWhere.Trim()!="")
 			{

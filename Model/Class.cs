@@ -11,7 +11,8 @@ namespace Eva.Model
 		{}
 		#region Model
 		private int _id;
-		private int _name;
+		private string _name;
+		private int? _majorid;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -21,12 +22,20 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 班级名称
+		/// 
 		/// </summary>
-		public int Name
+		public string Name
 		{
 			set{ _name=value;}
 			get{return _name;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? MajorId
+		{
+			set{ _majorid=value;}
+			get{return _majorid;}
 		}
 		#endregion Model
 

@@ -16,10 +16,17 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		专业名称
+		Name
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblName" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		CollegeId
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblCollegeId" runat="server"></asp:Label>
 	</td></tr>
 </table>
 

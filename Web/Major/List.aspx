@@ -41,7 +41,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField> 
                             
-		<asp:BoundField DataField="Name" HeaderText="专业名称" SortExpression="Name" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="CollegeId" HeaderText="CollegeId" SortExpression="CollegeId" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"
                                 Text="详细"  />

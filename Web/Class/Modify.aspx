@@ -16,10 +16,17 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		班级名称
+		Name
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtName" runat="server" Width="200px"></asp:TextBox>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		MajorId
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:TextBox id="txtMajorId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 </table>
 

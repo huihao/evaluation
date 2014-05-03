@@ -24,9 +24,13 @@ namespace Eva.Web.Class
 		{
 			
 			string strErr="";
-			if(!PageValidate.IsNumber(txtName.Text))
+			if(this.txtName.Text.Trim().Length==0)
 			{
-				strErr+="班级名称格式错误！\\n";	
+				strErr+="Name不能为空！\\n";	
+			}
+			if(!PageValidate.IsNumber(txtMajorId.Text))
+			{
+				strErr+="MajorId格式错误！\\n";	
 			}
 
 			if(strErr!="")
@@ -34,10 +38,12 @@ namespace Eva.Web.Class
 				MessageBox.Show(this,strErr);
 				return;
 			}
-			int Name=int.Parse(this.txtName.Text);
+			string Name=this.txtName.Text;
+			int MajorId=int.Parse(this.txtMajorId.Text);
 
 			Eva.Model.Class model=new Eva.Model.Class();
 			model.Name=Name;
+			model.MajorId=MajorId;
 
 			Eva.BLL.Class bll=new Eva.BLL.Class();
 			bll.Add(model);

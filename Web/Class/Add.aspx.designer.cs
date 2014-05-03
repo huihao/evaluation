@@ -20,6 +20,7 @@ namespace Eva.Web.Class {
     {
         
 		protected global::System.Web.UI.WebControls.TextBox txtName;
+		protected global::System.Web.UI.WebControls.TextBox txtMajorId;
 	protected global::System.Web.UI.WebControls.Button btnSave;
 	protected global::System.Web.UI.WebControls.Button btnCancel;
 

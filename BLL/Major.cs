@@ -123,6 +123,10 @@ namespace Eva.BLL
 					{
 					model.Name=dt.Rows[n]["Name"].ToString();
 					}
+					if(dt.Rows[n]["CollegeId"]!=null && dt.Rows[n]["CollegeId"].ToString()!="")
+					{
+						model.CollegeId=int.Parse(dt.Rows[n]["CollegeId"].ToString());
+					}
 					modelList.Add(model);
 				}
 			}

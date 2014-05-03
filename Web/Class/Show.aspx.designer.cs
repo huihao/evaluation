@@ -19,6 +19,7 @@ namespace Eva.Web.Class {
     public partial class Show {
         	protected global::System.Web.UI.WebControls.Label lblId;
 	protected global::System.Web.UI.WebControls.Label lblName;
+	protected global::System.Web.UI.WebControls.Label lblMajorId;
 
 
        

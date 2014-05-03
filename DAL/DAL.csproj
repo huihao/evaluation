@@ -140,6 +140,11 @@
   <ItemGroup>
     <Compile Include="Item.cs" />
     <Compile Include="ItemList.cs" />
+    <Compile Include="MyDAL\Authority.cs" />
+    <Compile Include="MyDAL\Class.cs" />
+    <Compile Include="MyDAL\College.cs" />
+    <Compile Include="MyDAL\Major.cs" />
+    <Compile Include="MyDAL\WebUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -181,9 +186,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MyDAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

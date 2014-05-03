@@ -32,7 +32,8 @@ namespace Eva.Web.Class
 		Eva.BLL.Class bll=new Eva.BLL.Class();
 		Eva.Model.Class model=bll.GetModel(Id);
 		this.lblId.Text=model.Id.ToString();
-		this.lblName.Text=model.Name.ToString();
+		this.lblName.Text=model.Name;
+		this.lblMajorId.Text=model.MajorId.ToString();
 
 	}
 

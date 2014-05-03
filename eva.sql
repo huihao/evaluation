@@ -14,10 +14,15 @@ DROP TABLE [Class]
 
 CREATE TABLE [Class] (
 [Id] [int]  IDENTITY (1, 1)  NOT NULL,
-[Name] [int]  NOT NULL)
+[Name] [nvarchar]  (MAX) NOT NULL,
+[MajorId] [int]  NULL)
 
 SET IDENTITY_INSERT [Class] ON
 
+INSERT [Class] ([Id],[Name],[MajorId]) VALUES ( 1,N'计算机101',1)
+INSERT [Class] ([Id],[Name],[MajorId]) VALUES ( 2,N'计算机102',1)
+INSERT [Class] ([Id],[Name],[MajorId]) VALUES ( 3,N'法律101',4)
+INSERT [Class] ([Id],[Name],[MajorId]) VALUES ( 4,N'法律102',4)
 
 SET IDENTITY_INSERT [Class] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[College]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -29,6 +34,8 @@ CREATE TABLE [College] (
 
 SET IDENTITY_INSERT [College] ON
 
+INSERT [College] ([Id],[Name]) VALUES ( 1,N'工学院')
+INSERT [College] ([Id],[Name]) VALUES ( 2,N'法学院')
 
 SET IDENTITY_INSERT [College] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[Course]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -42,6 +49,10 @@ CREATE TABLE [Course] (
 
 SET IDENTITY_INSERT [Course] ON
 
+INSERT [Course] ([Id],[Name],[Gpa],[Introdution]) VALUES ( 1,N'高等数学',4,N'高等数学')
+INSERT [Course] ([Id],[Name],[Gpa],[Introdution]) VALUES ( 2,N'数据结构',4,N'数据结构')
+INSERT [Course] ([Id],[Name],[Gpa],[Introdution]) VALUES ( 3,N'英语',2,N'英语')
+INSERT [Course] ([Id],[Name],[Gpa],[Introdution]) VALUES ( 4,N'高级语言',2,N'高级语言')
 
 SET IDENTITY_INSERT [Course] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[Evaluation]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -72,6 +83,9 @@ CREATE TABLE [Item] (
 
 SET IDENTITY_INSERT [Item] ON
 
+INSERT [Item] ([Id],[Name],[Value]) VALUES ( 1,N'思想品德',10)
+INSERT [Item] ([Id],[Name],[Value]) VALUES ( 2,N'社会实践',10)
+INSERT [Item] ([Id],[Name],[Value]) VALUES ( 3,N'竞赛表现',10)
 
 SET IDENTITY_INSERT [Item] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[ItemList]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -93,10 +107,16 @@ DROP TABLE [Major]
 
 CREATE TABLE [Major] (
 [Id] [int]  IDENTITY (1, 1)  NOT NULL,
-[Name] [nvarchar]  (MAX) NULL)
+[Name] [nvarchar]  (MAX) NULL,
+[CollegeId] [int]  NULL)
 
 SET IDENTITY_INSERT [Major] ON
 
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 1,N'计算机科学与技术',1)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 2,N'机械',1)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 3,N'建筑',1)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 4,N'法律',2)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 5,N'思想品德',2)
 
 SET IDENTITY_INSERT [Major] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[Mark]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
@@ -115,6 +135,10 @@ CREATE TABLE [Mark] (
 
 SET IDENTITY_INSERT [Mark] ON
 
+INSERT [Mark] ([Id],[CourseId],[StudentId],[EvalutionId],[Score],[AcademicYear],[SchoolTerm]) VALUES ( 1,1,1,1,90,2012,1)
+INSERT [Mark] ([Id],[CourseId],[StudentId],[EvalutionId],[Score],[AcademicYear],[SchoolTerm]) VALUES ( 2,2,1,1,88,2012,2)
+INSERT [Mark] ([Id],[CourseId],[StudentId],[EvalutionId],[Score],[AcademicYear],[SchoolTerm]) VALUES ( 3,3,1,1,99,2013,1)
+INSERT [Mark] ([Id],[CourseId],[StudentId],[EvalutionId],[Score],[AcademicYear],[SchoolTerm]) VALUES ( 4,4,1,1,7,2013,2)
 
 SET IDENTITY_INSERT [Mark] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[Teach]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
