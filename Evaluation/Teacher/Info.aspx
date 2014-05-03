@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form runat="server" class="form-horizontal"  >
+    <form runat="server" class="form-horizontal">
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
@@ -27,52 +27,52 @@
                                 <label class="control-label">
                                     真实姓名 :</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtName" runat="server" class="span6" placeholder="真实姓名"></asp:TextBox>
+                                    <asp:TextBox ID="txtName" runat="server" class="span5" placeholder="真实姓名"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label">
                                     身份证</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtIdCard" runat="server" class="span11" ></asp:TextBox>
+                                    <asp:TextBox ID="txtIdCard" runat="server" class="span5"></asp:TextBox>
                                 </div>
                             </div>
-                             <div class="control-group">
+                            <div class="control-group">
                                 <label class="control-label">
                                     手机号码</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="TextBox1" runat="server" class="span11" ></asp:TextBox>
+                                    <asp:TextBox ID="txtTel" runat="server" class="span5"></asp:TextBox>
                                 </div>
                             </div>
-                             <div class="control-group">
+                            <div class="control-group">
                                 <label class="control-label">
                                     学院</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="TextBox2" runat="server" class="span11" ></asp:TextBox>
+                                    <asp:DropDownList ID="ddCollege" runat="server" class="span5">
+                                    </asp:DropDownList>                               
                                 </div>
                             </div>
-                             <div class="control-group">
+                            <div class="control-group">
                                 <label class="control-label">
                                     性别</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="TextBox3" runat="server" class="span5" ></asp:TextBox>
+                                    <asp:TextBox ID="txtSex" runat="server" class="span5"></asp:TextBox>
                                 </div>
                             </div>
-
                             <div class="form-actions">
-                                <asp:Button ID="Save" runat="server" Text="保存" class="btn btn-success" />
+                                <asp:Button ID="Save" runat="server" Text="保存" class="btn btn-success" OnClick="Save_Click" />
                             </div>
                         </div>
                         <div class="widget-content nopadding">
-                        <div class="control-group">
+                            <div class="control-group">
                                 <label class="control-label">
                                     原始密码</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtOldPassWord" runat="server" class="span6" placeholder="原始密码" TextMode="Password">
+                                    <asp:TextBox ID="txtOldPassWord" runat="server" class="span6" placeholder="原始密码"
+                                        TextMode="Password">
                                     </asp:TextBox>
                                 </div>
                             </div>
-
                             <div class="control-group">
                                 <label class="control-label">
                                     新密码</label>
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="form-actions">
-                                <asp:Button ID="Button1" runat="server" Text="保存" class="btn btn-success" />
+                                <asp:Button ID="Button1" runat="server" Text="保存" class="btn btn-success" OnClick="Button1_Click" />
                             </div>
                         </div>
                     </div>
