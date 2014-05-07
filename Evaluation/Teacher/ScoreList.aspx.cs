@@ -11,7 +11,20 @@ namespace Eva.Evaluation.Teacher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Eva.BLL.Mark markBll = new BLL.Mark();
+                int id = int.Parse(Request["id"]);
+                var set = markBll.GetListByStudentId(id);
+                MarkRepeater.DataSource = set;
+                MarkRepeater.DataBind();
 
+
+                Eva.BLL.WebUser blluser=new BLL.WebUser();
+                Eva.Model.WebUser user=new Model.WebUser();
+                user=blluser.GetModel(id);
+                Label1.Text = user.Name;
+            }
         }
     }
 }

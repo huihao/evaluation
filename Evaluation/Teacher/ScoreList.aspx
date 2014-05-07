@@ -11,7 +11,8 @@
                 <a href="#" class="current">成绩查看</a>
             </div>
             <h1>
-               学生姓名： 李小明</h1>
+                学生姓名： 
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label></h1>
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
@@ -41,90 +42,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="gradeX">
-                                        <td>
-                                            高等数学
-                                        </td>
-                                        <td>
-                                            90
-                                        </td>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td class="center">
-                                            0
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            计算机基础
-                                        </td>
-                                        <td>
-                                            88
-                                        </td>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td class="center">
-                                            0
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            c#高级编程
-                                        </td>
-                                        <td>
-                                            77
-                                        </td>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td class="center">
-                                            0
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            离散数学
-                                        </td>
-                                        <td>
-                                            76
-                                        </td>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td class="center">
-                                            0
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            毛泽东概论
-                                        </td>
-                                        <td>
-                                            33
-                                        </td>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td class="center">
-                                            0
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            英语
-                                        </td>
-                                        <td>
-                                            92
-                                        </td>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td class="center">
-                                            0
-                                        </td>
-                                    </tr>
+                                    <asp:Repeater ID="MarkRepeater" runat="server">
+                                        <ItemTemplate>
+                                            <tr class="gradeX">
+                                                <td>
+                                                    <%# Eva.BLL.Utils.GetCourseName(Convert.ToInt16( Eval("CourseId"))) %>
+                                                </td>
+                                                <td>
+                                                    <%#  Eval("Score") %>
+                                                </td>
+                                                <td>
+                                                    <%# Eva.BLL.Utils.GetCourseGpa(Convert.ToInt16( Eval("CourseId"))) %>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                   
                                 </tbody>
                             </table>
                         </div>

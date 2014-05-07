@@ -45,240 +45,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="gradeX">
-                                        <td>
-                                            李小明
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button1" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button2" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            张飞
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button3" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button4" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                           王五
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button5" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button6" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            陆星
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button7" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button8" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            刘敏
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button9" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button10" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                           刘国庆
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button11" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button12" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            蔡达
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button13" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button14" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            吴军
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button15" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button16" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            李小明
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button17" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button18" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            李明
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button19" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button20" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            李德华
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button21" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button22" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            李小明
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button23" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button24" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>
-                                            李小明
-                                        </td>
-                                        <td>
-                                            男
-                                        </td>
-                                        <td>
-                                            22223123
-                                        </td>
-                                        <td class="center">
-                                            12312312
-                                        </td>
-                                        <td class="center">
-                                            <asp:Button ID="Button25" runat="server" Text="查看成绩" class="btn btn-success" />
-                                            <asp:Button ID="Button26" runat="server" Text="综合评价" class="btn btn-success" />
-                                        </td>
-                                    </tr>
+                                    <asp:Repeater ID="StudentRepeater" runat="server" OnItemCommand="StudentRepeater_ItemCommand">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td>
+                                                    <%#Eval("Name")%>
+                                                </td>
+                                                <td>
+                                                    <%#Eval("Sex")%>
+                                                </td>
+                                                <td>
+                                                    <%#Eval("StudentId")%>
+                                                </td>
+                                                <td>
+                                                    <%#Eval("Phone")%>
+                                                </td>
+                                                <td>
+                                                    <asp:Button ID="btnShowScroe" runat="server" Text="成绩查看" CommandArgument='<%#Eval("Id") %>'
+                                                        CommandName="view" />
+                                                    <asp:Button ID="btnEvaluation" runat="server" Text="综合评价" CommandArgument='<%#Eval("Id") %>'
+                                                        CommandName="eva" />
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </tbody>
                             </table>
                         </div>

@@ -76,6 +76,7 @@ namespace Eva.Evaluation.Teacher
             model.Sex = sex;
 
             bllUser.Update(model);
+            Maticsoft.Common.MessageBox.Show(this, "保存成功！");
             
 
         }
@@ -119,15 +120,8 @@ namespace Eva.Evaluation.Teacher
             {
                 model.PassWord = paw;
                 bllUser.Update(model);
-                strErr += "修改密码成功！";
-            }
-
-
-            if (strErr != "")
-            {
-                Maticsoft.Common.MessageBox.Show(this, strErr);
-                return;
-            }
+                Maticsoft.Common.MessageBox.Show(this, "修改密码成功！");
+            }          
 
         }
     }
