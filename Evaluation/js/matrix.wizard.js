@@ -1,7 +1,7 @@
 
-$(document).ready(function () {
-
-    $("#aspnetForm").formwizard({ 
+$(document).ready(function(){
+	
+	$("#form-wizard").formwizard({ 
 		formPluginEnabled: true,
 		validationEnabled: true,
 		focusFirstInput : true,
