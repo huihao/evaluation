@@ -24,6 +24,13 @@ namespace Eva.BLL
 
             return dal.GetList(sql);
         }
+
+        public DataSet getListByCheckStep(int teacherId)
+        {
+
+            return dal.GetListMarkWithTeacher(teacherId);
+            
+        }
     }
 }
 

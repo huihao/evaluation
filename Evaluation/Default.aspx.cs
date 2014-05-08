@@ -17,7 +17,7 @@ namespace Evaluation
         {
             Eva.BLL.WebUser ww = new Eva.BLL.WebUser();
             Session["user"] = ww.GetModel(1);
-            Response.Redirect("Teacher/Info.aspx");
+            Response.Redirect("Teacher/ApplyList.aspx");
         }
     }
 }

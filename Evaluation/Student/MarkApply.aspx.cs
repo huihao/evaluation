@@ -11,14 +11,19 @@ namespace Eva.Evaluation.Student
     {
         Eva.BLL.Mark bllMark = new BLL.Mark();
         Eva.Model.Mark mark = new Model.Mark();
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
-                int id = int.Parse(Request["id"]);
+                Eva.Model.WebUser teacher = new Model.WebUser();
+                teacher = Session["user"]as Model.WebUser;
+                int id = teacher.Id;
+                
+                
                 mark = bllMark.GetModel(id);
+
+                Session["mark"] = mark;
                 
                 txtCourseName.Text = Eva.BLL.Utils.GetCourseName(Convert.ToInt16(mark.CourseId));
                 txtScore.Text = mark.Score.ToString();
@@ -28,6 +33,8 @@ namespace Eva.Evaluation.Student
 
         protected void Save_Click(object sender, EventArgs e)
         {
+      
+            mark = Session["mark"] as Eva.Model.Mark;
             string strErr = "";
             if (txtBonusPoint.Text.Trim().Length == 0)
             {
@@ -35,13 +42,19 @@ namespace Eva.Evaluation.Student
             }
             if (strErr != "")
             {
-                Maticsoft.Common.MessageBox.Show( this,strErr);
+                Maticsoft.Common.MessageBox.Show(this, strErr);
                 return;
             }
-            mark.BonusPoint =  Convert.ToDecimal( txtBonusPoint.Text);
+            mark.BonusPoint = Convert.ToDecimal(txtBonusPoint.Text);
             mark.CheckStep = 1;
-            bllMark.Update(mark);
-            Maticsoft.Common.MessageBox.ShowAndRedirect(this, "保存成功！", "ShowMark.aspx");
+            if (bllMark.Update(mark))
+            {
+                Maticsoft.Common.MessageBox.ShowAndRedirect(this, "保存成功！", "ShowMark.aspx");
+            }
+            else
+            {
+                Maticsoft.Common.MessageBox.Show(this, "保存失败！");
+            }
         }
     }
 }

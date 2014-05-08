@@ -18,5 +18,10 @@ namespace Eva.BLL
             var bll = new Course();
             return decimal.Parse(bll.GetModel(id).Gpa.ToString());
         }
+        public static string GetStudentName(int studentId) 
+        {
+            var bll = new WebUser();
+            return bll.GetModel(studentId).Name;
+        }
     }
 }
