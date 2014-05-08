@@ -21,17 +21,17 @@ namespace Eva.Evaluation.Teacher
         }
         protected void StudentRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName =="view")
-            { 
-                int id=Convert.ToInt32(e.CommandArgument);
-                Response.Redirect("ScoreList.aspx?id="+id);
+            if (e.CommandName == "view")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("ScoreList.aspx?id=" + id);
             }
             if (e.CommandName == "eva")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                Response.Redirect("");
+                Response.Redirect("Evaluation.aspx?id=" + id);
             }
-            
+
         }
     }
 }

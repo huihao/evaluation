@@ -110,6 +110,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Excel.dll</HintPath>
     </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Lib\NPOI.dll</HintPath>
+    </Reference>
     <Reference Include="OpenSmtp, Version=1.11.0.34196, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\OpenSmtp.dll</HintPath>
@@ -136,6 +139,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelHelper.cs" />
+    <Compile Include="FileUtil.cs" />
     <Compile Include="HttpProc.cs" />
     <Compile Include="MailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -172,6 +177,7 @@
     </Compile>
     <Compile Include="RMB.cs" />
     <Compile Include="StringPlus.cs" />
+    <Compile Include="StringUtil.cs" />
     <Compile Include="TimeParser.cs" />
     <Compile Include="UrlOper.cs" />
   </ItemGroup>

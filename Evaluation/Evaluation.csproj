@@ -248,6 +248,9 @@
     <Compile Include="Teacher\ApplyList.aspx.designer.cs">
       <DependentUpon>ApplyList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\EvaluationHandler.ashx.cs">
+      <DependentUpon>EvaluationHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,11 +282,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="FilesUp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Admin\学生信息导入模板.xls" />
     <None Include="font-awesome\css\Descr.WD3" />
     <None Include="font-awesome\font\Descr.WD3" />
     <None Include="font-awesome\font\fontawesome-webfont.eot" />
@@ -298,6 +303,7 @@
     <None Include="img\gallery\Descr.WD3" />
     <Content Include="Master\Student.Master" />
     <Content Include="Master\Teacher.Master" />
+    <Content Include="Teacher\EvaluationHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
