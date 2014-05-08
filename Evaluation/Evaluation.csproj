@@ -282,11 +282,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="FilesUp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\Admin.Master" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Admin\学生信息导入模板.xls" />
     <None Include="font-awesome\css\Descr.WD3" />
     <None Include="font-awesome\font\Descr.WD3" />
     <None Include="font-awesome\font\fontawesome-webfont.eot" />
