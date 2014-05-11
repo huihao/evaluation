@@ -53,7 +53,7 @@
                                         <ItemTemplate>
                                             <tr>
                                                 <td>
-                                                    <%#Eva.BLL.Utils.GetStudentName(Convert.ToInt16(Eval("StudentId"))) %>
+                                                    <%#Eva.BLL.Utils.GetStudentName(Convert.ToInt32(Eval("StudentId"))) %>
                                                 </td>
                                                 <td>
                                                     <%#Eva.BLL.Utils.GetCourseName(Convert.ToInt16( Eval("CourseId")))%>

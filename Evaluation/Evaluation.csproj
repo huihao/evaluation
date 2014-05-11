@@ -50,6 +50,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddClass.aspx" />
+    <Content Include="Admin\AddCollege.aspx" />
+    <Content Include="Admin\AddMajor.aspx" />
     <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\EditInfo.aspx" />
     <Content Include="Admin\ImportUser.aspx" />
@@ -135,6 +138,7 @@
     <Content Include="js\matrix.wizard.js" />
     <Content Include="js\select2.min.js" />
     <Content Include="js\wysihtml5-0.3.0.js" />
+    <Content Include="login.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -156,6 +160,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddClass.aspx.cs">
+      <DependentUpon>AddClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddClass.aspx.designer.cs">
+      <DependentUpon>AddClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddCollege.aspx.cs">
+      <DependentUpon>AddCollege.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCollege.aspx.designer.cs">
+      <DependentUpon>AddCollege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddMajor.aspx.cs">
+      <DependentUpon>AddMajor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddMajor.aspx.designer.cs">
+      <DependentUpon>AddMajor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +229,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -335,7 +367,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5715</DevelopmentServerPort>
+          <DevelopmentServerPort>11677</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

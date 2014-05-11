@@ -9,7 +9,7 @@
         <div id="content-header">
             <div id="breadcrumb">
                 <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>主页</a>
-                <a href="#" class="current">添加用户</a>
+                <a href="#" class="current">用户信息</a>
             </div>
         </div>
         <div class="container-fluid">
@@ -48,8 +48,27 @@
                                 <label class="control-label">
                                     学院</label>
                                 <div class="controls">
-                                    <asp:DropDownList ID="ddCollege" runat="server" class="span5">
+                                    <asp:DropDownList ID="CollegeList" runat="server" class="span5" 
+                                        AutoPostBack="True" onselectedindexchanged="CollegeList_SelectedIndexChanged">
                                     </asp:DropDownList>                               
+                                </div>
+                            </div>
+                             <div class="control-group">
+                                <label class="control-label">
+                                    专业</label>
+                                <div class="controls">
+                                    <asp:DropDownList ID="MajorList" runat="server" class="span5" 
+                                        onselectedindexchanged="MajorList_SelectedIndexChanged" 
+                                        AutoPostBack="True">
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">
+                                    班级</label>
+                                <div class="controls">
+                                    <asp:DropDownList ID="ClassList" runat="server" class="span5">
+                                    </asp:DropDownList>
                                 </div>
                             </div>
                             <div class="control-group">

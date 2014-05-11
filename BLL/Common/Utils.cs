@@ -55,5 +55,10 @@ namespace Eva.BLL
             }
 
         }
+        public static string GetStudentName(int studentId)
+        {
+            var bll = new Eva.BLL.WebUser();            
+            return bll.GetModelByStudentId(studentId).Name;            
+        }
     }
 }

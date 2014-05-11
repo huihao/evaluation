@@ -7,54 +7,54 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace Eva.Evaluation.Student {
+namespace Eva.Evaluation.Admin {
     
     
-    public partial class ShowMark {
+    public partial class AddClass {
         
         /// <summary>
-        /// form1 控件。
+        /// Form1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// Label1 控件。
+        /// CollegeList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.DropDownList CollegeList;
         
         /// <summary>
-        /// YearList 控件。
+        /// MajorList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList YearList;
+        protected global::System.Web.UI.WebControls.DropDownList MajorList;
         
         /// <summary>
-        /// Termlist 控件。
+        /// txtClass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Termlist;
+        protected global::System.Web.UI.WebControls.TextBox txtClass;
         
         /// <summary>
-        /// MarkRepeater 控件。
+        /// Save 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater MarkRepeater;
+        protected global::System.Web.UI.WebControls.Button Save;
     }
 }

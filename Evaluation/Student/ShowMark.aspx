@@ -19,6 +19,15 @@
             <div class="container-fluid">
                 <div class="row-fluid">
                     <div class="span12">
+                    <div>
+                        学年<asp:DropDownList ID="YearList" runat="server" 
+                            Width="100px" AutoPostBack="True" 
+                            onselectedindexchanged="YearList_SelectedIndexChanged">
+                        </asp:DropDownList>
+                        学期<asp:DropDownList ID="Termlist" runat="server" Width="100px" 
+                            AutoPostBack="True" onselectedindexchanged="Termlist_SelectedIndexChanged">
+                        </asp:DropDownList>
+                    </div>
                         <div class="widget-box">
                             <div class="widget-title">
                                 <span class="icon"><i class="icon-th"></i></span>

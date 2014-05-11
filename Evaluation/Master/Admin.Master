@@ -20,8 +20,7 @@
 <body>
     <!--Header-part-->
     <div id="header">
-        <h1>
-            <a href="dashboard.html">学生综合评价系统</a></h1>
+       <asp:image ID="img_top" runat="server" ImageUrl="../img/logo_admin.png" />
     </div>
     <!--close-Header-part-->
     <!--top-Header-menu-->
@@ -29,7 +28,7 @@
         <ul class="nav">
             <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown"
                 data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user">
-                </i><span class="text">Welcome User</span><b class="caret"></b></a>
+                </i><span class="text">欢迎你<asp:Label ID="Label1" runat="server" ></asp:Label></span><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="icon-user"></i>My Profile</a></li>
                     <li class="divider"></li>
@@ -57,12 +56,9 @@
         </ul>
     </div>
     <!--start-top-serch-->
-    <div id="search">
-        <input type="text" placeholder="Search here..." />
-        <button type="submit" class="tip-bottom" title="Search">
-            <i class="icon-search icon-white"></i>
-        </button>
-    </div>
+   <div id="logo">
+          <asp:Image ID="Image1" runat="server" ImageUrl="../img/logo.jpg"/>
+      </div>   
     <!--close-top-serch-->
     <!--sidebar-menu-->
     <div id="sidebar">

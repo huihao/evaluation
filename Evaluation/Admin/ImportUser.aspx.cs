@@ -114,14 +114,18 @@ namespace Eva.Evaluation.Admin
                 var user = new Model.WebUser();
 
                 user.Name = StringUtil.ClearString(dt.Rows[i]["姓名"].ToString());
+                user.StudentId = int.Parse(dt.Rows[i]["学号"].ToString());
                 user.IdCard = StringUtil.ClearString(dt.Rows[i]["身份证"].ToString());
+
                 user.CollegeId = BLL.Utils.GetCollegeIdByName(StringUtil.ClearString(dt.Rows[i]["学院"].ToString()));
                 user.MajorId = BLL.Utils.GetMajorIdByName(StringUtil.ClearString(dt.Rows[i]["学院"].ToString()), StringUtil.ClearString(dt.Rows[i]["专业"].ToString()));
                 user.ClassId = BLL.Utils.GetClassIdByName(StringUtil.ClearString(dt.Rows[i]["学院"].ToString()), StringUtil.ClearString(dt.Rows[i]["专业"].ToString()), StringUtil.ClearString(dt.Rows[i]["班级"].ToString()));
                 user.Sex = StringUtil.ClearString(dt.Rows[i]["性别"].ToString());
                 user.Address = StringUtil.ClearString(dt.Rows[i]["联系地址"].ToString());
                 user.Phone = StringUtil.ClearString(dt.Rows[i]["电话"].ToString());
-
+                
+                user.LoginId = user.StudentId.ToString();
+                user.PassWord = "123456";
                 userBll.Add(user);
 
             }

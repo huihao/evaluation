@@ -16,9 +16,7 @@ namespace Eva.Evaluation.Student
         {
             if (!IsPostBack)
             {
-                Eva.Model.WebUser teacher = new Model.WebUser();
-                teacher = Session["user"]as Model.WebUser;
-                int id = teacher.Id;
+                int id = int.Parse(Request["id"]);
                 
                 
                 mark = bllMark.GetModel(id);
@@ -33,7 +31,6 @@ namespace Eva.Evaluation.Student
 
         protected void Save_Click(object sender, EventArgs e)
         {
-      
             mark = Session["mark"] as Eva.Model.Mark;
             string strErr = "";
             if (txtBonusPoint.Text.Trim().Length == 0)

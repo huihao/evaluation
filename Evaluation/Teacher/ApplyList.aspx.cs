@@ -37,14 +37,23 @@ namespace Eva.Evaluation.Teacher
                 
                 mark.Score = mark.Score + mark.BonusPoint;
                 mark.CheckStep = 2;
-                bll.Update(mark);
+                if (bll.Update(mark))
+                {
+                    Maticsoft.Common.MessageBox.Show(this, "已加分！");
+                }
+                
+
                 markBing();
             }
             if (e.CommandName == "no")
             {
                 mark.CheckStep = 3;
-                bll.Update(mark);
+                if (bll.Update(mark))
+                {
+                    Maticsoft.Common.MessageBox.Show(this, "已拒绝！");
+                }
                 markBing();
+
                
             }
         }

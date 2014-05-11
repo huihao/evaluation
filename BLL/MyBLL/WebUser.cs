@@ -10,11 +10,25 @@ namespace Eva.BLL
     /// </summary>
     public partial class WebUser
     {
-
-        public DataSet GetStudents()
+        public DataSet GetAllStudents()
         {
-            string sql = " StudentId is NOT NULL ";
+            string sql = " StudentId  is not null";
             return dal.GetList(sql);
+        }
+        public DataSet GetStudents(int studentId)
+        {
+            string sql = " StudentId = "+studentId;
+            return dal.GetList(sql);
+        }
+        public Eva.Model.WebUser Login(string loginId, string paw)
+        {
+            string sql = " LoginId=" + "'" + loginId + "'" + " and PassWord = " +"'"+paw+"'";
+            return dal.Login(sql);
+        }
+        public Eva.Model.WebUser GetModelByStudentId(int studentId)
+        {
+            string sql = " StudentId=" + studentId;
+            return dal.GetModel(sql);
         }
     }
 }

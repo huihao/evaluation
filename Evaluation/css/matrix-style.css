@@ -47,10 +47,12 @@ hr{ border-top-color:#dadada;}
 
 /* Header */
 #header {
-	height: 77px;
+	height: 32px;
 	position: relative;
 	width: 100%;
 	z-index: -9;
+	padding-top:8px;
+	padding-left:5px;
 }
 #header h1 {
 	background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
@@ -59,12 +61,21 @@ hr{ border-top-color:#dadada;}
 	line-height: 600px;
 	overflow: hidden;
 	position: relative;
-	top: 26px;
+	top: 5px;
 	width: 191px;
 }
 #header h1 a {
 	display: block;
 }
+#logo
+{
+    margin-top:5px;   
+}
+
+
+
+
+
 /* Search input */
 #search {
 	position: absolute;
@@ -94,7 +105,7 @@ hr{ border-top-color:#dadada;}
 /* Top user navigation */
 #user-nav {
 	position: absolute;
-	left: 220px;
+	right:0px;
 	top:0px;
 	z-index: 20;
 	margin: 0;
@@ -144,6 +155,7 @@ hr{ border-top-color:#dadada;}
 	position: relative;
 	width: 220px;
 	z-index: 16;
+	margin-top:0px;
 }
 #sidebar > ul {
 	list-style: none;
@@ -197,6 +209,7 @@ hr{ border-top-color:#dadada;}
 	background: none repeat scroll 0 0 #eeeeee;
 	margin-left: 220px;
 	margin-right: 0;
+	margin-top:38px;
 	padding-bottom: 25px;
 	position: relative;
 	min-height:100%;

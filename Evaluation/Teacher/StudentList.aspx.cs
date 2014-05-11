@@ -13,8 +13,9 @@ namespace Eva.Evaluation.Teacher
         {
             if (!IsPostBack)
             {
-                Eva.BLL.WebUser student = new BLL.WebUser();
-                var set = student.GetStudents();
+                
+                Eva.BLL.WebUser bllStudent = new BLL.WebUser();
+                var set = bllStudent.GetAllStudents();
                 StudentRepeater.DataSource = set;
                 StudentRepeater.DataBind();
             }

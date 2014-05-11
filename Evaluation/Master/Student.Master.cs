@@ -11,7 +11,15 @@ namespace Eva.Evaluation.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Eva.Model.WebUser user = Session["user"] as Eva.Model.WebUser;
+                if (user != null)
+                {
+                    Label1.Text = user.Name;
 
+                }
+            }
         }
     }
 }
