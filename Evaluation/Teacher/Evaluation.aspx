@@ -2,23 +2,13 @@
     CodeBehind="Evaluation.aspx.cs" Inherits="Eva.Evaluation.Teacher.Evaluation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta charset="UTF-8" />
-    <script src="../js/jquery.wizard.js"></script>
-    <script src="../js/matrix.js"></script>
-    <script src="../js/matrix.wizard.js"></script>
+    <script src="../js/jquery.wizard.js" charset="gb2312"></script>
+    <script src="../js/matrix.js"  charset="gb2312"></script>
+    <script src="../js/matrix.wizard.js"  charset="gb2312"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
-        <div id="content-header">
-            <div id="breadcrumb">
-                <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>Home</a>
-                <a href="#">Form elements</a> <a href="#" class="current">Form wizard</a>
-            </div>
-            <h1>
-                Form wizard</h1>
-        </div>
         <div class="container-fluid">
-            <hr>
             <div class="row-fluid">
                 <div class="span12">
                     <div class="widget-box">

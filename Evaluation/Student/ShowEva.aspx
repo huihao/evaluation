@@ -14,7 +14,7 @@
                 </div>
                 <h1>
                     学生姓名：
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label></h1>
+                    <asp:Label ID="Name" runat="server" Text=""></asp:Label></h1>
             </div>
             <div class="container-fluid">
                 <div class="row-fluid">
