@@ -123,7 +123,8 @@ namespace Eva.Evaluation.Admin
                 user.Sex = StringUtil.ClearString(dt.Rows[i]["性别"].ToString());
                 user.Address = StringUtil.ClearString(dt.Rows[i]["联系地址"].ToString());
                 user.Phone = StringUtil.ClearString(dt.Rows[i]["电话"].ToString());
-                
+
+                user.AuthorityId = 1;
                 user.LoginId = user.StudentId.ToString();
                 user.PassWord = "123456";
                 userBll.Add(user);

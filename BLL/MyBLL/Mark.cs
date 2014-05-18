@@ -32,6 +32,12 @@ namespace Eva.BLL
             return dal.GetListMarkWithTeacher(teacherId);
 
         }
+        public DataSet getListByStuCheckStep(int stuId)
+        {
+
+            return dal.GetListMarkWithStu(stuId);
+
+        }
     }
 }
 

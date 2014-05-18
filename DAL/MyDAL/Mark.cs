@@ -20,6 +20,16 @@ namespace Eva.DAL
             return DbHelperSQL.Query(strSql.ToString());
 
         }
+        public DataSet GetListMarkWithStu(int stuId)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep ");
+            strSql.Append(" FROM Mark ");
+            strSql.Append(" where  StudentId =" + stuId + " and CheckStep=1");
+
+            return DbHelperSQL.Query(strSql.ToString());
+
+        }
 
     }
 }

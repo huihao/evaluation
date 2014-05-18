@@ -29,7 +29,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "matrix-admin00", "matrix-ad
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1401"
+		VWDPort = "10314"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evaluation", "Evaluation\Evaluation.csproj", "{B1FC546B-8364-45D6-BFF5-C9CF9EB89B9B}"

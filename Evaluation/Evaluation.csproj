@@ -153,7 +153,10 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Student\ApplyList.aspx" />
+    <Content Include="Student\EditApply.aspx" />
     <Content Include="Student\MarkApply.aspx" />
+    <Content Include="Student\SelfEva.aspx" />
     <Content Include="Student\ShowEva.aspx" />
     <Content Include="Student\ShowMark.aspx" />
     <Content Include="Student\StuInfo.aspx" />
@@ -349,12 +352,33 @@
       <DependentUpon>Teacher.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student\ApplyList.aspx.cs">
+      <DependentUpon>ApplyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\ApplyList.aspx.designer.cs">
+      <DependentUpon>ApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\EditApply.aspx.cs">
+      <DependentUpon>EditApply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\EditApply.aspx.designer.cs">
+      <DependentUpon>EditApply.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\MarkApply.aspx.cs">
       <DependentUpon>MarkApply.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Student\MarkApply.aspx.designer.cs">
       <DependentUpon>MarkApply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\SelfEva.aspx.cs">
+      <DependentUpon>SelfEva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\SelfEva.aspx.designer.cs">
+      <DependentUpon>SelfEva.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student\ShowEva.aspx.cs">
       <DependentUpon>ShowEva.aspx</DependentUpon>
