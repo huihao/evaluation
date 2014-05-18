@@ -22,12 +22,13 @@ namespace Eva.Evaluation.Teacher
             if (context.Request["ctl00$ContentPlaceHolder1$studentId"] != null)
             {
                 int id = int.Parse(context.Request["ctl00$ContentPlaceHolder1$studentId"]);
-                int teacherId = Convert.ToInt32((context.Session["user"] as Model.WebUser).Id);
+                //int teacherId = Convert.ToInt32((context.Session["user"] as Model.WebUser).Id);
                 var eva = new Model.Evaluation();
                 eva.SchoolTerm = 1;
-                eva.AcademicYear = 2014;
+                eva.AcademicYear = DateTime.Now.Year;
                 eva.StudentId = id;
-                eva.TeacherId = teacherId;
+                //todo
+                eva.TeacherId = 1;
                 int evaID = evaBll.Add(eva);
                 if (evaID > 0)
                 {

@@ -14,8 +14,8 @@ namespace Eva.Evaluation.Teacher
         {
             if (!IsPostBack)
             {
-                //int id = Convert.ToInt32(Request["id"]);
-                studentId.Value = "2";
+                int id = Convert.ToInt32(Request["id"]);
+                studentId.Value = id.ToString();
                 ItemRepeater.DataSource = item.GetAllList();
                 ItemRepeater.DataBind();
             }
