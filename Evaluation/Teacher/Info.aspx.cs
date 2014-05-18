@@ -21,25 +21,14 @@ namespace Eva.Evaluation.Teacher
 
             if (!IsPostBack)
             {
-                DataSet ds = bllCollege.GetAllList();
-                CollegeList.Items.Clear();
-                CollegeList.DataSource = ds.Tables["ds"].DefaultView;
+                
 
-                CollegeList.DataTextField = "Name";
-                CollegeList.DataValueField = "Id";
-                CollegeList.DataBind();
-                CollegeList.Items.Insert(0, new ListItem("请选择", "0"));
-
-                int id = int.Parse(Request["id"]);
-                user = bllUser.GetModel(id);
+                Eva.Model.WebUser user = Session["user"] as Eva.Model.WebUser;
                 txtName.Text = user.Name;
                 txtIdCard.Text = user.IdCard;
                 txtSex.Text = user.Sex;
                 txtTel.Text = user.Phone;
-                CollegeList.Items.FindByValue(user.CollegeId.ToString()).Selected = true;
-
-                MajorList.Items.FindByValue(user.MajorId.ToString()).Selected = true;
-                ClassList.Items.FindByValue(user.ClassId.ToString()).Selected = true;
+                
             }
 
         }
@@ -59,18 +48,7 @@ namespace Eva.Evaluation.Teacher
             {
                 strErr += "手机号码不能为空！\\n";
             }
-            if (int.Parse(CollegeList.SelectedValue) == 0)
-            {
-                strErr += "学院不能为空！\\n";
-            }
-            if (int.Parse(MajorList.SelectedValue) == 0)
-            {
-                strErr += "专业不能为空！\\n";
-            }
-            if (int.Parse(ClassList.SelectedValue) == 0)
-            {
-                strErr += "班级不能为空！\\n";
-            }
+           
             if (txtSex.Text.Trim().Length == 0)
             {
                 strErr += "性别不能为空！\\n";
@@ -84,9 +62,7 @@ namespace Eva.Evaluation.Teacher
             string name = txtName.Text;
             string idCard = txtIdCard.Text;
             string tel = txtTel.Text;
-            int college = int.Parse(CollegeList.SelectedValue);
-            int major = int.Parse(MajorList.SelectedValue);
-            int classes = int.Parse(ClassList.SelectedValue);
+           
             string sex = txtSex.Text;
 
             Eva.Model.WebUser model = Session["user"] as Eva.Model.WebUser;
@@ -95,9 +71,7 @@ namespace Eva.Evaluation.Teacher
             model.Name = name;
             model.IdCard = idCard;
             model.Phone = tel;
-            model.CollegeId = college;
-            model.MajorId = major;
-            model.ClassId = classes;
+           
             model.Sex = sex;
             if (bllUser.Update(model))
             {
@@ -155,38 +129,6 @@ namespace Eva.Evaluation.Teacher
 
         }
 
-        protected void CollegeList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadMajorList(int.Parse(CollegeList.SelectedItem.Value));
-        }
-
-        protected void MajorList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadClass(int.Parse(MajorList.SelectedItem.Value));
-        }
-        private void LoadMajorList(int collegeId)
-        {
-            var set = bllMajor.GetList(" CollegeId =" + collegeId);
-            MajorList.Items.Clear();
-            MajorList.DataSource = set.Tables["ds"].DefaultView;
-            MajorList.DataTextField = "Name";
-            MajorList.DataValueField = "Id";
-            MajorList.DataBind();
-            CollegeList.Items.Insert(0, new ListItem("请选择", "0"));
-
-        }
-        private void LoadClass(int majorId)
-        {
-            var set = bllCollege.GetList(" MajorId = " + majorId);
-            ClassList.Items.Clear();
-
-            ClassList.DataSource = set.Tables["ds"].DefaultView;
-
-            ClassList.DataTextField = "Name";
-            ClassList.DataValueField = "Id";
-            ClassList.DataBind();
-            ClassList.Items.Insert(0, new ListItem("请选择", "0"));
-
-        }
+        
     }
 }

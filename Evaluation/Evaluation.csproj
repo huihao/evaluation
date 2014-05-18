@@ -52,12 +52,23 @@
   <ItemGroup>
     <Content Include="Admin\AddClass.aspx" />
     <Content Include="Admin\AddCollege.aspx" />
+    <Content Include="Admin\AddCourse.aspx" />
     <Content Include="Admin\AddMajor.aspx" />
     <Content Include="Admin\AddUser.aspx" />
+    <Content Include="Admin\AdminInfo.aspx" />
+    <Content Include="Admin\ClassList.aspx" />
+    <Content Include="Admin\CollegeList.aspx" />
+    <Content Include="Admin\CourseList.aspx" />
+    <Content Include="Admin\EditAuth.aspx" />
+    <Content Include="Admin\EditClass.aspx" />
+    <Content Include="Admin\EditCollege.aspx" />
+    <Content Include="Admin\EditCourse.aspx" />
     <Content Include="Admin\EditInfo.aspx" />
+    <Content Include="Admin\EditMajor.aspx" />
     <Content Include="Admin\ImportUser.aspx" />
     <Content Include="Admin\ListStudent.aspx" />
     <Content Include="Admin\ListUser.aspx" />
+    <Content Include="Admin\MajorList.aspx" />
     <Content Include="Admin\ShowMark.aspx" />
     <Content Include="css\bootstrap-responsive.min.css" />
     <Content Include="css\bootstrap-wysihtml5.css" />
@@ -143,7 +154,9 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Student\MarkApply.aspx" />
+    <Content Include="Student\ShowEva.aspx" />
     <Content Include="Student\ShowMark.aspx" />
+    <Content Include="Student\StuInfo.aspx" />
     <Content Include="Teacher\ApplyList.aspx" />
     <Content Include="Teacher\Info.aspx" />
     <Content Include="Teacher\ScoreList.aspx" />
@@ -174,6 +187,13 @@
     <Compile Include="Admin\AddCollege.aspx.designer.cs">
       <DependentUpon>AddCollege.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddCourse.aspx.cs">
+      <DependentUpon>AddCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCourse.aspx.designer.cs">
+      <DependentUpon>AddCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddMajor.aspx.cs">
       <DependentUpon>AddMajor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,12 +208,75 @@
     <Compile Include="Admin\AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminInfo.aspx.cs">
+      <DependentUpon>AdminInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminInfo.aspx.designer.cs">
+      <DependentUpon>AdminInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClassList.aspx.cs">
+      <DependentUpon>ClassList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ClassList.aspx.designer.cs">
+      <DependentUpon>ClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CollegeList.aspx.cs">
+      <DependentUpon>CollegeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CollegeList.aspx.designer.cs">
+      <DependentUpon>CollegeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CourseList.aspx.cs">
+      <DependentUpon>CourseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CourseList.aspx.designer.cs">
+      <DependentUpon>CourseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditAuth.aspx.cs">
+      <DependentUpon>EditAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditAuth.aspx.designer.cs">
+      <DependentUpon>EditAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditClass.aspx.cs">
+      <DependentUpon>EditClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditClass.aspx.designer.cs">
+      <DependentUpon>EditClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCollege.aspx.cs">
+      <DependentUpon>EditCollege.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCollege.aspx.designer.cs">
+      <DependentUpon>EditCollege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCourse.aspx.cs">
+      <DependentUpon>EditCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCourse.aspx.designer.cs">
+      <DependentUpon>EditCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditInfo.aspx.cs">
       <DependentUpon>EditInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\EditInfo.aspx.designer.cs">
       <DependentUpon>EditInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditMajor.aspx.cs">
+      <DependentUpon>EditMajor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditMajor.aspx.designer.cs">
+      <DependentUpon>EditMajor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ImportUser.aspx.cs">
       <DependentUpon>ImportUser.aspx</DependentUpon>
@@ -215,6 +298,13 @@
     </Compile>
     <Compile Include="Admin\ListUser.aspx.designer.cs">
       <DependentUpon>ListUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MajorList.aspx.cs">
+      <DependentUpon>MajorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MajorList.aspx.designer.cs">
+      <DependentUpon>MajorList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ShowMark.aspx.cs">
       <DependentUpon>ShowMark.aspx</DependentUpon>
@@ -266,12 +356,26 @@
     <Compile Include="Student\MarkApply.aspx.designer.cs">
       <DependentUpon>MarkApply.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Student\ShowEva.aspx.cs">
+      <DependentUpon>ShowEva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\ShowEva.aspx.designer.cs">
+      <DependentUpon>ShowEva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\ShowMark.aspx.cs">
       <DependentUpon>ShowMark.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Student\ShowMark.aspx.designer.cs">
       <DependentUpon>ShowMark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StuInfo.aspx.cs">
+      <DependentUpon>StuInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StuInfo.aspx.designer.cs">
+      <DependentUpon>StuInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher\ApplyList.aspx.cs">
       <DependentUpon>ApplyList.aspx</DependentUpon>

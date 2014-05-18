@@ -10,7 +10,9 @@ namespace Eva.DAL
 	/// </summary>
 	public partial class College
 	{
-
+      
+       
+        
 	}
 }
 

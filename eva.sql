@@ -9,13 +9,52 @@ SET IDENTITY_INSERT [Authority] ON
 
 
 SET IDENTITY_INSERT [Authority] OFF
+
+
+if exists (select * from sysobjects where id = OBJECT_ID('[College]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [College]
+
+CREATE TABLE [College] (
+[Id] [int]  IDENTITY (1, 1)  NOT NULL primary key,
+[Name] [nvarchar]  (50) NOT NULL)
+
+SET IDENTITY_INSERT [College] ON
+
+INSERT [College] ([Id],[Name]) VALUES ( 1,N'工学院')
+INSERT [College] ([Id],[Name]) VALUES ( 2,N'法学院')
+
+SET IDENTITY_INSERT [College] OFF
+if exists (select * from sysobjects where id = OBJECT_ID('[Course]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+if exists (select * from sysobjects where id = OBJECT_ID('[Major]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
+DROP TABLE [Major]
+
+CREATE TABLE [Major] (
+[Id] [int]  IDENTITY (1, 1)  NOT NULL primary key,
+[Name] [nvarchar]  (MAX) NULL,
+[CollegeId] [int]  NULL
+foreign key ([CollegeId]) references [College](Id) on delete cascade
+)
+
+SET IDENTITY_INSERT [Major] ON
+
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 1,N'计算机科学与技术',1)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 2,N'机械',1)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 3,N'建筑',1)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 4,N'法律',2)
+INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 5,N'思想品德',2)
+
+SET IDENTITY_INSERT [Major] OFF
+
+
 if exists (select * from sysobjects where id = OBJECT_ID('[Class]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [Class]
 
 CREATE TABLE [Class] (
 [Id] [int]  IDENTITY (1, 1)  NOT NULL,
 [Name] [nvarchar]  (MAX) NOT NULL,
-[MajorId] [int]  NULL)
+[MajorId] [int]  NULL,
+foreign key ([MajorId]) references [Major](Id)on delete cascade
+)
 
 SET IDENTITY_INSERT [Class] ON
 
@@ -25,19 +64,6 @@ INSERT [Class] ([Id],[Name],[MajorId]) VALUES ( 3,N'法律101',4)
 INSERT [Class] ([Id],[Name],[MajorId]) VALUES ( 4,N'法律102',4)
 
 SET IDENTITY_INSERT [Class] OFF
-if exists (select * from sysobjects where id = OBJECT_ID('[College]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
-DROP TABLE [College]
-
-CREATE TABLE [College] (
-[Id] [int]  IDENTITY (1, 1)  NOT NULL,
-[Name] [nvarchar]  (50) NOT NULL)
-
-SET IDENTITY_INSERT [College] ON
-
-INSERT [College] ([Id],[Name]) VALUES ( 1,N'工学院')
-INSERT [College] ([Id],[Name]) VALUES ( 2,N'法学院')
-
-SET IDENTITY_INSERT [College] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[Course]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [Course]
 
@@ -99,26 +125,10 @@ CREATE TABLE [ItemList] (
 [score] [int]  NULL)
 
 SET IDENTITY_INSERT [ItemList] ON
-
-
 SET IDENTITY_INSERT [ItemList] OFF
-if exists (select * from sysobjects where id = OBJECT_ID('[Major]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
-DROP TABLE [Major]
 
-CREATE TABLE [Major] (
-[Id] [int]  IDENTITY (1, 1)  NOT NULL,
-[Name] [nvarchar]  (MAX) NULL,
-[CollegeId] [int]  NULL)
 
-SET IDENTITY_INSERT [Major] ON
 
-INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 1,N'计算机科学与技术',1)
-INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 2,N'机械',1)
-INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 3,N'建筑',1)
-INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 4,N'法律',2)
-INSERT [Major] ([Id],[Name],[CollegeId]) VALUES ( 5,N'思想品德',2)
-
-SET IDENTITY_INSERT [Major] OFF
 if exists (select * from sysobjects where id = OBJECT_ID('[Mark]') and OBJECTPROPERTY(id, 'IsUserTable') = 1) 
 DROP TABLE [Mark]
 

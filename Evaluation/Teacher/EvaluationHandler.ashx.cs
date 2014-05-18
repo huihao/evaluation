@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 
 namespace Eva.Evaluation.Teacher
 {
     /// <summary>
     /// EvaluationHandler 的摘要说明
     /// </summary>
-    public class EvaluationHandler : IHttpHandler
+    public class EvaluationHandler : IHttpHandler, IRequiresSessionState
     {
         BLL.Item itemBll = BLL.BLLFactory.GetItemBLLInstance();
         BLL.ItemList itemListBll = BLL.BLLFactory.GetItemListBLLInstance();
@@ -21,7 +22,7 @@ namespace Eva.Evaluation.Teacher
             if (context.Request["ctl00$ContentPlaceHolder1$studentId"] != null)
             {
                 int id = int.Parse(context.Request["ctl00$ContentPlaceHolder1$studentId"]);
-                int teacherId = Convert.ToInt32(context.Session["teacherId"]);
+                int teacherId = Convert.ToInt32((context.Session["user"] as Model.WebUser).Id);
                 var eva = new Model.Evaluation();
                 eva.SchoolTerm = 1;
                 eva.AcademicYear = 2014;

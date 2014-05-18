@@ -7,6 +7,21 @@ namespace Eva.BLL
 {
     public static class Utils
     {
+        public static string GetClassName(int id)
+        {
+            var bll = new Class();
+            return bll.GetModel(id).Name;
+        }
+        public static string GetCollegeName(int id)
+        {
+            var bll = new College();
+            return bll.GetModel(id).Name;
+        }
+        public static string GetMajorName(int id)
+        {
+            var bll = new Major();
+            return bll.GetModel(id).Name;
+        }
         public static string GetCourseName(int id)
         {
             var bll = new Course();
@@ -57,8 +72,14 @@ namespace Eva.BLL
         }
         public static string GetStudentName(int studentId)
         {
-            var bll = new Eva.BLL.WebUser();            
-            return bll.GetModelByStudentId(studentId).Name;            
+            var bll = new Eva.BLL.WebUser();
+            return bll.GetModelByStudentId(studentId).Name;
+        }
+
+        public static string GetItemName(int itemId)
+        {
+            var bll = new Eva.BLL.Item();
+            return bll.GetModel(itemId).Name;
         }
     }
 }

@@ -143,6 +143,7 @@
     <Compile Include="MyDAL\Authority.cs" />
     <Compile Include="MyDAL\Class.cs" />
     <Compile Include="MyDAL\College.cs" />
+    <Compile Include="MyDAL\Evaluation.cs" />
     <Compile Include="MyDAL\Major.cs" />
     <Compile Include="MyDAL\Mark.cs" />
     <Compile Include="MyDAL\WebUser.cs" />

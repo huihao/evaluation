@@ -70,7 +70,7 @@
             </li>
             <li><a href="ImportUser.aspx"><i class="icon icon-inbox"></i><span>自我测评</span></a>
             </li>
-            <li><a href="EditInfo.aspx"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
+            <li><a href="StuInfo.aspx"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
         </ul>
     </div>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

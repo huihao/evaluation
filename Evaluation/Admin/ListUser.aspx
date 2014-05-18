@@ -43,8 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <asp:Repeater ID="UserRepeater" runat="server" 
-                                        onitemcommand="UserRepeater_ItemCommand">
+                                    <asp:Repeater ID="UserRepeater" runat="server" OnItemCommand="UserRepeater_ItemCommand">
                                         <ItemTemplate>
                                             <tr class="gradeX">
                                                 <td>
@@ -54,11 +53,13 @@
                                                     <%# Eval("AuthorityId") %>
                                                 </td>
                                                 <td>
-                                                   <%# Eval("Sex") %>
+                                                    <%# Eval("Sex") %>
                                                 </td>
                                                 <td class="center">
-                                                  <asp:Button ID="BtnInfo" runat="server" Text="信息修改" class="btn btn-info btn-mini" />
-                                                  <asp:Button ID="BtnAu" runat="server" Text="权限修改" class="btn btn-primary btn-mini" />
+                                                    <asp:Button ID="BtnInfo" runat="server" Text="信息修改" CommandArgument='<%#Eval("id") %>'
+                                                        CommandName="EditInfo" class="btn btn-info btn-mini" />
+                                                    <asp:Button ID="BtnAu" runat="server" Text="权限修改" CommandArgument='<%#Eval("id") %>'
+                                                        CommandName="EditAuth" class="btn btn-primary btn-mini" />
                                                 </td>
                                             </tr>
                                         </ItemTemplate>

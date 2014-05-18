@@ -123,6 +123,9 @@
     <Compile Include="MyBLL\BLLFactory.cs" />
     <Compile Include="MyBLL\Class.cs" />
     <Compile Include="MyBLL\College.cs" />
+    <Compile Include="MyBLL\Evaluation.cs" />
+    <Compile Include="MyBLL\Item.cs" />
+    <Compile Include="MyBLL\ItemList.cs" />
     <Compile Include="MyBLL\Major.cs" />
     <Compile Include="MyBLL\Mark.cs" />
     <Compile Include="MyBLL\WebUser.cs" />

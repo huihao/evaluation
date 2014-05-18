@@ -11,6 +11,7 @@ namespace Eva.Evaluation.Admin
     {
         BLL.Mark markBll = BLL.BLLFactory.GetMarkBLLInstance();
         BLL.WebUser userBll = BLL.BLLFactory.GetWebUserBLLInstance();
+        Model.WebUser user = new Model.WebUser();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -38,7 +39,8 @@ namespace Eva.Evaluation.Admin
         protected void MarkBind()
         {
             //int id = int.Parse(Request["id"]);
-            var set = markBll.GetListByStudentId(1, YearList.SelectedItem.Text, Termlist.SelectedItem.Text);
+            user = Session["user"] as Model.WebUser;
+            var set = markBll.GetListByStudentId(Convert.ToInt16(user.StudentId), YearList.SelectedItem.Text, Termlist.SelectedItem.Text);
             MarkRepeater.DataSource = set;
             MarkRepeater.DataBind();
         }

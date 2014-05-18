@@ -44,33 +44,7 @@
                                     <asp:TextBox ID="txtTel" runat="server" class="span5"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <label class="control-label">
-                                    学院</label>
-                                <div class="controls">
-                                    <asp:DropDownList ID="CollegeList" runat="server" class="span5" 
-                                        AutoPostBack="True" onselectedindexchanged="CollegeList_SelectedIndexChanged">
-                                    </asp:DropDownList>                               
-                                </div>
-                            </div>
-                             <div class="control-group">
-                                <label class="control-label">
-                                    专业</label>
-                                <div class="controls">
-                                    <asp:DropDownList ID="MajorList" runat="server" class="span5" 
-                                        onselectedindexchanged="MajorList_SelectedIndexChanged" 
-                                        AutoPostBack="True">
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">
-                                    班级</label>
-                                <div class="controls">
-                                    <asp:DropDownList ID="ClassList" runat="server" class="span5">
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
+                           
                             <div class="control-group">
                                 <label class="control-label">
                                     性别</label>

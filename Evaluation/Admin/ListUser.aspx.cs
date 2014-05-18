@@ -23,7 +23,17 @@ namespace Eva.Evaluation.Admin
 
         protected void UserRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            if (e.CommandName=="EditInfo")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("EditInfo.aspx?id=" + id);
 
+            }
+            if (e.CommandName == "EditAuth")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("EditAuth.aspx?id="+id);
+            }
         }
     }
 }

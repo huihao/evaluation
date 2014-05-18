@@ -36,6 +36,8 @@ namespace Eva.Evaluation.Admin
                 txtIdCard.Text = user.IdCard;
                 txtSex.Text = user.Sex;
                 txtTel.Text = user.Phone;
+                LoadMajorList(Convert.ToInt32(user.CollegeId));
+                LoadClass(Convert.ToInt32(user.MajorId));
                 if (user.CollegeId!=null)
                 {
                     CollegeList.Items.FindByValue(user.CollegeId.ToString()).Selected = true;

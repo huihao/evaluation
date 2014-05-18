@@ -26,7 +26,7 @@ namespace Eva.Evaluation.Admin
             if (e.CommandName == "view")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
-                Response.Redirect("ScoreList.aspx?id=" + id);
+                Response.Redirect("ShowMark.aspx?id=" + id);
             }
             if (e.CommandName == "eva")
             {

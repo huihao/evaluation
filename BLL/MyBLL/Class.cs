@@ -18,6 +18,11 @@ namespace Eva.BLL
             DataSet ds = dal.GetList(" MajorId= " + id);
             return DataTableToList(ds.Tables[0]);
         }
+        public DataSet GetAllListWithCollegeId()
+        {
+            return dal.GetAllListWithCollegeId();
+        }
+       
     }
 }
 

@@ -19,12 +19,11 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div>
-                        学年<asp:DropDownList ID="YearList" runat="server" 
-                            Width="100px" AutoPostBack="True" 
-                            onselectedindexchanged="YearList_SelectedIndexChanged">
+                        学年<asp:DropDownList ID="YearList" runat="server" Width="100px" AutoPostBack="True"
+                            OnSelectedIndexChanged="YearList_SelectedIndexChanged">
                         </asp:DropDownList>
-                        学期<asp:DropDownList ID="Termlist" runat="server" Width="100px" 
-                            AutoPostBack="True" onselectedindexchanged="Termlist_SelectedIndexChanged">
+                        学期<asp:DropDownList ID="Termlist" runat="server" Width="100px" AutoPostBack="True"
+                            OnSelectedIndexChanged="Termlist_SelectedIndexChanged">
                         </asp:DropDownList>
                     </div>
                     <div class="widget-box">
@@ -66,6 +65,11 @@
                                     </asp:Repeater>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </form>
-    </div> </div> </div> </div> </div> </div>
 </asp:Content>

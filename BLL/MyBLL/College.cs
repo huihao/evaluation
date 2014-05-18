@@ -10,7 +10,7 @@ namespace Eva.BLL
 	/// </summary>
 	public partial class College
 	{
-		
+       
     }
 }
 

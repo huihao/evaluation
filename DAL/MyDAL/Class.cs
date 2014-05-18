@@ -10,7 +10,18 @@ namespace Eva.DAL
 	/// </summary>
 	public partial class Class
 	{
-		
+        public DataSet GetAllListWithCollegeId()
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select Class.Id,Class.Name,MajorId,CollegeId ");
+            strSql.Append(" FROM Class,Major ");
+            strSql.Append(" where Class.MajorId=Major.Id");
+           
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
+       
+        
     }
 }
 

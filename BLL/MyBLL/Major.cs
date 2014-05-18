@@ -18,6 +18,7 @@ namespace Eva.BLL
             DataSet ds = dal.GetList(" CollegeId = " + id);
             return DataTableToList(ds.Tables[0]);
         }
+     
     }
 }
 
