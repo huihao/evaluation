@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* Course.cs
+*
+* 功 能： N/A
+* 类 名： Course
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/5/19 12:56:06   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -12,7 +28,7 @@ namespace Eva.DAL
 	{
 		public Course()
 		{}
-		#region  Method
+		#region  BasicMethod
 
 
 
@@ -30,7 +46,7 @@ namespace Eva.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
 					new SqlParameter("@Gpa", SqlDbType.Float,8),
-					new SqlParameter("@Introdution", SqlDbType.NVarChar)};
+					new SqlParameter("@Introdution", SqlDbType.NVarChar,-1)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Gpa;
 			parameters[2].Value = model.Introdution;
@@ -59,7 +75,7 @@ namespace Eva.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
 					new SqlParameter("@Gpa", SqlDbType.Float,8),
-					new SqlParameter("@Introdution", SqlDbType.NVarChar),
+					new SqlParameter("@Introdution", SqlDbType.NVarChar,-1),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Gpa;
@@ -139,28 +155,41 @@ namespace Eva.DAL
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
-				if(ds.Tables[0].Rows[0]["Id"]!=null && ds.Tables[0].Rows[0]["Id"].ToString()!="")
-				{
-					model.Id=int.Parse(ds.Tables[0].Rows[0]["Id"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Name"]!=null && ds.Tables[0].Rows[0]["Name"].ToString()!="")
-				{
-					model.Name=ds.Tables[0].Rows[0]["Name"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["Gpa"]!=null && ds.Tables[0].Rows[0]["Gpa"].ToString()!="")
-				{
-					model.Gpa=decimal.Parse(ds.Tables[0].Rows[0]["Gpa"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Introdution"]!=null && ds.Tables[0].Rows[0]["Introdution"].ToString()!="")
-				{
-					model.Introdution=ds.Tables[0].Rows[0]["Introdution"].ToString();
-				}
-				return model;
+				return DataRowToModel(ds.Tables[0].Rows[0]);
 			}
 			else
 			{
 				return null;
 			}
+		}
+
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Eva.Model.Course DataRowToModel(DataRow row)
+		{
+			Eva.Model.Course model=new Eva.Model.Course();
+			if (row != null)
+			{
+				if(row["Id"]!=null && row["Id"].ToString()!="")
+				{
+					model.Id=int.Parse(row["Id"].ToString());
+				}
+				if(row["Name"]!=null)
+				{
+					model.Name=row["Name"].ToString();
+				}
+				if(row["Gpa"]!=null && row["Gpa"].ToString()!="")
+				{
+					model.Gpa=decimal.Parse(row["Gpa"].ToString());
+				}
+				if(row["Introdution"]!=null)
+				{
+					model.Introdution=row["Introdution"].ToString();
+				}
+			}
+			return model;
 		}
 
 		/// <summary>
@@ -271,7 +300,10 @@ namespace Eva.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-		#endregion  Method
+		#endregion  BasicMethod
+		#region  ExtensionMethod
+
+		#endregion  ExtensionMethod
 	}
 }
 

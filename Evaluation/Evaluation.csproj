@@ -65,6 +65,7 @@
     <Content Include="Admin\EditCourse.aspx" />
     <Content Include="Admin\EditInfo.aspx" />
     <Content Include="Admin\EditMajor.aspx" />
+    <Content Include="Admin\EditMark.aspx" />
     <Content Include="Admin\ImportMark.aspx" />
     <Content Include="Admin\ImportUser.aspx" />
     <Content Include="Admin\ListStudent.aspx" />
@@ -155,6 +156,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Student\ApplyList.aspx" />
+    <Content Include="Student\ComEva.aspx" />
     <Content Include="Student\EditApply.aspx" />
     <Content Include="Student\MarkApply.aspx" />
     <Content Include="Student\SelfEva.aspx" />
@@ -282,6 +284,13 @@
     <Compile Include="Admin\EditMajor.aspx.designer.cs">
       <DependentUpon>EditMajor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditMark.aspx.cs">
+      <DependentUpon>EditMark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditMark.aspx.designer.cs">
+      <DependentUpon>EditMark.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ImportMark.aspx.cs">
       <DependentUpon>ImportMark.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,6 +375,13 @@
     </Compile>
     <Compile Include="Student\ApplyList.aspx.designer.cs">
       <DependentUpon>ApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\ComEva.aspx.cs">
+      <DependentUpon>ComEva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\ComEva.aspx.designer.cs">
+      <DependentUpon>ComEva.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student\EditApply.aspx.cs">
       <DependentUpon>EditApply.aspx</DependentUpon>

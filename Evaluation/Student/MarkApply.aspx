@@ -44,6 +44,13 @@
                                     <asp:TextBox ID="txtBonusPoint" runat="server" class="span6" placeholder="加分"></asp:TextBox>
                                 </div>
                             </div>
+                            <div class="control-group">
+                                <label class="control-label">
+                                    理由</label>
+                                <div class="controls">
+                                    <asp:TextBox ID="txtReson" runat="server" class="span6" placeholder="理由" Rows="6" TextMode="MultiLine"></asp:TextBox>
+                                </div>
+                            </div>
                             <div class="form-actions">
                                 <asp:Button ID="Save" runat="server" Text="保存" class="btn btn-success" 
                                     onclick="Save_Click"  />

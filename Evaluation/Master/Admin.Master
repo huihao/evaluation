@@ -64,19 +64,21 @@
     <div id="sidebar">
         <a href="#" class="visible-phone"><i class="icon icon-th"></i>Tables</a>
         <ul>
-            <li><a href="ListUser.aspx"><i class="icon icon-home"></i><span>用户权限管理</span></a>
+            <li><a href="AdminInfo.aspx"><i class="icon icon-home"></i><span>密码修改</span></a>
             </li>
-            <li><a href="ListStudent.aspx"><i class="icon icon-signal"></i><span>学生成绩查询</span></a>
+            <li><a href="ListStudent.aspx"><i class="icon icon-signal"></i><span>学生管理</span></a>
             </li>
             <li><a href="ImportUser.aspx"><i class="icon icon-inbox"></i><span>用户批量导入</span></a>
+            </li>
+             <li><a href="ImportMark.aspx"><i class="icon icon-inbox"></i><span>成绩批量导入</span></a>
             </li>
             <li><a href="ListUser.aspx"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
             <li class="submenu"><a href="#"><i class="icon icon-th-list"></i><span>其他信息管理</span>
                 <ul>
-                    <li><a href="form-common.html">课程管理</a></li>
-                    <li><a href="form-validation.html">班级管理</a></li>
-                    <li><a href="form-wizard.html">专业管理</a></li>
-                    <li><a href="form-wizard.html">学院管理</a></li>
+                    <li><a href="CourseList.aspx">课程管理</a></li>
+                    <li><a href="ClassList.aspx">班级管理</a></li>
+                    <li><a href="MajorList.aspx">专业管理</a></li>
+                    <li><a href="CollegeList.aspx">学院管理</a></li>
                 </ul>
             </li>
         </ul>

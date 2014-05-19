@@ -73,10 +73,9 @@
         <ul>
             <li><a href="../Teacher/ApplyList.aspx"><i class="icon icon-home"></i><span>加分审核</span></a>
             </li>
-            <li><a href="../Teacher/ListStudent.aspx"><i class="icon icon-signal"></i><span>学生成绩查询</span></a>
+            <li><a href="../Teacher/StudentList.aspx"><i class="icon icon-signal"></i><span>学生查询</span></a>
             </li>
-            <li><a href="../Teacher/ImportUser.aspx"><i class="icon icon-inbox"></i><span>综合测评</span></a>
-            </li>
+           
             <li><a href="../Teacher/Info.aspx"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
         </ul>
     </div>

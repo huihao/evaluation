@@ -21,6 +21,7 @@ namespace Eva.Evaluation.Student
                 txtCourseName.Text = bllCourse.GetModel(Convert.ToInt16(mark.CourseId)).Name;
                 txtBonusPoint.Text = mark.BonusPoint.ToString();
                 txtScore.Text = mark.Score.ToString();
+                txtReson.Text = mark.Reason;
 
             }
         }
@@ -32,16 +33,22 @@ namespace Eva.Evaluation.Student
             {
                 strErr += "加分不能为空！\\n";
             }
+            if (txtReson.Text.Trim().Length==0)
+            {
+                 strErr += "理由不能为空！\\n";
+            }
             if (strErr != "")
             {
                 Maticsoft.Common.MessageBox.Show(this, strErr);
                 return;
             }
+            
 
             int id = int.Parse(Request["id"]);
             mark = bll.GetModel(id);
 
             mark.BonusPoint = Convert.ToDecimal(txtBonusPoint.Text);
+            mark.Reason = txtReson.Text;
             if (bll.Update(mark))
             {
                 Maticsoft.Common.MessageBox.ShowAndRedirect(this, "修改成功！", "ApplyList.aspx");

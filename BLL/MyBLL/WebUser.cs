@@ -30,6 +30,12 @@ namespace Eva.BLL
             string sql = " StudentId=" + studentId;
             return dal.GetModel(sql);
         }
+        public List<Model.WebUser> GetModelListStudents(int studentId)
+        {
+            string sql = " StudentId = " + studentId;
+            DataSet ds = dal.GetList(sql);
+            return DataTableToList(ds.Tables[0]);
+        }
     }
 }
 

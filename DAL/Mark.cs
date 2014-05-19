@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* Mark.cs
+*
+* 功 能： N/A
+* 类 名： Mark
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/5/19 12:56:08   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -12,7 +28,7 @@ namespace Eva.DAL
 	{
 		public Mark()
 		{}
-		#region  Method
+		#region  BasicMethod
 
 
 
@@ -23,9 +39,9 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Mark(");
-			strSql.Append("CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep)");
+			strSql.Append("CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason)");
 			strSql.Append(" values (");
-			strSql.Append("@CourseId,@StudentId,@EvalutionId,@Score,@BonusPoint,@AcademicYear,@SchoolTerm,@CheckStep)");
+			strSql.Append("@CourseId,@StudentId,@EvalutionId,@Score,@BonusPoint,@AcademicYear,@SchoolTerm,@CheckStep,@Reason)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@CourseId", SqlDbType.Int,4),
@@ -35,7 +51,8 @@ namespace Eva.DAL
 					new SqlParameter("@BonusPoint", SqlDbType.Float,8),
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
-					new SqlParameter("@CheckStep", SqlDbType.Int,4)};
+					new SqlParameter("@CheckStep", SqlDbType.Int,4),
+					new SqlParameter("@Reason", SqlDbType.NVarChar,50)};
 			parameters[0].Value = model.CourseId;
 			parameters[1].Value = model.StudentId;
 			parameters[2].Value = model.EvalutionId;
@@ -44,6 +61,7 @@ namespace Eva.DAL
 			parameters[5].Value = model.AcademicYear;
 			parameters[6].Value = model.SchoolTerm;
 			parameters[7].Value = model.CheckStep;
+			parameters[8].Value = model.Reason;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -69,7 +87,8 @@ namespace Eva.DAL
 			strSql.Append("BonusPoint=@BonusPoint,");
 			strSql.Append("AcademicYear=@AcademicYear,");
 			strSql.Append("SchoolTerm=@SchoolTerm,");
-			strSql.Append("CheckStep=@CheckStep");
+			strSql.Append("CheckStep=@CheckStep,");
+			strSql.Append("Reason=@Reason");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@CourseId", SqlDbType.Int,4),
@@ -80,6 +99,7 @@ namespace Eva.DAL
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
 					new SqlParameter("@CheckStep", SqlDbType.Int,4),
+					new SqlParameter("@Reason", SqlDbType.NVarChar,50),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.CourseId;
 			parameters[1].Value = model.StudentId;
@@ -89,7 +109,8 @@ namespace Eva.DAL
 			parameters[5].Value = model.AcademicYear;
 			parameters[6].Value = model.SchoolTerm;
 			parameters[7].Value = model.CheckStep;
-			parameters[8].Value = model.Id;
+			parameters[8].Value = model.Reason;
+			parameters[9].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -153,7 +174,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep from Mark ");
+			strSql.Append("select  top 1 Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason from Mark ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -164,48 +185,65 @@ namespace Eva.DAL
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
-				if(ds.Tables[0].Rows[0]["Id"]!=null && ds.Tables[0].Rows[0]["Id"].ToString()!="")
-				{
-					model.Id=int.Parse(ds.Tables[0].Rows[0]["Id"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["CourseId"]!=null && ds.Tables[0].Rows[0]["CourseId"].ToString()!="")
-				{
-					model.CourseId=int.Parse(ds.Tables[0].Rows[0]["CourseId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["StudentId"]!=null && ds.Tables[0].Rows[0]["StudentId"].ToString()!="")
-				{
-					model.StudentId=int.Parse(ds.Tables[0].Rows[0]["StudentId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["EvalutionId"]!=null && ds.Tables[0].Rows[0]["EvalutionId"].ToString()!="")
-				{
-					model.EvalutionId=int.Parse(ds.Tables[0].Rows[0]["EvalutionId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Score"]!=null && ds.Tables[0].Rows[0]["Score"].ToString()!="")
-				{
-					model.Score=decimal.Parse(ds.Tables[0].Rows[0]["Score"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["BonusPoint"]!=null && ds.Tables[0].Rows[0]["BonusPoint"].ToString()!="")
-				{
-					model.BonusPoint=decimal.Parse(ds.Tables[0].Rows[0]["BonusPoint"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["AcademicYear"]!=null && ds.Tables[0].Rows[0]["AcademicYear"].ToString()!="")
-				{
-					model.AcademicYear=int.Parse(ds.Tables[0].Rows[0]["AcademicYear"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["SchoolTerm"]!=null && ds.Tables[0].Rows[0]["SchoolTerm"].ToString()!="")
-				{
-					model.SchoolTerm=int.Parse(ds.Tables[0].Rows[0]["SchoolTerm"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["CheckStep"]!=null && ds.Tables[0].Rows[0]["CheckStep"].ToString()!="")
-				{
-					model.CheckStep=int.Parse(ds.Tables[0].Rows[0]["CheckStep"].ToString());
-				}
-				return model;
+				return DataRowToModel(ds.Tables[0].Rows[0]);
 			}
 			else
 			{
 				return null;
 			}
+		}
+
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Eva.Model.Mark DataRowToModel(DataRow row)
+		{
+			Eva.Model.Mark model=new Eva.Model.Mark();
+			if (row != null)
+			{
+				if(row["Id"]!=null && row["Id"].ToString()!="")
+				{
+					model.Id=int.Parse(row["Id"].ToString());
+				}
+				if(row["CourseId"]!=null && row["CourseId"].ToString()!="")
+				{
+					model.CourseId=int.Parse(row["CourseId"].ToString());
+				}
+				if(row["StudentId"]!=null && row["StudentId"].ToString()!="")
+				{
+					model.StudentId=int.Parse(row["StudentId"].ToString());
+				}
+				if(row["EvalutionId"]!=null && row["EvalutionId"].ToString()!="")
+				{
+					model.EvalutionId=int.Parse(row["EvalutionId"].ToString());
+				}
+				if(row["Score"]!=null && row["Score"].ToString()!="")
+				{
+					model.Score=decimal.Parse(row["Score"].ToString());
+				}
+				if(row["BonusPoint"]!=null && row["BonusPoint"].ToString()!="")
+				{
+					model.BonusPoint=decimal.Parse(row["BonusPoint"].ToString());
+				}
+				if(row["AcademicYear"]!=null && row["AcademicYear"].ToString()!="")
+				{
+					model.AcademicYear=int.Parse(row["AcademicYear"].ToString());
+				}
+				if(row["SchoolTerm"]!=null && row["SchoolTerm"].ToString()!="")
+				{
+					model.SchoolTerm=int.Parse(row["SchoolTerm"].ToString());
+				}
+				if(row["CheckStep"]!=null && row["CheckStep"].ToString()!="")
+				{
+					model.CheckStep=int.Parse(row["CheckStep"].ToString());
+				}
+				if(row["Reason"]!=null)
+				{
+					model.Reason=row["Reason"].ToString();
+				}
+			}
+			return model;
 		}
 
 		/// <summary>
@@ -214,7 +252,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep ");
+			strSql.Append("select Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason ");
 			strSql.Append(" FROM Mark ");
 			if(strWhere.Trim()!="")
 			{
@@ -234,7 +272,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep ");
+			strSql.Append(" Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason ");
 			strSql.Append(" FROM Mark ");
 			if(strWhere.Trim()!="")
 			{
@@ -316,7 +354,10 @@ namespace Eva.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-		#endregion  Method
+		#endregion  BasicMethod
+		#region  ExtensionMethod
+
+		#endregion  ExtensionMethod
 	}
 }
 

@@ -37,12 +37,17 @@ namespace Eva.Evaluation.Student
             {
                 strErr += "加分的分数不能为空！";
             }
+            if (txtReson.Text.Trim().Length==0)
+            {
+                strErr += "理由不能为空！";
+            }
             if (strErr != "")
             {
                 Maticsoft.Common.MessageBox.Show(this, strErr);
                 return;
             }
             mark.BonusPoint = Convert.ToDecimal(txtBonusPoint.Text);
+            mark.Reason = txtReson.Text;
             mark.CheckStep = 1;
             if (bllMark.Update(mark))
             {

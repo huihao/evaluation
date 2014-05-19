@@ -35,5 +35,10 @@ namespace Eva.Evaluation.Admin
                 Response.Redirect("EditAuth.aspx?id="+id);
             }
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddUser.aspx");
+        }
     }
 }

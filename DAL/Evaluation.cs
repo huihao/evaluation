@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* Evaluation.cs
+*
+* 功 能： N/A
+* 类 名： Evaluation
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/5/19 12:56:06   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -12,7 +28,7 @@ namespace Eva.DAL
 	{
 		public Evaluation()
 		{}
-		#region  Method
+		#region  BasicMethod
 
 
 
@@ -32,8 +48,8 @@ namespace Eva.DAL
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
 					new SqlParameter("@Gpa", SqlDbType.Float,8),
 					new SqlParameter("@Ave", SqlDbType.Float,8),
-					new SqlParameter("@TeacherEvaluation", SqlDbType.NVarChar),
-					new SqlParameter("@SelfEvaluation", SqlDbType.NVarChar),
+					new SqlParameter("@TeacherEvaluation", SqlDbType.NVarChar,-1),
+					new SqlParameter("@SelfEvaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@TeacherId", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4)};
 			parameters[0].Value = model.StudentId;
@@ -76,8 +92,8 @@ namespace Eva.DAL
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
 					new SqlParameter("@Gpa", SqlDbType.Float,8),
 					new SqlParameter("@Ave", SqlDbType.Float,8),
-					new SqlParameter("@TeacherEvaluation", SqlDbType.NVarChar),
-					new SqlParameter("@SelfEvaluation", SqlDbType.NVarChar),
+					new SqlParameter("@TeacherEvaluation", SqlDbType.NVarChar,-1),
+					new SqlParameter("@SelfEvaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@TeacherId", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
@@ -164,48 +180,61 @@ namespace Eva.DAL
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
-				if(ds.Tables[0].Rows[0]["Id"]!=null && ds.Tables[0].Rows[0]["Id"].ToString()!="")
-				{
-					model.Id=int.Parse(ds.Tables[0].Rows[0]["Id"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["StudentId"]!=null && ds.Tables[0].Rows[0]["StudentId"].ToString()!="")
-				{
-					model.StudentId=int.Parse(ds.Tables[0].Rows[0]["StudentId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["AcademicYear"]!=null && ds.Tables[0].Rows[0]["AcademicYear"].ToString()!="")
-				{
-					model.AcademicYear=int.Parse(ds.Tables[0].Rows[0]["AcademicYear"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Gpa"]!=null && ds.Tables[0].Rows[0]["Gpa"].ToString()!="")
-				{
-					model.Gpa=decimal.Parse(ds.Tables[0].Rows[0]["Gpa"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Ave"]!=null && ds.Tables[0].Rows[0]["Ave"].ToString()!="")
-				{
-					model.Ave=decimal.Parse(ds.Tables[0].Rows[0]["Ave"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["TeacherEvaluation"]!=null && ds.Tables[0].Rows[0]["TeacherEvaluation"].ToString()!="")
-				{
-					model.TeacherEvaluation=ds.Tables[0].Rows[0]["TeacherEvaluation"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["SelfEvaluation"]!=null && ds.Tables[0].Rows[0]["SelfEvaluation"].ToString()!="")
-				{
-					model.SelfEvaluation=ds.Tables[0].Rows[0]["SelfEvaluation"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["TeacherId"]!=null && ds.Tables[0].Rows[0]["TeacherId"].ToString()!="")
-				{
-					model.TeacherId=int.Parse(ds.Tables[0].Rows[0]["TeacherId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["SchoolTerm"]!=null && ds.Tables[0].Rows[0]["SchoolTerm"].ToString()!="")
-				{
-					model.SchoolTerm=int.Parse(ds.Tables[0].Rows[0]["SchoolTerm"].ToString());
-				}
-				return model;
+				return DataRowToModel(ds.Tables[0].Rows[0]);
 			}
 			else
 			{
 				return null;
 			}
+		}
+
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Eva.Model.Evaluation DataRowToModel(DataRow row)
+		{
+			Eva.Model.Evaluation model=new Eva.Model.Evaluation();
+			if (row != null)
+			{
+				if(row["Id"]!=null && row["Id"].ToString()!="")
+				{
+					model.Id=int.Parse(row["Id"].ToString());
+				}
+				if(row["StudentId"]!=null && row["StudentId"].ToString()!="")
+				{
+					model.StudentId=int.Parse(row["StudentId"].ToString());
+				}
+				if(row["AcademicYear"]!=null && row["AcademicYear"].ToString()!="")
+				{
+					model.AcademicYear=int.Parse(row["AcademicYear"].ToString());
+				}
+				if(row["Gpa"]!=null && row["Gpa"].ToString()!="")
+				{
+					model.Gpa=decimal.Parse(row["Gpa"].ToString());
+				}
+				if(row["Ave"]!=null && row["Ave"].ToString()!="")
+				{
+					model.Ave=decimal.Parse(row["Ave"].ToString());
+				}
+				if(row["TeacherEvaluation"]!=null)
+				{
+					model.TeacherEvaluation=row["TeacherEvaluation"].ToString();
+				}
+				if(row["SelfEvaluation"]!=null)
+				{
+					model.SelfEvaluation=row["SelfEvaluation"].ToString();
+				}
+				if(row["TeacherId"]!=null && row["TeacherId"].ToString()!="")
+				{
+					model.TeacherId=int.Parse(row["TeacherId"].ToString());
+				}
+				if(row["SchoolTerm"]!=null && row["SchoolTerm"].ToString()!="")
+				{
+					model.SchoolTerm=int.Parse(row["SchoolTerm"].ToString());
+				}
+			}
+			return model;
 		}
 
 		/// <summary>
@@ -316,7 +345,10 @@ namespace Eva.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-		#endregion  Method
+		#endregion  BasicMethod
+		#region  ExtensionMethod
+
+		#endregion  ExtensionMethod
 	}
 }
 

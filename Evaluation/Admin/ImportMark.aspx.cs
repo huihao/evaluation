@@ -89,6 +89,12 @@ namespace Eva.Evaluation.Admin
                     return false;
                 }
 
+                if (BLL.Utils.GetMark(dt.Rows[i]["学生姓名"].ToString(),dt.Rows[i]["课程"].ToString()))
+                {
+                     this.Upload_info.Text += string.Format("<br/><span style='color:red;'>表格第{0}行,该{1}的{2}成绩已存在。<span>",
+                                                                i + 1, dt.Rows[i]["学生姓名"].ToString(),dt.Rows[i]["课程"].ToString());
+                    return false;
+                }
 
             }
 

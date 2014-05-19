@@ -81,5 +81,36 @@ namespace Eva.BLL
             var bll = new Eva.BLL.Item();
             return bll.GetModel(itemId).Name;
         }
+
+        public static int GetStuIdByName(string stuName)
+        {
+
+
+            var list = new BLL.WebUser().GetModelList(" Name= '" + stuName+" '");
+                return list.Count > 0 ? Convert.ToInt32( list[0].StudentId) : -1;
+           
+
+        }
+        public static int GetCourseIdByName(string courseName)
+        {
+            var list = new BLL.Course().GetModelList(" Name= '" + courseName+" ' ");
+            return list.Count > 0 ? list[0].Id : -1;
+
+        }
+        public static string GetAuthNamebyId(int id)
+        {
+            var bll = new BLL.Authority();
+            return bll.GetModel(id).Name;
+        }
+
+
+
+        public static bool GetMark(string stuName, string courseName)
+        {
+            var list = new BLL.Mark().GetModelList(" StudentId= " + GetStuIdByName(stuName) + " And CourseId = " + GetCourseIdByName(courseName));
+            return list.Count > 0 ? true : false;
+        }
+   
+
     }
 }

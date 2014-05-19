@@ -1,8 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Student.Master" AutoEventWireup="true" CodeBehind="SelfEva.aspx.cs" Inherits="Eva.Evaluation.Student.SelfEva" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Student.Master" AutoEventWireup="true"
+    CodeBehind="SelfEva.aspx.cs" Inherits="Eva.Evaluation.Student.SelfEva" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div id="content">
+    <form id="Form1" runat="server" class="form-horizontal">
+    <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
                 <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>主页</a>
@@ -20,24 +23,22 @@
                                 自评</h5>
                         </div>
                         <div class="widget-content nopadding">
-                            <form id="Form1" action="#" method="get" class="form-horizontal" runat="server">
                             <div class="control-group">
                                 <label class="control-label">
                                     自评</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtSelf" runat="server" class="span6" placeholder="自评"  TextMode="MultiLine" Rows="6"></asp:TextBox>
+                                    <asp:TextBox ID="txtSelf" runat="server" class="span6" placeholder="自评" TextMode="MultiLine"
+                                        Rows="6"></asp:TextBox>
                                 </div>
                             </div>
-                            
                             <div class="form-actions">
-                                <asp:Button ID="Save" runat="server" Text="保存" class="btn btn-success" onclick="Save_Click" 
-                                     />
+                                <asp:Button ID="Save" runat="server" Text="保存" class="btn btn-success" OnClick="Save_Click" />
                             </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 </asp:Content>

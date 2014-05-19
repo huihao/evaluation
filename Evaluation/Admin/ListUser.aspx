@@ -50,7 +50,7 @@
                                                     <%# Eval("Name") %>
                                                 </td>
                                                 <td>
-                                                    <%# Eval("AuthorityId") %>
+                                                    <%# Eva.BLL.Utils.GetAuthNamebyId(Convert.ToInt32(Eval("AuthorityId")))%>
                                                 </td>
                                                 <td>
                                                     <%# Eval("Sex") %>
@@ -66,6 +66,9 @@
                                     </asp:Repeater>
                                 </tbody>
                             </table>
+                            <div>
+                                <asp:Button ID="btnAdd" runat="server" Text="添加" OnClick="btnAdd_Click" />
+                            </div>
                             </form>
                         </div>
                     </div>

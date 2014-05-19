@@ -48,8 +48,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <asp:Repeater ID="MarkRepeater" runat="server" 
-                                        onitemcommand="MarkRepeater_ItemCommand">
+                                    <asp:Repeater ID="MarkRepeater" runat="server" OnItemCommand="MarkRepeater_ItemCommand">
                                         <ItemTemplate>
                                             <tr>
                                                 <td>
@@ -65,6 +64,7 @@
                                                     <%#Eval("BonusPoint")%>
                                                 </td>
                                                 <td>
+                                                    <%#Eval("Reason") %>
                                                 </td>
                                                 <td>
                                                     <asp:Button ID="btnAgree" runat="server" Text="同意" CommandArgument='<%#Eval("Id") %>'

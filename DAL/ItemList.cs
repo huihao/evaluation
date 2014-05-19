@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* ItemList.cs
+*
+* 功 能： N/A
+* 类 名： ItemList
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/5/19 12:56:07   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -12,7 +28,7 @@ namespace Eva.DAL
 	{
 		public ItemList()
 		{}
-		#region  Method
+		#region  BasicMethod
 
 
 
@@ -30,7 +46,7 @@ namespace Eva.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@EvaluationId", SqlDbType.Int,4),
 					new SqlParameter("@ItemId", SqlDbType.Int,4),
-					new SqlParameter("@Evaluation", SqlDbType.NVarChar),
+					new SqlParameter("@Evaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@score", SqlDbType.Int,4)};
 			parameters[0].Value = model.EvaluationId;
 			parameters[1].Value = model.ItemId;
@@ -62,7 +78,7 @@ namespace Eva.DAL
 			SqlParameter[] parameters = {
 					new SqlParameter("@EvaluationId", SqlDbType.Int,4),
 					new SqlParameter("@ItemId", SqlDbType.Int,4),
-					new SqlParameter("@Evaluation", SqlDbType.NVarChar),
+					new SqlParameter("@Evaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@score", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.EvaluationId;
@@ -144,32 +160,45 @@ namespace Eva.DAL
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
-				if(ds.Tables[0].Rows[0]["Id"]!=null && ds.Tables[0].Rows[0]["Id"].ToString()!="")
-				{
-					model.Id=int.Parse(ds.Tables[0].Rows[0]["Id"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["EvaluationId"]!=null && ds.Tables[0].Rows[0]["EvaluationId"].ToString()!="")
-				{
-					model.EvaluationId=int.Parse(ds.Tables[0].Rows[0]["EvaluationId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["ItemId"]!=null && ds.Tables[0].Rows[0]["ItemId"].ToString()!="")
-				{
-					model.ItemId=int.Parse(ds.Tables[0].Rows[0]["ItemId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Evaluation"]!=null && ds.Tables[0].Rows[0]["Evaluation"].ToString()!="")
-				{
-					model.Evaluation=ds.Tables[0].Rows[0]["Evaluation"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["score"]!=null && ds.Tables[0].Rows[0]["score"].ToString()!="")
-				{
-					model.score=int.Parse(ds.Tables[0].Rows[0]["score"].ToString());
-				}
-				return model;
+				return DataRowToModel(ds.Tables[0].Rows[0]);
 			}
 			else
 			{
 				return null;
 			}
+		}
+
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Eva.Model.ItemList DataRowToModel(DataRow row)
+		{
+			Eva.Model.ItemList model=new Eva.Model.ItemList();
+			if (row != null)
+			{
+				if(row["Id"]!=null && row["Id"].ToString()!="")
+				{
+					model.Id=int.Parse(row["Id"].ToString());
+				}
+				if(row["EvaluationId"]!=null && row["EvaluationId"].ToString()!="")
+				{
+					model.EvaluationId=int.Parse(row["EvaluationId"].ToString());
+				}
+				if(row["ItemId"]!=null && row["ItemId"].ToString()!="")
+				{
+					model.ItemId=int.Parse(row["ItemId"].ToString());
+				}
+				if(row["Evaluation"]!=null)
+				{
+					model.Evaluation=row["Evaluation"].ToString();
+				}
+				if(row["score"]!=null && row["score"].ToString()!="")
+				{
+					model.score=int.Parse(row["score"].ToString());
+				}
+			}
+			return model;
 		}
 
 		/// <summary>
@@ -280,7 +309,10 @@ namespace Eva.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-		#endregion  Method
+		#endregion  BasicMethod
+		#region  ExtensionMethod
+
+		#endregion  ExtensionMethod
 	}
 }
 

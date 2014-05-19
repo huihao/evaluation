@@ -66,8 +66,7 @@
                                                 <td>
                                                     <asp:Button ID="btnShowScroe" runat="server" Text="成绩查看" CommandArgument='<%#Eval("Id") %>'
                                                         CommandName="view" />
-                                                    <asp:Button ID="btnEvaluation" runat="server" Text="综合评价" CommandArgument='<%#Eval("Id") %>'
-                                                        CommandName="eva" />
+                                                    
                                                     <asp:Button ID="btnUpdate" runat="server" Text="修改" CommandArgument='<%#Eval("Id") %>'
                                                         CommandName="update" />
                                                     <asp:Button ID="btnDelete" runat="server" Text="删除" CommandArgument='<%#Eval("Id") %>'

@@ -54,6 +54,9 @@
                                                 <td>
                                                     <%# Eva.BLL.Utils.GetCourseGpa(Convert.ToInt16( Eval("CourseId"))) %>
                                                 </td>
+                                                <td>
+                                                    <%#Eval("BonusPoint")%>
+                                                </td>
                                             </tr>
                                         </ItemTemplate>
                                     </asp:Repeater>

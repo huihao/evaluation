@@ -21,9 +21,9 @@ namespace Eva.Evaluation.Teacher
 
 
                 Eva.BLL.WebUser blluser=new BLL.WebUser();
-                Eva.Model.WebUser user=new Model.WebUser();
-                user=blluser.GetModel(id);
-                Label1.Text = user.Name;
+              
+                List<Model.WebUser> list = blluser.GetModelListStudents(id);
+                Label1.Text =list[0].Name;
             }
         }
     }

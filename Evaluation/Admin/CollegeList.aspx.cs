@@ -46,5 +46,10 @@ namespace Eva.Evaluation.Admin
                 }
             }
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddCollege.aspx");
+        }
     }
 }

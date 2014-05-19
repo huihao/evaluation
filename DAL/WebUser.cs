@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* WebUser.cs
+*
+* 功 能： N/A
+* 类 名： WebUser
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/5/19 12:56:09   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -12,7 +28,7 @@ namespace Eva.DAL
 	{
 		public WebUser()
 		{}
-		#region  Method
+		#region  BasicMethod
 
 
 
@@ -38,7 +54,7 @@ namespace Eva.DAL
 					new SqlParameter("@ClassId", SqlDbType.Int,4),
 					new SqlParameter("@MajorId", SqlDbType.Int,4),
 					new SqlParameter("@IdCard", SqlDbType.NVarChar,50),
-					new SqlParameter("@Address", SqlDbType.NVarChar),
+					new SqlParameter("@Address", SqlDbType.NVarChar,-1),
 					new SqlParameter("@Phone", SqlDbType.NVarChar,50)};
 			parameters[0].Value = model.LoginId;
 			parameters[1].Value = model.PassWord;
@@ -94,7 +110,7 @@ namespace Eva.DAL
 					new SqlParameter("@ClassId", SqlDbType.Int,4),
 					new SqlParameter("@MajorId", SqlDbType.Int,4),
 					new SqlParameter("@IdCard", SqlDbType.NVarChar,50),
-					new SqlParameter("@Address", SqlDbType.NVarChar),
+					new SqlParameter("@Address", SqlDbType.NVarChar,-1),
 					new SqlParameter("@Phone", SqlDbType.NVarChar,50),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.LoginId;
@@ -184,64 +200,77 @@ namespace Eva.DAL
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
-				if(ds.Tables[0].Rows[0]["Id"]!=null && ds.Tables[0].Rows[0]["Id"].ToString()!="")
-				{
-					model.Id=int.Parse(ds.Tables[0].Rows[0]["Id"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["LoginId"]!=null && ds.Tables[0].Rows[0]["LoginId"].ToString()!="")
-				{
-					model.LoginId=ds.Tables[0].Rows[0]["LoginId"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["PassWord"]!=null && ds.Tables[0].Rows[0]["PassWord"].ToString()!="")
-				{
-					model.PassWord=ds.Tables[0].Rows[0]["PassWord"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["AuthorityId"]!=null && ds.Tables[0].Rows[0]["AuthorityId"].ToString()!="")
-				{
-					model.AuthorityId=int.Parse(ds.Tables[0].Rows[0]["AuthorityId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Name"]!=null && ds.Tables[0].Rows[0]["Name"].ToString()!="")
-				{
-					model.Name=ds.Tables[0].Rows[0]["Name"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["StudentId"]!=null && ds.Tables[0].Rows[0]["StudentId"].ToString()!="")
-				{
-					model.StudentId=int.Parse(ds.Tables[0].Rows[0]["StudentId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["Sex"]!=null && ds.Tables[0].Rows[0]["Sex"].ToString()!="")
-				{
-					model.Sex=ds.Tables[0].Rows[0]["Sex"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["CollegeId"]!=null && ds.Tables[0].Rows[0]["CollegeId"].ToString()!="")
-				{
-					model.CollegeId=int.Parse(ds.Tables[0].Rows[0]["CollegeId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["ClassId"]!=null && ds.Tables[0].Rows[0]["ClassId"].ToString()!="")
-				{
-					model.ClassId=int.Parse(ds.Tables[0].Rows[0]["ClassId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["MajorId"]!=null && ds.Tables[0].Rows[0]["MajorId"].ToString()!="")
-				{
-					model.MajorId=int.Parse(ds.Tables[0].Rows[0]["MajorId"].ToString());
-				}
-				if(ds.Tables[0].Rows[0]["IdCard"]!=null && ds.Tables[0].Rows[0]["IdCard"].ToString()!="")
-				{
-					model.IdCard=ds.Tables[0].Rows[0]["IdCard"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["Address"]!=null && ds.Tables[0].Rows[0]["Address"].ToString()!="")
-				{
-					model.Address=ds.Tables[0].Rows[0]["Address"].ToString();
-				}
-				if(ds.Tables[0].Rows[0]["Phone"]!=null && ds.Tables[0].Rows[0]["Phone"].ToString()!="")
-				{
-					model.Phone=ds.Tables[0].Rows[0]["Phone"].ToString();
-				}
-				return model;
+				return DataRowToModel(ds.Tables[0].Rows[0]);
 			}
 			else
 			{
 				return null;
 			}
+		}
+
+
+		/// <summary>
+		/// 得到一个对象实体
+		/// </summary>
+		public Eva.Model.WebUser DataRowToModel(DataRow row)
+		{
+			Eva.Model.WebUser model=new Eva.Model.WebUser();
+			if (row != null)
+			{
+				if(row["Id"]!=null && row["Id"].ToString()!="")
+				{
+					model.Id=int.Parse(row["Id"].ToString());
+				}
+				if(row["LoginId"]!=null)
+				{
+					model.LoginId=row["LoginId"].ToString();
+				}
+				if(row["PassWord"]!=null)
+				{
+					model.PassWord=row["PassWord"].ToString();
+				}
+				if(row["AuthorityId"]!=null && row["AuthorityId"].ToString()!="")
+				{
+					model.AuthorityId=int.Parse(row["AuthorityId"].ToString());
+				}
+				if(row["Name"]!=null)
+				{
+					model.Name=row["Name"].ToString();
+				}
+				if(row["StudentId"]!=null && row["StudentId"].ToString()!="")
+				{
+					model.StudentId=int.Parse(row["StudentId"].ToString());
+				}
+				if(row["Sex"]!=null)
+				{
+					model.Sex=row["Sex"].ToString();
+				}
+				if(row["CollegeId"]!=null && row["CollegeId"].ToString()!="")
+				{
+					model.CollegeId=int.Parse(row["CollegeId"].ToString());
+				}
+				if(row["ClassId"]!=null && row["ClassId"].ToString()!="")
+				{
+					model.ClassId=int.Parse(row["ClassId"].ToString());
+				}
+				if(row["MajorId"]!=null && row["MajorId"].ToString()!="")
+				{
+					model.MajorId=int.Parse(row["MajorId"].ToString());
+				}
+				if(row["IdCard"]!=null)
+				{
+					model.IdCard=row["IdCard"].ToString();
+				}
+				if(row["Address"]!=null)
+				{
+					model.Address=row["Address"].ToString();
+				}
+				if(row["Phone"]!=null)
+				{
+					model.Phone=row["Phone"].ToString();
+				}
+			}
+			return model;
 		}
 
 		/// <summary>
@@ -352,7 +381,10 @@ namespace Eva.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-		#endregion  Method
+		#endregion  BasicMethod
+		#region  ExtensionMethod
+
+		#endregion  ExtensionMethod
 	}
 }
 

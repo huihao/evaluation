@@ -96,7 +96,7 @@ namespace Eva.Evaluation.Admin
         {
             Eva.Model.WebUser model = new Model.WebUser(); ;
 
-            int Id =int.Parse(Request["id"]);
+            int id =int.Parse(Request["id"]);
             model = bllUser.GetModel(id);
 
             string strErr = "";
@@ -156,7 +156,7 @@ namespace Eva.Evaluation.Admin
             model.Sex = sex;
             if (bllUser.Update(model))
             {
-                Maticsoft.Common.MessageBox.Show(this, "保存成功！");
+                Maticsoft.Common.MessageBox.ShowAndRedirect(this, "保存成功！"," ListStudent.aspx");
             }
             else
             {

@@ -37,7 +37,7 @@ namespace Eva.Evaluation.Student
             eva.SelfEvaluation = txtSelf.Text;
             if (bllEva.Update(eva))
             {
-                Maticsoft.Common.MessageBox.Show(this, "自评成功！");
+                Maticsoft.Common.MessageBox.ShowAndRedirect(this, "自评成功！", "ShowEva.aspx");
             }
             else
             {

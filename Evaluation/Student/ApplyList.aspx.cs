@@ -11,6 +11,7 @@ namespace Eva.Evaluation.Student
     {
         Eva.BLL.Mark bllMark = new BLL.Mark();
         Eva.Model.WebUser user = new Model.WebUser();
+        Eva.Model.Mark mark = new Model.Mark();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -33,9 +34,14 @@ namespace Eva.Evaluation.Student
             if (e.CommandName == "delete")
             {
                 int id = Convert.ToInt16(e.CommandArgument);
-                if (bllMark.Delete(id))
+                mark = bllMark.GetModel(id);
+                mark.BonusPoint = null;
+                mark.CheckStep = 0;
+                mark.Reason = null;
+                if (bllMark.Update(mark))
                 {
                     Maticsoft.Common.MessageBox.Show(this, "删除成功！");
+                    return;
                 }
                 else 
                 {

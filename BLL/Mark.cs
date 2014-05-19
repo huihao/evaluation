@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* Mark.cs
+*
+* 功 能： N/A
+* 类 名： Mark
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/5/19 12:56:08   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
@@ -13,7 +29,7 @@ namespace Eva.BLL
 		private readonly Eva.DAL.Mark dal=new Eva.DAL.Mark();
 		public Mark()
 		{}
-		#region  Method
+		#region  BasicMethod
 
 		/// <summary>
 		/// 增加一条数据
@@ -114,44 +130,11 @@ namespace Eva.BLL
 				Eva.Model.Mark model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = new Eva.Model.Mark();
-					if(dt.Rows[n]["Id"]!=null && dt.Rows[n]["Id"].ToString()!="")
+					model = dal.DataRowToModel(dt.Rows[n]);
+					if (model != null)
 					{
-						model.Id=int.Parse(dt.Rows[n]["Id"].ToString());
+						modelList.Add(model);
 					}
-					if(dt.Rows[n]["CourseId"]!=null && dt.Rows[n]["CourseId"].ToString()!="")
-					{
-						model.CourseId=int.Parse(dt.Rows[n]["CourseId"].ToString());
-					}
-					if(dt.Rows[n]["StudentId"]!=null && dt.Rows[n]["StudentId"].ToString()!="")
-					{
-						model.StudentId=int.Parse(dt.Rows[n]["StudentId"].ToString());
-					}
-					if(dt.Rows[n]["EvalutionId"]!=null && dt.Rows[n]["EvalutionId"].ToString()!="")
-					{
-						model.EvalutionId=int.Parse(dt.Rows[n]["EvalutionId"].ToString());
-					}
-					if(dt.Rows[n]["Score"]!=null && dt.Rows[n]["Score"].ToString()!="")
-					{
-						model.Score=decimal.Parse(dt.Rows[n]["Score"].ToString());
-					}
-					if(dt.Rows[n]["BonusPoint"]!=null && dt.Rows[n]["BonusPoint"].ToString()!="")
-					{
-						model.BonusPoint=decimal.Parse(dt.Rows[n]["BonusPoint"].ToString());
-					}
-					if(dt.Rows[n]["AcademicYear"]!=null && dt.Rows[n]["AcademicYear"].ToString()!="")
-					{
-						model.AcademicYear=int.Parse(dt.Rows[n]["AcademicYear"].ToString());
-					}
-					if(dt.Rows[n]["SchoolTerm"]!=null && dt.Rows[n]["SchoolTerm"].ToString()!="")
-					{
-						model.SchoolTerm=int.Parse(dt.Rows[n]["SchoolTerm"].ToString());
-					}
-					if(dt.Rows[n]["CheckStep"]!=null && dt.Rows[n]["CheckStep"].ToString()!="")
-					{
-						model.CheckStep=int.Parse(dt.Rows[n]["CheckStep"].ToString());
-					}
-					modelList.Add(model);
 				}
 			}
 			return modelList;
@@ -187,7 +170,10 @@ namespace Eva.BLL
 			//return dal.GetList(PageSize,PageIndex,strWhere);
 		//}
 
-		#endregion  Method
+		#endregion  BasicMethod
+		#region  ExtensionMethod
+
+		#endregion  ExtensionMethod
 	}
 }
 

@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Student.Master" AutoEventWireup="true" CodeBehind="ApplyList.aspx.cs" Inherits="Eva.Evaluation.Student.ApplyList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Student.Master" AutoEventWireup="true"
+    CodeBehind="ApplyList.aspx.cs" Inherits="Eva.Evaluation.Student.ApplyList" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <form id="Form1" runat="server">
+    <form id="Form1" runat="server">
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
@@ -24,7 +26,7 @@
                         <div class="widget-content nopadding">
                             <table class="table table-bordered data-table">
                                 <thead>
-                                    <tr>                                        
+                                    <tr>
                                         <th>
                                             加分课程
                                         </th>
@@ -43,10 +45,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <asp:Repeater ID="MarkRepeater" runat="server" 
-                                        onitemcommand="MarkRepeater_ItemCommand">
+                                    <asp:Repeater ID="MarkRepeater" runat="server" OnItemCommand="MarkRepeater_ItemCommand">
                                         <ItemTemplate>
-                                            <tr>                                               
+                                            <tr>
                                                 <td>
                                                     <%#Eva.BLL.Utils.GetCourseName(Convert.ToInt16( Eval("CourseId")))%>
                                                 </td>
@@ -57,7 +58,7 @@
                                                     <%#Eval("BonusPoint")%>
                                                 </td>
                                                 <td>
-                                                <%#Eval("") %>
+                                                    <%#Eval("Reason") %>
                                                 </td>
                                                 <td>
                                                 </td>

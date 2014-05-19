@@ -55,6 +55,9 @@
                                     </asp:Repeater>
                                 </tbody>
                             </table>
+                            <div>
+                            <asp:Button ID="btnAdd" runat="server" Text="添加" onclick="btnAdd_Click" />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -28,12 +28,7 @@ namespace Eva.Evaluation.Admin
                 int id = Convert.ToInt32(e.CommandArgument);
                 Response.Redirect("ShowMark.aspx?id=" + id);
             }
-            if (e.CommandName == "eva")
-            {
-                int id = Convert.ToInt32(e.CommandArgument);
-                Response.Redirect("Evaluation.aspx?id=" + id);
-
-            }
+           
             if (e.CommandName == "update")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
@@ -50,37 +45,8 @@ namespace Eva.Evaluation.Admin
             }
         }
 
-        protected void btnAllDEL_Click(object sender, EventArgs e)
-        {
-            foreach (RepeaterItem item in StudentRepeater.Items)
-            {
-                CheckBox chk = (CheckBox)item.FindControl("chkID");
-                if (chk.Checked)
-                {
+       
 
-                }
-            }
-
-        }
-
-        protected void chkAll_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkAll.Checked)
-            {
-                foreach (RepeaterItem item in StudentRepeater.Items)
-                {
-                    CheckBox chk = (CheckBox)item.FindControl("chkID");
-                    chk.Checked = true;
-                }
-            }
-            else
-            {
-                foreach (RepeaterItem item in StudentRepeater.Items)
-                {
-                    CheckBox chk = (CheckBox)item.FindControl("chkID");
-                    chk.Checked = false;
-                }
-            }
-        }
+        
     }
 }
