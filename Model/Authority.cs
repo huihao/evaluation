@@ -21,7 +21,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 权限名称
+		/// 
 		/// </summary>
 		public string Name
 		{

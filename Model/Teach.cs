@@ -24,7 +24,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 课程ID
+		/// 
 		/// </summary>
 		public int? CourseId
 		{
@@ -32,7 +32,7 @@ namespace Eva.Model
 			get{return _courseid;}
 		}
 		/// <summary>
-		/// 教师ID
+		/// 
 		/// </summary>
 		public int? TeacherId
 		{
@@ -40,7 +40,7 @@ namespace Eva.Model
 			get{return _teacherid;}
 		}
 		/// <summary>
-		/// 学年
+		/// 
 		/// </summary>
 		public int? AcademicYear
 		{
@@ -48,7 +48,7 @@ namespace Eva.Model
 			get{return _academicyear;}
 		}
 		/// <summary>
-		/// 学期
+		/// 
 		/// </summary>
 		public int? SchoolTerm
 		{

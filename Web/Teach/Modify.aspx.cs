@@ -46,19 +46,19 @@ namespace Eva.Web.Teach
 			string strErr="";
 			if(!PageValidate.IsNumber(txtCourseId.Text))
 			{
-				strErr+="课程ID格式错误！\\n";	
+				strErr+="CourseId格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtTeacherId.Text))
 			{
-				strErr+="教师ID格式错误！\\n";	
+				strErr+="TeacherId格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtAcademicYear.Text))
 			{
-				strErr+="学年格式错误！\\n";	
+				strErr+="AcademicYear格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtSchoolTerm.Text))
 			{
-				strErr+="学期格式错误！\\n";	
+				strErr+="SchoolTerm格式错误！\\n";	
 			}
 
 			if(strErr!="")

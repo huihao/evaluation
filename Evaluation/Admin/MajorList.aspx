@@ -21,16 +21,12 @@
                             <h5>
                                 学院列表</h5>
                         </div>
-                        <div>
-                            <asp:Button ID="btnAllDEL" runat="server" Text="删除"  />
-                        </div>
+                        
                         <div class="widget-content nopadding">
                             <table class="table table-bordered data-table">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            <asp:CheckBox ID="chkAll" runat="server" Text="全选" />
-                                        </th>
+                                       
                                         <th>
                                             学院
                                         </th>  
@@ -47,9 +43,7 @@
                                          >
                                         <ItemTemplate>
                                             <tr>
-                                                <td>
-                                                    <asp:CheckBox ID="chkID" runat="server" />
-                                                </td>
+                                                
                                                 <td>
                                                     <%#Eva.BLL.Utils.GetCollegeName(Convert.ToInt16( Eval("CollegeId"))) %>
                                                 </td>

@@ -57,6 +57,9 @@
                                                     <%#Eval("BonusPoint")%>
                                                 </td>
                                                 <td>
+                                                <%#Eval("") %>
+                                                </td>
+                                                <td>
                                                 </td>
                                                 <td>
                                                     <asp:Button ID="btnUpdate" runat="server" Text="修改" CommandArgument='<%#Eval("Id") %>'

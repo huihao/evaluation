@@ -32,7 +32,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 登录名
+		/// 
 		/// </summary>
 		public string LoginId
 		{
@@ -40,7 +40,7 @@ namespace Eva.Model
 			get{return _loginid;}
 		}
 		/// <summary>
-		/// 密码
+		/// 
 		/// </summary>
 		public string PassWord
 		{
@@ -48,7 +48,7 @@ namespace Eva.Model
 			get{return _password;}
 		}
 		/// <summary>
-		/// 权限
+		/// 
 		/// </summary>
 		public int? AuthorityId
 		{
@@ -56,7 +56,7 @@ namespace Eva.Model
 			get{return _authorityid;}
 		}
 		/// <summary>
-		/// 真实姓名
+		/// 
 		/// </summary>
 		public string Name
 		{
@@ -64,7 +64,7 @@ namespace Eva.Model
 			get{return _name;}
 		}
 		/// <summary>
-		/// 学号
+		/// 
 		/// </summary>
 		public int? StudentId
 		{
@@ -72,7 +72,7 @@ namespace Eva.Model
 			get{return _studentid;}
 		}
 		/// <summary>
-		/// 性别
+		/// 
 		/// </summary>
 		public string Sex
 		{
@@ -80,7 +80,7 @@ namespace Eva.Model
 			get{return _sex;}
 		}
 		/// <summary>
-		/// 学院ID
+		/// 
 		/// </summary>
 		public int? CollegeId
 		{
@@ -88,7 +88,7 @@ namespace Eva.Model
 			get{return _collegeid;}
 		}
 		/// <summary>
-		/// 班级ID
+		/// 
 		/// </summary>
 		public int? ClassId
 		{
@@ -96,7 +96,7 @@ namespace Eva.Model
 			get{return _classid;}
 		}
 		/// <summary>
-		/// 专业ID
+		/// 
 		/// </summary>
 		public int? MajorId
 		{
@@ -104,7 +104,7 @@ namespace Eva.Model
 			get{return _majorid;}
 		}
 		/// <summary>
-		/// 身份证号码
+		/// 
 		/// </summary>
 		public string IdCard
 		{
@@ -112,7 +112,7 @@ namespace Eva.Model
 			get{return _idcard;}
 		}
 		/// <summary>
-		/// 联系地址
+		/// 
 		/// </summary>
 		public string Address
 		{
@@ -120,7 +120,7 @@ namespace Eva.Model
 			get{return _address;}
 		}
 		/// <summary>
-		/// 电话号码
+		/// 
 		/// </summary>
 		public string Phone
 		{

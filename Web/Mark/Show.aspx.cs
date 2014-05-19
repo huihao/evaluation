@@ -40,6 +40,7 @@ namespace Eva.Web.Mark
 		this.lblAcademicYear.Text=model.AcademicYear.ToString();
 		this.lblSchoolTerm.Text=model.SchoolTerm.ToString();
 		this.lblCheckStep.Text=model.CheckStep.ToString();
+		this.lblReason.Text=model.Reason;
 
 	}
 

@@ -11,56 +11,56 @@
 <table cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
 	<td height="25" width="30%" align="right">
-		学生编号
+		StudentId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtStudentId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学年
+		AcademicYear
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtAcademicYear" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		平均绩点
+		Gpa
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtGpa" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		平均分
+		Ave
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtAve" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		教师评价
+		TeacherEvaluation
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtTeacherEvaluation" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学生自评
+		SelfEvaluation
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtSelfEvaluation" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		教师ID
+		TeacherId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtTeacherId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学期
+		SchoolTerm
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtSchoolTerm" runat="server" Width="200px"></asp:TextBox>

@@ -16,59 +16,66 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程ID
+		CourseId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblCourseId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学生ID
+		StudentId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblStudentId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		所属评测表ID
+		EvalutionId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblEvalutionId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		分数
+		Score
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblScore" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		加分
+		BonusPoint
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblBonusPoint" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学年
+		AcademicYear
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblAcademicYear" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学期
+		SchoolTerm
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblSchoolTerm" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		加分审核
+		CheckStep
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblCheckStep" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		Reason
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblReason" runat="server"></asp:Label>
 	</td></tr>
 </table>
 

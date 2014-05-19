@@ -26,15 +26,15 @@ namespace Eva.Web.Course
 			string strErr="";
 			if(this.txtName.Text.Trim().Length==0)
 			{
-				strErr+="课程名称不能为空！\\n";	
+				strErr+="Name不能为空！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtGpa.Text))
 			{
-				strErr+="绩点格式错误！\\n";	
+				strErr+="Gpa格式错误！\\n";	
 			}
 			if(this.txtIntrodution.Text.Trim().Length==0)
 			{
-				strErr+="课程介绍不能为空！\\n";	
+				strErr+="Introdution不能为空！\\n";	
 			}
 
 			if(strErr!="")

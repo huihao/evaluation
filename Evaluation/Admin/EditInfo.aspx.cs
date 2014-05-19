@@ -36,6 +36,8 @@ namespace Eva.Evaluation.Admin
                 txtIdCard.Text = user.IdCard;
                 txtSex.Text = user.Sex;
                 txtTel.Text = user.Phone;
+
+
                 LoadMajorList(Convert.ToInt32(user.CollegeId));
                 LoadClass(Convert.ToInt32(user.MajorId));
                 if (user.CollegeId!=null)
@@ -92,6 +94,11 @@ namespace Eva.Evaluation.Admin
 
         protected void Save_Click(object sender, EventArgs e)
         {
+            Eva.Model.WebUser model = new Model.WebUser(); ;
+
+            int Id =int.Parse(Request["id"]);
+            model = bllUser.GetModel(id);
+
             string strErr = "";
             if (txtName.Text.Trim().Length == 0)
             {
@@ -105,18 +112,22 @@ namespace Eva.Evaluation.Admin
             {
                 strErr += "手机号码不能为空！\\n";
             }
-            if (int.Parse(CollegeList.SelectedValue) == 0)
+            if (model.StudentId!=null)
             {
-                strErr += "学院不能为空！\\n";
+                if (int.Parse(CollegeList.SelectedValue) == 0)
+                {
+                    strErr += "学院不能为空！\\n";
+                }
+                if (int.Parse(MajorList.SelectedValue) == 0)
+                {
+                    strErr += "专业不能为空！\\n";
+                }
+                if (int.Parse(ClassList.SelectedValue) == 0)
+                {
+                    strErr += "班级不能为空！\\n";
+                }
             }
-            if (int.Parse(MajorList.SelectedValue) == 0)
-            {
-                strErr += "专业不能为空！\\n";
-            }
-            if (int.Parse(ClassList.SelectedValue) == 0)
-            {
-                strErr += "班级不能为空！\\n";
-            }
+            
             if (txtSex.Text.Trim().Length == 0)
             {
                 strErr += "性别不能为空！\\n";
@@ -135,9 +146,7 @@ namespace Eva.Evaluation.Admin
             int classes = int.Parse(ClassList.SelectedValue);
             string sex = txtSex.Text;
 
-            Eva.Model.WebUser model = new Model.WebUser(); ;
-
-            model.Id =int.Parse(Request["id"]);
+            
             model.Name = name;
             model.IdCard = idCard;
             model.Phone = tel;
@@ -192,7 +201,7 @@ namespace Eva.Evaluation.Admin
             else if (paw != pawc)
             {
                 strErr += "两次密码不一致！";
-            }
+            }   
             else
             {
                 model.PassWord = paw;

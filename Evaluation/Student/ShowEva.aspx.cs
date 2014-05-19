@@ -68,5 +68,13 @@ namespace Eva.Evaluation.Student
         {
 
         }
+
+        protected void btnSelf_Click(object sender, EventArgs e)
+        {
+            user = Session["user"] as Model.WebUser;
+            var eva = bllEva.GetModelList(string.Format("StudentId={0} and AcademicYear={1} and SchoolTerm={2}", user.Id, YearList.SelectedValue, Termlist.SelectedValue));
+            int id = eva[0].Id;
+            Response.Redirect("SelfEva.aspx?id=" + id);
+        }
     }
 }

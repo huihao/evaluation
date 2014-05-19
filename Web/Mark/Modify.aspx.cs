@@ -41,6 +41,7 @@ namespace Eva.Web.Mark
 		this.txtAcademicYear.Text=model.AcademicYear.ToString();
 		this.txtSchoolTerm.Text=model.SchoolTerm.ToString();
 		this.txtCheckStep.Text=model.CheckStep.ToString();
+		this.txtReason.Text=model.Reason;
 
 	}
 
@@ -50,35 +51,39 @@ namespace Eva.Web.Mark
 			string strErr="";
 			if(!PageValidate.IsNumber(txtCourseId.Text))
 			{
-				strErr+="课程ID格式错误！\\n";	
+				strErr+="CourseId格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtStudentId.Text))
 			{
-				strErr+="学生ID格式错误！\\n";	
+				strErr+="StudentId格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtEvalutionId.Text))
 			{
-				strErr+="所属评测表ID格式错误！\\n";	
+				strErr+="EvalutionId格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtScore.Text))
 			{
-				strErr+="分数格式错误！\\n";	
+				strErr+="Score格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtBonusPoint.Text))
 			{
-				strErr+="加分格式错误！\\n";	
+				strErr+="BonusPoint格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtAcademicYear.Text))
 			{
-				strErr+="学年格式错误！\\n";	
+				strErr+="AcademicYear格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtSchoolTerm.Text))
 			{
-				strErr+="学期格式错误！\\n";	
+				strErr+="SchoolTerm格式错误！\\n";	
 			}
 			if(!PageValidate.IsNumber(txtCheckStep.Text))
 			{
-				strErr+="加分审核格式错误！\\n";	
+				strErr+="CheckStep格式错误！\\n";	
+			}
+			if(this.txtReason.Text.Trim().Length==0)
+			{
+				strErr+="Reason不能为空！\\n";	
 			}
 
 			if(strErr!="")
@@ -95,6 +100,7 @@ namespace Eva.Web.Mark
 			int AcademicYear=int.Parse(this.txtAcademicYear.Text);
 			int SchoolTerm=int.Parse(this.txtSchoolTerm.Text);
 			int CheckStep=int.Parse(this.txtCheckStep.Text);
+			string Reason=this.txtReason.Text;
 
 
 			Eva.Model.Mark model=new Eva.Model.Mark();
@@ -107,6 +113,7 @@ namespace Eva.Web.Mark
 			model.AcademicYear=AcademicYear;
 			model.SchoolTerm=SchoolTerm;
 			model.CheckStep=CheckStep;
+			model.Reason=Reason;
 
 			Eva.BLL.Mark bll=new Eva.BLL.Mark();
 			bll.Update(model);

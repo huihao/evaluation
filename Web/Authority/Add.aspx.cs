@@ -26,7 +26,7 @@ namespace Eva.Web.Authority
 			string strErr="";
 			if(this.txtName.Text.Trim().Length==0)
 			{
-				strErr+="权限名称不能为空！\\n";	
+				strErr+="Name不能为空！\\n";	
 			}
 
 			if(strErr!="")

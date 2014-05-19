@@ -28,7 +28,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 学生编号
+		/// 
 		/// </summary>
 		public int? StudentId
 		{
@@ -36,7 +36,7 @@ namespace Eva.Model
 			get{return _studentid;}
 		}
 		/// <summary>
-		/// 学年
+		/// 
 		/// </summary>
 		public int? AcademicYear
 		{
@@ -44,7 +44,7 @@ namespace Eva.Model
 			get{return _academicyear;}
 		}
 		/// <summary>
-		/// 平均绩点
+		/// 
 		/// </summary>
 		public decimal? Gpa
 		{
@@ -52,7 +52,7 @@ namespace Eva.Model
 			get{return _gpa;}
 		}
 		/// <summary>
-		/// 平均分
+		/// 
 		/// </summary>
 		public decimal? Ave
 		{
@@ -60,7 +60,7 @@ namespace Eva.Model
 			get{return _ave;}
 		}
 		/// <summary>
-		/// 教师评价
+		/// 
 		/// </summary>
 		public string TeacherEvaluation
 		{
@@ -68,7 +68,7 @@ namespace Eva.Model
 			get{return _teacherevaluation;}
 		}
 		/// <summary>
-		/// 学生自评
+		/// 
 		/// </summary>
 		public string SelfEvaluation
 		{
@@ -76,7 +76,7 @@ namespace Eva.Model
 			get{return _selfevaluation;}
 		}
 		/// <summary>
-		/// 教师ID
+		/// 
 		/// </summary>
 		public int? TeacherId
 		{
@@ -84,7 +84,7 @@ namespace Eva.Model
 			get{return _teacherid;}
 		}
 		/// <summary>
-		/// 学期
+		/// 
 		/// </summary>
 		public int? SchoolTerm
 		{

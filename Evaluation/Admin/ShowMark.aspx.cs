@@ -54,5 +54,22 @@ namespace Eva.Evaluation.Admin
         {
             MarkBind();
         }
+
+        protected void MarkRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName=="update")
+            {
+                int id =Convert.ToInt32(e.CommandArgument);
+                Response.Redirect("EditMark.aspx?id=" + id);
+            }
+            if (e.CommandName=="delete")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+                if (markBll.Delete(id))
+                {
+                    Maticsoft.Common.MessageBox.Show(this, "删除成功！");
+                }
+            }
+        }
     }
 }

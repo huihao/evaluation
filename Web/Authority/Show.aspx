@@ -16,7 +16,7 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		权限名称
+		Name
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblName" runat="server"></asp:Label>

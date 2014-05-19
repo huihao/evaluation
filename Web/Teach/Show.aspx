@@ -16,28 +16,28 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程ID
+		CourseId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblCourseId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		教师ID
+		TeacherId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblTeacherId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学年
+		AcademicYear
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblAcademicYear" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学期
+		SchoolTerm
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblSchoolTerm" runat="server"></asp:Label>

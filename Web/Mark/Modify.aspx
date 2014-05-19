@@ -16,59 +16,66 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程ID
+		CourseId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtCourseId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学生ID
+		StudentId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtStudentId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		所属评测表ID
+		EvalutionId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtEvalutionId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		分数
+		Score
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtScore" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		加分
+		BonusPoint
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtBonusPoint" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学年
+		AcademicYear
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtAcademicYear" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学期
+		SchoolTerm
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtSchoolTerm" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		加分审核
+		CheckStep
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtCheckStep" runat="server" Width="200px"></asp:TextBox>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		Reason
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:TextBox id="txtReason" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 </table>
 

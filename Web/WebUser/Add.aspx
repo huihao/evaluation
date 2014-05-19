@@ -11,84 +11,84 @@
 <table cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
 	<td height="25" width="30%" align="right">
-		登录名
+		LoginId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtLoginId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		密码
+		PassWord
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtPassWord" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		权限
+		AuthorityId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtAuthorityId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		真实姓名
+		Name
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtName" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学号
+		StudentId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtStudentId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		性别
+		Sex
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtSex" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学院ID
+		CollegeId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtCollegeId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		班级ID
+		ClassId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtClassId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		专业ID
+		MajorId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtMajorId" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		身份证号码
+		IdCard
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtIdCard" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		联系地址
+		Address
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtAddress" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		电话号码
+		Phone
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtPhone" runat="server" Width="200px"></asp:TextBox>

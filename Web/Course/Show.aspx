@@ -16,21 +16,21 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程名称
+		Name
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblName" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		绩点
+		Gpa
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblGpa" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程介绍
+		Introdution
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblIntrodution" runat="server"></asp:Label>

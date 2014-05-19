@@ -119,8 +119,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,6 +128,8 @@
     <Compile Include="College.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Evaluation.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemList.cs" />
     <Compile Include="Major.cs" />
     <Compile Include="Mark.cs" />
     <Compile Include="Teach.cs" />

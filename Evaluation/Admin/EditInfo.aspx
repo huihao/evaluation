@@ -88,8 +88,7 @@
                                 <label class="control-label">
                                     原始密码</label>
                                 <div class="controls">
-                                    <asp:TextBox ID="txtOldPassWord" runat="server" class="span6" placeholder="原始密码"
-                                        TextMode="Password">
+                                    <asp:TextBox ID="txtOldPassWord" runat="server" class="span6" placeholder="原始密码" TextMode="Password">
                                     </asp:TextBox>
                                 </div>
                             </div>

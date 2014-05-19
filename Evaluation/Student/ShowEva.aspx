@@ -10,7 +10,7 @@
             <div id="content-header">
                 <div id="breadcrumb">
                     <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>主页</a>
-                    <a href="#" class="current">成绩查看</a>
+                    <a href="#" class="current">评价查看</a>
                 </div>
                 <h1>
                     学生姓名：
@@ -33,6 +33,7 @@
                                 <h5>
                                     评价列表</h5>
                             </div>
+                            
                             <div class="widget-content nopadding">
                                 <table class="table table-bordered data-table">
                                     <thead>
@@ -66,6 +67,10 @@
                                         </asp:Repeater>
                                     </tbody>
                                 </table>
+
+                            </div>
+                            <div>
+                                <asp:Button ID="btnSelf" runat="server" Text="自评" onclick="btnSelf_Click" />
                             </div>
                         </div>
                     </div>

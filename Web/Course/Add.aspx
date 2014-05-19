@@ -11,21 +11,21 @@
 <table cellSpacing="0" cellPadding="0" width="100%" border="0">
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程名称
+		Name
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtName" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		绩点
+		Gpa
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtGpa" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		课程介绍
+		Introdution
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtIntrodution" runat="server" Width="200px"></asp:TextBox>

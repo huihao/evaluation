@@ -16,56 +16,56 @@
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学生编号
+		StudentId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblStudentId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学年
+		AcademicYear
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblAcademicYear" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		平均绩点
+		Gpa
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblGpa" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		平均分
+		Ave
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblAve" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		教师评价
+		TeacherEvaluation
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblTeacherEvaluation" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学生自评
+		SelfEvaluation
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblSelfEvaluation" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		教师ID
+		TeacherId
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblTeacherId" runat="server"></asp:Label>
 	</td></tr>
 	<tr>
 	<td height="25" width="30%" align="right">
-		学期
+		SchoolTerm
 	：</td>
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblSchoolTerm" runat="server"></asp:Label>

@@ -65,6 +65,7 @@
     <Content Include="Admin\EditCourse.aspx" />
     <Content Include="Admin\EditInfo.aspx" />
     <Content Include="Admin\EditMajor.aspx" />
+    <Content Include="Admin\ImportMark.aspx" />
     <Content Include="Admin\ImportUser.aspx" />
     <Content Include="Admin\ListStudent.aspx" />
     <Content Include="Admin\ListUser.aspx" />
@@ -281,6 +282,13 @@
     <Compile Include="Admin\EditMajor.aspx.designer.cs">
       <DependentUpon>EditMajor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ImportMark.aspx.cs">
+      <DependentUpon>ImportMark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ImportMark.aspx.designer.cs">
+      <DependentUpon>ImportMark.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ImportUser.aspx.cs">
       <DependentUpon>ImportUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -449,6 +457,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Admin\学生信息导入模板.xls" />
+    <None Include="Admin\学生成绩导入模板.xls" />
     <None Include="font-awesome\css\Descr.WD3" />
     <None Include="font-awesome\font\Descr.WD3" />
     <None Include="font-awesome\font\fontawesome-webfont.eot" />

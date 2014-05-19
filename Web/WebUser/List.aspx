@@ -41,18 +41,18 @@
                                 </ItemTemplate>
                             </asp:TemplateField> 
                             
-		<asp:BoundField DataField="LoginId" HeaderText="登录名" SortExpression="LoginId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="PassWord" HeaderText="密码" SortExpression="PassWord" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="AuthorityId" HeaderText="权限" SortExpression="AuthorityId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Name" HeaderText="真实姓名" SortExpression="Name" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="StudentId" HeaderText="学号" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Sex" HeaderText="性别" SortExpression="Sex" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="CollegeId" HeaderText="学院ID" SortExpression="CollegeId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="ClassId" HeaderText="班级ID" SortExpression="ClassId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="MajorId" HeaderText="专业ID" SortExpression="MajorId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="IdCard" HeaderText="身份证号码" SortExpression="IdCard" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Address" HeaderText="联系地址" SortExpression="Address" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Phone" HeaderText="电话号码" SortExpression="Phone" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="LoginId" HeaderText="LoginId" SortExpression="LoginId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="PassWord" HeaderText="PassWord" SortExpression="PassWord" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="AuthorityId" HeaderText="AuthorityId" SortExpression="AuthorityId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Sex" HeaderText="Sex" SortExpression="Sex" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="CollegeId" HeaderText="CollegeId" SortExpression="CollegeId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="ClassId" HeaderText="ClassId" SortExpression="ClassId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="MajorId" HeaderText="MajorId" SortExpression="MajorId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="IdCard" HeaderText="IdCard" SortExpression="IdCard" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"
                                 Text="详细"  />

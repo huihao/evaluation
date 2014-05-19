@@ -23,7 +23,7 @@ namespace Eva.Model
 			get{return _id;}
 		}
 		/// <summary>
-		/// 课程名称
+		/// 
 		/// </summary>
 		public string Name
 		{
@@ -31,7 +31,7 @@ namespace Eva.Model
 			get{return _name;}
 		}
 		/// <summary>
-		/// 绩点
+		/// 
 		/// </summary>
 		public decimal? Gpa
 		{
@@ -39,7 +39,7 @@ namespace Eva.Model
 			get{return _gpa;}
 		}
 		/// <summary>
-		/// 课程介绍
+		/// 
 		/// </summary>
 		public string Introdution
 		{

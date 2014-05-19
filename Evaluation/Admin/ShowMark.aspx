@@ -45,10 +45,14 @@
                                         <th>
                                             绩点
                                         </th>
+                                        <th>
+                                            操作
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <asp:Repeater ID="MarkRepeater" runat="server">
+                                    <asp:Repeater ID="MarkRepeater" runat="server" 
+                                        onitemcommand="MarkRepeater_ItemCommand">
                                         <ItemTemplate>
                                             <tr class="gradeX">
                                                 <td>
@@ -59,6 +63,12 @@
                                                 </td>
                                                 <td>
                                                     <%# Eva.BLL.Utils.GetCourseGpa(Convert.ToInt16( Eval("CourseId"))) %>
+                                                </td>
+                                                <td>
+                                                    <asp:Button ID="btnUpdate" runat="server" Text="修改" CommandArgument='<%#Eval("Id") %>'
+                                                        CommandName="update" />
+                                                    <asp:Button ID="btnDelete" runat="server" Text="删除" CommandArgument='<%#Eval("Id") %>'
+                                                        CommandName="delete" />
                                                 </td>
                                             </tr>
                                         </ItemTemplate>

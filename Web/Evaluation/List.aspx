@@ -41,14 +41,14 @@
                                 </ItemTemplate>
                             </asp:TemplateField> 
                             
-		<asp:BoundField DataField="StudentId" HeaderText="学生编号" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="AcademicYear" HeaderText="学年" SortExpression="AcademicYear" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Gpa" HeaderText="平均绩点" SortExpression="Gpa" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Ave" HeaderText="平均分" SortExpression="Ave" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="TeacherEvaluation" HeaderText="教师评价" SortExpression="TeacherEvaluation" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="SelfEvaluation" HeaderText="学生自评" SortExpression="SelfEvaluation" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="TeacherId" HeaderText="教师ID" SortExpression="TeacherId" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="SchoolTerm" HeaderText="学期" SortExpression="SchoolTerm" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="AcademicYear" HeaderText="AcademicYear" SortExpression="AcademicYear" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Gpa" HeaderText="Gpa" SortExpression="Gpa" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Ave" HeaderText="Ave" SortExpression="Ave" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="TeacherEvaluation" HeaderText="TeacherEvaluation" SortExpression="TeacherEvaluation" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="SelfEvaluation" HeaderText="SelfEvaluation" SortExpression="SelfEvaluation" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="TeacherId" HeaderText="TeacherId" SortExpression="TeacherId" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="SchoolTerm" HeaderText="SchoolTerm" SortExpression="SchoolTerm" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"
                                 Text="详细"  />
