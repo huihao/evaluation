@@ -53,7 +53,9 @@
     <Content Include="Admin\AddClass.aspx" />
     <Content Include="Admin\AddCollege.aspx" />
     <Content Include="Admin\AddCourse.aspx" />
+    <Content Include="Admin\AddItem.aspx" />
     <Content Include="Admin\AddMajor.aspx" />
+    <Content Include="Admin\AddTeach.aspx" />
     <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\AdminInfo.aspx" />
     <Content Include="Admin\ClassList.aspx" />
@@ -64,14 +66,18 @@
     <Content Include="Admin\EditCollege.aspx" />
     <Content Include="Admin\EditCourse.aspx" />
     <Content Include="Admin\EditInfo.aspx" />
+    <Content Include="Admin\EditItem.aspx" />
     <Content Include="Admin\EditMajor.aspx" />
     <Content Include="Admin\EditMark.aspx" />
+    <Content Include="Admin\EditTeach.aspx" />
     <Content Include="Admin\ImportMark.aspx" />
     <Content Include="Admin\ImportUser.aspx" />
+    <Content Include="Admin\ItemList.aspx" />
     <Content Include="Admin\ListStudent.aspx" />
     <Content Include="Admin\ListUser.aspx" />
     <Content Include="Admin\MajorList.aspx" />
     <Content Include="Admin\ShowMark.aspx" />
+    <Content Include="Admin\TeachList.aspx" />
     <Content Include="css\bootstrap-responsive.min.css" />
     <Content Include="css\bootstrap-wysihtml5.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -200,12 +206,26 @@
     <Compile Include="Admin\AddCourse.aspx.designer.cs">
       <DependentUpon>AddCourse.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddItem.aspx.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddItem.aspx.designer.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddMajor.aspx.cs">
       <DependentUpon>AddMajor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\AddMajor.aspx.designer.cs">
       <DependentUpon>AddMajor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddTeach.aspx.cs">
+      <DependentUpon>AddTeach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddTeach.aspx.designer.cs">
+      <DependentUpon>AddTeach.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
@@ -277,6 +297,13 @@
     <Compile Include="Admin\EditInfo.aspx.designer.cs">
       <DependentUpon>EditInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditItem.aspx.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditItem.aspx.designer.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditMajor.aspx.cs">
       <DependentUpon>EditMajor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,6 +318,13 @@
     <Compile Include="Admin\EditMark.aspx.designer.cs">
       <DependentUpon>EditMark.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditTeach.aspx.cs">
+      <DependentUpon>EditTeach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditTeach.aspx.designer.cs">
+      <DependentUpon>EditTeach.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ImportMark.aspx.cs">
       <DependentUpon>ImportMark.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +338,13 @@
     </Compile>
     <Compile Include="Admin\ImportUser.aspx.designer.cs">
       <DependentUpon>ImportUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ItemList.aspx.cs">
+      <DependentUpon>ItemList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ItemList.aspx.designer.cs">
+      <DependentUpon>ItemList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListStudent.aspx.cs">
       <DependentUpon>ListStudent.aspx</DependentUpon>
@@ -332,6 +373,13 @@
     </Compile>
     <Compile Include="Admin\ShowMark.aspx.designer.cs">
       <DependentUpon>ShowMark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeachList.aspx.cs">
+      <DependentUpon>TeachList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TeachList.aspx.designer.cs">
+      <DependentUpon>TeachList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>

@@ -7,6 +7,19 @@ namespace Eva.BLL
 {
     public static class Utils
     {
+        public static string GetTeacherName(int id)
+        {
+            var bll = new WebUser();
+            return bll.GetModel(id).Name;
+        }
+        public static string GetCourse(int id)
+        {
+            var bll = new Course();
+            return bll.GetModel(id).Name;
+        }
+        
+
+
         public static string GetClassName(int id)
         {
             var bll = new Class();
@@ -109,8 +122,7 @@ namespace Eva.BLL
         {
             var list = new BLL.Mark().GetModelList(" StudentId= " + GetStuIdByName(stuName) + " And CourseId = " + GetCourseIdByName(courseName));
             return list.Count > 0 ? true : false;
-        }
-   
+        }   
 
     }
 }

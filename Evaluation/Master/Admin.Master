@@ -79,6 +79,8 @@
                     <li><a href="ClassList.aspx">班级管理</a></li>
                     <li><a href="MajorList.aspx">专业管理</a></li>
                     <li><a href="CollegeList.aspx">学院管理</a></li>
+                    <li><a href="TeachList.aspx">授课管理</a></li>
+                    <li><a href="ItemList.aspx">评价指标管理</a></li>
                 </ul>
             </li>
         </ul>

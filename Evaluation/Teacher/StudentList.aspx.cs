@@ -15,7 +15,9 @@ namespace Eva.Evaluation.Teacher
             {
                 
                 Eva.BLL.WebUser bllStudent = new BLL.WebUser();
-                var set = bllStudent.GetAllStudents();
+                Eva.Model.WebUser teacher = Session["user"] as Model.WebUser;
+
+                var set = bllStudent.GetMyStudents(teacher.Id);
                 StudentRepeater.DataSource = set;
                 StudentRepeater.DataBind();
             }

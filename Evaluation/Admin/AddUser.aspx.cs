@@ -51,7 +51,13 @@ namespace Eva.Evaluation.Admin
         protected void Save_Click(object sender, EventArgs e)
         {
             string strErr = "";
-         
+
+
+
+            if (this.txtLogin.Text.Trim().Length==0)
+            {
+                strErr += "用户名不能为空！\\n";
+            }
             if (this.txtPassWord.Text.Trim().Length == 0)
             {
                 strErr += "PassWord不能为空！\\n";
@@ -76,6 +82,7 @@ namespace Eva.Evaluation.Admin
             string Name = this.txtName.Text;
             string IdCard = this.txtIdCard.Text;
             Eva.Model.WebUser model = new Eva.Model.WebUser();
+            model.LoginId = txtLogin.Text;
             model.PassWord = PassWord;
             model.Name = Name;
             model.IdCard = IdCard;

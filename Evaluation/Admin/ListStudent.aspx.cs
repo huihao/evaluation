@@ -14,11 +14,15 @@ namespace Eva.Evaluation.Admin
         {
             if (!IsPostBack)
             {
+                Bing();
 
-                var set = bllStudent.GetAllStudents();
-                StudentRepeater.DataSource = set;
-                StudentRepeater.DataBind();
             }
+        }
+        private void Bing()
+        {
+            var set = bllStudent.GetAllStudents();
+            StudentRepeater.DataSource = set;
+            StudentRepeater.DataBind();
         }
 
         protected void StudentRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -28,7 +32,7 @@ namespace Eva.Evaluation.Admin
                 int id = Convert.ToInt32(e.CommandArgument);
                 Response.Redirect("ShowMark.aspx?id=" + id);
             }
-           
+
             if (e.CommandName == "update")
             {
                 int id = Convert.ToInt32(e.CommandArgument);
@@ -40,13 +44,14 @@ namespace Eva.Evaluation.Admin
                 int id = Convert.ToInt32(e.CommandArgument);
                 if (bllStudent.Delete(Convert.ToInt32(e.CommandArgument)))
                 {
+                    Bing();
                     Maticsoft.Common.MessageBox.Show(this, "删除成功！");
                 }
             }
         }
 
-       
 
-        
+
+
     }
 }

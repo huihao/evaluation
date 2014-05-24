@@ -16,10 +16,14 @@ namespace Eva.Evaluation.Admin
             if (!IsPostBack)
             {
 
-                var set = bll.GetAllList();
-                MajorRepeater.DataSource = set;
-                MajorRepeater.DataBind();
+               
             }
+        }
+        private void Bing()
+        {
+            var set = bll.GetAllList();
+            MajorRepeater.DataSource = set;
+            MajorRepeater.DataBind();
         }
 
         protected void MajorRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -34,6 +38,7 @@ namespace Eva.Evaluation.Admin
                 int id = Convert.ToInt16(e.CommandArgument);
                 if (bll.Delete(id))
                 {
+                    Bing();
                     Maticsoft.Common.MessageBox.Show(this, "删除成功!");
                 }
                 else

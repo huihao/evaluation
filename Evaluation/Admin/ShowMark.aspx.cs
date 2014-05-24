@@ -38,9 +38,9 @@ namespace Eva.Evaluation.Admin
 
         protected void MarkBind()
         {
-            //int id = int.Parse(Request["id"]);
-            user = Session["user"] as Model.WebUser;
-            var set = markBll.GetListByStudentId(Convert.ToInt16(user.StudentId), YearList.SelectedItem.Text, Termlist.SelectedItem.Text);
+            int id = int.Parse(Request["id"]);
+            user = userBll.GetModelByStudentId(id);
+            var set = markBll.GetListByStudentId(Convert.ToInt32(user.StudentId), YearList.SelectedItem.Text, Termlist.SelectedItem.Text);
             MarkRepeater.DataSource = set;
             MarkRepeater.DataBind();
         }
@@ -67,6 +67,7 @@ namespace Eva.Evaluation.Admin
                 int id = Convert.ToInt32(e.CommandArgument);
                 if (markBll.Delete(id))
                 {
+                    MarkBind();
                     Maticsoft.Common.MessageBox.Show(this, "删除成功！");
                 }
             }

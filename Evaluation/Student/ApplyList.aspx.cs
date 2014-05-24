@@ -16,11 +16,16 @@ namespace Eva.Evaluation.Student
         {
             if (!IsPostBack)
             {
-                user = Session["user"] as Model.WebUser;
-                var set = bllMark.getListByStuCheckStep(Convert.ToInt16(user.StudentId));
-                MarkRepeater.DataSource = set;
-                MarkRepeater.DataBind();
+                Bing();
             }
+        }
+
+        private void Bing()
+        {
+            user = Session["user"] as Model.WebUser;
+            var set = bllMark.getListByStuCheckStep(Convert.ToInt16(user.StudentId));
+            MarkRepeater.DataSource = set;
+            MarkRepeater.DataBind();
         }
 
         protected void MarkRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -40,8 +45,9 @@ namespace Eva.Evaluation.Student
                 mark.Reason = null;
                 if (bllMark.Update(mark))
                 {
+                    Bing();
                     Maticsoft.Common.MessageBox.Show(this, "删除成功！");
-                    return;
+                    
                 }
                 else 
                 {

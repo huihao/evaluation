@@ -15,6 +15,11 @@ namespace Eva.BLL
             string sql = " StudentId  is not null";
             return dal.GetList(sql);
         }
+        public DataSet GetMyStudents(int teaId)
+        {
+           
+            return dal.GetMyStudents(teaId);
+        }
         public DataSet GetStudents(int studentId)
         {
             string sql = " StudentId = "+studentId;

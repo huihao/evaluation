@@ -14,12 +14,17 @@ namespace Eva.Evaluation.Admin
         {
             if (!IsPostBack)
             {
-                var set = bllClass.GetAllListWithCollegeId();
-                ClassRepeater.DataSource = set;
-                ClassRepeater.DataBind();
+                Bing();
 
             }
         }
+        private void Bing()
+        {
+            var set = bllClass.GetAllListWithCollegeId();
+            ClassRepeater.DataSource = set;
+            ClassRepeater.DataBind();
+        }
+
 
         protected void ClassRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -33,6 +38,7 @@ namespace Eva.Evaluation.Admin
                 int id = Convert.ToInt16(e.CommandArgument);
                 if (bllClass.Delete(id))
                 {
+                    Bing();
                     Maticsoft.Common.MessageBox.Show(this, "删除成功！");
                 }
                 else

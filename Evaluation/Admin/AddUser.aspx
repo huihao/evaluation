@@ -22,7 +22,16 @@
                                 添加用户</h5>
                         </div>
                         <div class="widget-content nopadding">
+
                             <form action="#" method="get" class="form-horizontal" runat="server">
+                            
+                            <div class="control-group">
+                                <label class="control-label">
+                                        用户名 :</label>
+                                <div class="controls">
+                                    <asp:TextBox ID="txtLogin" runat="server" class="span6" placeholder="用户名"></asp:TextBox>
+                                </div>
+                            </div>
                             <div class="control-group">
                                 <label class="control-label">
                                     真实姓名 :</label>

@@ -152,6 +152,16 @@ namespace Eva.DAL
 				return null;
 			}
         }
+
+            public DataSet GetMyStudents(int teaId)
+            {
+                StringBuilder strSql = new StringBuilder();
+                strSql.Append("select WebUser.Id,LoginId,PassWord,AuthorityId,WebUser.Name,WebUser.StudentId,Sex,CollegeId,ClassId,MajorId,IdCard,Address,Phone ");
+                strSql.Append(" FROM WebUser ,Teach,Mark");
+                strSql.Append(" where  WebUser.StudentId is  not null and WebUser.StudentId=Mark.StudentId and Mark.CourseId=Teach.CourseId and Teach.TeacherId=" + teaId);
+                
+                return DbHelperSQL.Query(strSql.ToString());
+            }
 	}
 }
 

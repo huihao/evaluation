@@ -75,7 +75,17 @@ namespace Eva.Evaluation.Admin
                 int collegeId = BLL.Utils.GetCollegeIdByName(dt.Rows[i]["学院"].ToString());
                 int majorId = BLL.Utils.GetMajorIdByName(dt.Rows[i]["学院"].ToString(), dt.Rows[i]["专业"].ToString());
                 int classId = BLL.Utils.GetClassIdByName(dt.Rows[i]["学院"].ToString(), dt.Rows[i]["专业"].ToString(), dt.Rows[i]["班级"].ToString());
+                BLL.WebUser bllStu=new WebUser();
+                DataSet ds=bllStu.GetStudents(Convert.ToInt32(dt.Rows[i]["学号"].ToString()));
+                List<Eva.Model.WebUser> list = bllStu.DataTableToList(ds.Tables[0]);
+                if (list.Count>0)
+                {
+                     this.Upload_info.Text += string.Format("<br/><span style='color:red;'>表格第{0}行,这‘{1}’学号已存在。<span>",
+                                                                i + 1, dt.Rows[i]["学号"].ToString());
+                    return false;
+                }
 
+               
                 if (collegeId == -1)
                 {
                     this.Upload_info.Text += string.Format("<br/><span style='color:red;'>表格第{0}行,本协会不存在‘{1}’这个学院。<span>",

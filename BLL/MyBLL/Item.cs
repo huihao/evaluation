@@ -10,7 +10,11 @@ namespace Eva.BLL
 	/// </summary>
 	public partial class Item
 	{
-		
+        public List<Eva.Model.Item> GetModelAllList()
+        {
+            DataSet ds = dal.GetList("");
+            return DataTableToList(ds.Tables[0]);
+        }
 	}
 }
 
