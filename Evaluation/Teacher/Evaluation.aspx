@@ -56,13 +56,16 @@
                                                         <ItemTemplate>
                                                             <li>赛事:
                                                                 <%#Eval("Name") %>
-                                                                &nbsp; 级别:
+                                                                &nbsp; &nbsp;
+                                                                级别:
                                                                 <%#Eval("Grade") %>
-                                                                奖项 &nbsp;
+                                                                奖项
+                                                                &nbsp;&nbsp;
                                                                 <%#Eval("Score") %>
-                                                                <asp:Button ID="btnOK" runat="server" Text="确认" CssClass="btn-success" CommandName="yes"
-                                                                    CommandArgument='<%#Eval("Id") %>' />
-                                                                <asp:Button ID="btnNo" runat="server" Text="否决" CssClass="btn-danger" CommandName="no"
+                                                                审核情况：
+                                                                &nbsp;&nbsp;
+                                                                <%#Eval("IsCheck") %>
+                                                                <asp:Button ID="btnOK" runat="server" Text='<%#Eval("IsCheck").ToString()=="同意"?"否决":"同意" %>' CssClass='<%#Eval("IsCheck").ToString()=="同意"?"btn-danger":"btn-success" %>' CommandName="yes"
                                                                     CommandArgument='<%#Eval("Id") %>' />
                                                             </li>
                                                         </ItemTemplate>

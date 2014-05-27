@@ -50,20 +50,32 @@ namespace Eva.Evaluation.Teacher
 
         protected void ExplainRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            var a = award.GetModel(Convert.ToInt32(e.CommandArgument));
             if (e.CommandName == "yes")
             {
-                a.IsCheck = "同意";
-                award.Update(a);
-                Maticsoft.Common.MessageBox.Show(this, "已同意");
-            }
-            if (e.CommandName == "no")
-            {
+                var a = award.GetModel(Convert.ToInt32(e.CommandArgument));
+                Button bt = (Button)e.Item.FindControl("btnOK");
+                if (bt.Text == "同意")
+                {
+                    a.IsCheck = "同意";
+                    award.Update(a);    
+                    ItemRepeater.DataSource = itemBll.GetAllList();
+                    ItemRepeater.DataBind();
+               
+                    Maticsoft.Common.MessageBox.Show(this, "已同意");
+                }
+                else
+                {
+                    a.IsCheck = "不同意";
+                    award.Update(a);   
+                    ItemRepeater.DataSource = itemBll.GetAllList();
+                    ItemRepeater.DataBind();
+                 
+                    Maticsoft.Common.MessageBox.Show(this, "已否决");
+                }
 
-                a.IsCheck = "不同意";
-                award.Update(a);
-                Maticsoft.Common.MessageBox.Show(this, "已否决");
             }
+
+
         }
 
         protected void ItemRepeater_ItemCreated(object sender, RepeaterItemEventArgs e)
