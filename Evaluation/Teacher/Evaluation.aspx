@@ -18,12 +18,13 @@
                                 综合评价</h5>
                         </div>
                         <div class="widget-content nopadding">
-                            <form id="form-wizard" class="form-horizontal" method="post" action="EvaluationHandler.ashx">
+                            <form id="formwizard" class="form-horizontal" runat="server" 
+                            method="post">
                             <input id="studentId" name="studentId" type="hidden" runat="server" />
                             <asp:Repeater ID="ItemRepeater" runat="server" OnItemDataBound="ItemRepeater_ItemDataBound">
                                 <ItemTemplate>
-                                    
                                     <div id="formwizard-<%#Eval("Id") %>" class="step">
+                                        <asp:HiddenField ID="ItemId" runat="server" Value='<%#Eval("Id") %>' />
                                         <div class="control-group">
                                             <label class="control-label">
                                                 评价指标</label>
@@ -35,55 +36,44 @@
                                             <label class="control-label">
                                                 评价分数</label>
                                             <div class="controls">
-                                                <input type="text" name="score<%#Eval("Id") %>" id="score<%#Eval("Id") %>">
+                                                <asp:TextBox ID="score" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label">
                                                 文字评价</label>
                                             <div class="controls">
-                                                <textarea id="word<%#Eval("Id") %>" name="word<%#Eval("Id") %>" cols="20" rows="3"></textarea>
+                                                <asp:TextBox ID="word" runat="server" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <asp:Repeater ID="ExplainRepeater" runat="server" EnableViewState="True">
-                                                <ItemTemplate>
-                                                    <div class="control-group">
-                                                        <label class="control-label">
-                                                            赛事</label>
-                                                        <div class="controls">
-                                                            <%#Eval("Name") %>
-                                                        </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label">
-                                                            级别</label>
-                                                        <div class="controls">
-                                                        </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                        <label class="control-label">
-                                                            奖项</label>
-                                                        <div class="controls">
-                                                        </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                        <asp:Button ID="btnOK" runat="server" Text="确认" CommandName="yes" />
-                                                        <asp:Button ID="btnNo" runat="server" Text="否决" CommandName="no"/>
-                                                    </div>
-                                                </ItemTemplate>
-                                            </asp:Repeater>
+                                            <label class="control-label">
+                                                获奖成果</label>
+                                            <div class="controls">
+                                                <ul>
+                                                    <asp:Repeater ID="ExplainRepeater" runat="server" EnableViewState="True" OnItemCommand="ExplainRepeater_ItemCommand">
+                                                        <ItemTemplate>
+                                                            <li>赛事:
+                                                                <%#Eval("Name") %>
+                                                                &nbsp; 级别:
+                                                                <%#Eval("Grade") %>
+                                                                奖项 &nbsp;
+                                                                <%#Eval("Score") %>
+                                                                <asp:Button ID="btnOK" runat="server" Text="确认" CssClass="btn-success" CommandName="yes"
+                                                                    CommandArgument='<%#Eval("Id") %>' />
+                                                                <asp:Button ID="btnNo" runat="server" Text="否决" CssClass="btn-danger" CommandName="no"
+                                                                    CommandArgument='<%#Eval("Id") %>' />
+                                                            </li>
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
                             <div class="form-actions">
-                                <input id="back" class="btn btn-primary" type="reset" value="上一项" />
-                                <input id="next" class="btn btn-primary" type="submit" value="下一项" />
-                                <div id="status">
-                                </div>
-                            </div>
-                            <div id="submitted">
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" Text="提交" OnClick="Button1_Click" />
                             </div>
                             </form>
                         </div>

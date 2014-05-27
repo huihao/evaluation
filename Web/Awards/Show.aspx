@@ -56,6 +56,20 @@
 	<td height="25" width="*" align="left">
 		<asp:Label id="lblSchoolTerm" runat="server"></asp:Label>
 	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		IsCheck
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblIsCheck" runat="server"></asp:Label>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		Total
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:Label id="lblTotal" runat="server"></asp:Label>
+	</td></tr>
 </table>
 
                     </td>

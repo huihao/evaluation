@@ -24,6 +24,8 @@ namespace Eva.Web.Awards {
 	protected global::System.Web.UI.WebControls.Label lblStudentId;
 	protected global::System.Web.UI.WebControls.Label lblAcademicYear;
 	protected global::System.Web.UI.WebControls.Label lblSchoolTerm;
+	protected global::System.Web.UI.WebControls.Label lblIsCheck;
+	protected global::System.Web.UI.WebControls.Label lblTotal;
 
 
        

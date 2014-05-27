@@ -21,5 +21,21 @@ namespace Eva.Evaluation.Master
                 }
             }
         }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (Session["user"] != null)
+            {
+                var user = Session["user"] as Model.WebUser;
+                if (user.AuthorityId != 3)
+                {
+                    Response.Redirect("../login.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../login.aspx");
+            }
+        }
     }
 }

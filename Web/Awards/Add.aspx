@@ -51,6 +51,20 @@
 	<td height="25" width="*" align="left">
 		<asp:TextBox id="txtSchoolTerm" runat="server" Width="200px"></asp:TextBox>
 	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		IsCheck
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:TextBox id="txtIsCheck" runat="server" Width="200px"></asp:TextBox>
+	</td></tr>
+	<tr>
+	<td height="25" width="30%" align="right">
+		Total
+	：</td>
+	<td height="25" width="*" align="left">
+		<asp:TextBox id="txtTotal" runat="server" Width="200px"></asp:TextBox>
+	</td></tr>
 </table>
 
             </td>

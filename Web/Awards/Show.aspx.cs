@@ -38,6 +38,8 @@ namespace Eva.Web.Awards
 		this.lblStudentId.Text=model.StudentId.ToString();
 		this.lblAcademicYear.Text=model.AcademicYear.ToString();
 		this.lblSchoolTerm.Text=model.SchoolTerm.ToString();
+		this.lblIsCheck.Text=model.IsCheck;
+		this.lblTotal.Text=model.Total.ToString();
 
 	}
 

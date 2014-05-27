@@ -39,6 +39,8 @@ namespace Eva.Web.Awards
 		this.txtStudentId.Text=model.StudentId.ToString();
 		this.txtAcademicYear.Text=model.AcademicYear.ToString();
 		this.txtSchoolTerm.Text=model.SchoolTerm.ToString();
+		this.txtIsCheck.Text=model.IsCheck;
+		this.txtTotal.Text=model.Total.ToString();
 
 	}
 
@@ -70,6 +72,14 @@ namespace Eva.Web.Awards
 			{
 				strErr+="SchoolTerm格式错误！\\n";	
 			}
+			if(this.txtIsCheck.Text.Trim().Length==0)
+			{
+				strErr+="IsCheck不能为空！\\n";	
+			}
+			if(!PageValidate.IsNumber(txtTotal.Text))
+			{
+				strErr+="Total格式错误！\\n";	
+			}
 
 			if(strErr!="")
 			{
@@ -83,6 +93,8 @@ namespace Eva.Web.Awards
 			int StudentId=int.Parse(this.txtStudentId.Text);
 			int AcademicYear=int.Parse(this.txtAcademicYear.Text);
 			int SchoolTerm=int.Parse(this.txtSchoolTerm.Text);
+			string IsCheck=this.txtIsCheck.Text;
+			int Total=int.Parse(this.txtTotal.Text);
 
 
 			Eva.Model.Awards model=new Eva.Model.Awards();
@@ -93,6 +105,8 @@ namespace Eva.Web.Awards
 			model.StudentId=StudentId;
 			model.AcademicYear=AcademicYear;
 			model.SchoolTerm=SchoolTerm;
+			model.IsCheck=IsCheck;
+			model.Total=Total;
 
 			Eva.BLL.Awards bll=new Eva.BLL.Awards();
 			bll.Update(model);

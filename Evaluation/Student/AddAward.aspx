@@ -39,21 +39,20 @@
                             </div>
                             <div class="control-group">
                                 <label class="control-label">
-                                    赛事</label>
+                                    获奖成果</label>
                                 <div class="controls">
-                                    <asp:DropDownList ID="txtName" runat="server" class="span5" placeholder="赛事">
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label">
                                     级别</label>
                                 <div class="controls">
-                                    <asp:DropDownList ID="GradeList" runat="server" class="span5" >
+                                    <asp:DropDownList ID="GradeList" runat="server" class="span5">
                                     </asp:DropDownList>
                                 </div>
                             </div>
-                               <div class="control-group">
+                            <div class="control-group">
                                 <label class="control-label">
                                     奖项</label>
                                 <div class="controls">
@@ -62,8 +61,7 @@
                                 </div>
                             </div>
                             <div class="form-actions">
-                                <asp:Button ID="btnSave" runat="server" Text="保存" class="btn btn-success" onclick="btnSave_Click" 
-                                      />
+                                <asp:Button ID="btnSave" runat="server" Text="保存" class="btn btn-success" OnClick="btnSave_Click" />
                             </div>
                         </div>
                     </div>

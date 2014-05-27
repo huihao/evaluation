@@ -34,7 +34,7 @@ namespace Eva.Evaluation.Teacher
                 }
 
                 eva.AcademicYear = DateTime.Now.Year;
-                eva.StudentId = id;
+                eva.StudentId = 1;
                 //todo
                 eva.TeacherId = 1;
                 int evaID = evaBll.Add(eva);

@@ -1,20 +1,4 @@
-﻿/**  版本信息模板在安装目录下，可自行修改。
-* Awards.cs
-*
-* 功 能： N/A
-* 类 名： Awards
-*
-* Ver    变更日期             负责人  变更内容
-* ───────────────────────────────────
-* V0.01  2014/5/27 2:22:13   N/A    初版
-*
-* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
-*┌──────────────────────────────────┐
-*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
-*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
-*└──────────────────────────────────┘
-*/
-using System;
+﻿using System;
 using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
@@ -29,7 +13,7 @@ namespace Eva.BLL
 		private readonly Eva.DAL.Awards dal=new Eva.DAL.Awards();
 		public Awards()
 		{}
-		#region  BasicMethod
+		#region  Method
 
 		/// <summary>
 		/// 增加一条数据
@@ -130,11 +114,44 @@ namespace Eva.BLL
 				Eva.Model.Awards model;
 				for (int n = 0; n < rowsCount; n++)
 				{
-					model = dal.DataRowToModel(dt.Rows[n]);
-					if (model != null)
+					model = new Eva.Model.Awards();
+					if(dt.Rows[n]["Id"]!=null && dt.Rows[n]["Id"].ToString()!="")
 					{
-						modelList.Add(model);
+						model.Id=int.Parse(dt.Rows[n]["Id"].ToString());
 					}
+					if(dt.Rows[n]["Name"]!=null && dt.Rows[n]["Name"].ToString()!="")
+					{
+					model.Name=dt.Rows[n]["Name"].ToString();
+					}
+					if(dt.Rows[n]["Grade"]!=null && dt.Rows[n]["Grade"].ToString()!="")
+					{
+					model.Grade=dt.Rows[n]["Grade"].ToString();
+					}
+					if(dt.Rows[n]["Score"]!=null && dt.Rows[n]["Score"].ToString()!="")
+					{
+					model.Score=dt.Rows[n]["Score"].ToString();
+					}
+					if(dt.Rows[n]["StudentId"]!=null && dt.Rows[n]["StudentId"].ToString()!="")
+					{
+						model.StudentId=int.Parse(dt.Rows[n]["StudentId"].ToString());
+					}
+					if(dt.Rows[n]["AcademicYear"]!=null && dt.Rows[n]["AcademicYear"].ToString()!="")
+					{
+						model.AcademicYear=int.Parse(dt.Rows[n]["AcademicYear"].ToString());
+					}
+					if(dt.Rows[n]["SchoolTerm"]!=null && dt.Rows[n]["SchoolTerm"].ToString()!="")
+					{
+						model.SchoolTerm=int.Parse(dt.Rows[n]["SchoolTerm"].ToString());
+					}
+					if(dt.Rows[n]["IsCheck"]!=null && dt.Rows[n]["IsCheck"].ToString()!="")
+					{
+					model.IsCheck=dt.Rows[n]["IsCheck"].ToString();
+					}
+					if(dt.Rows[n]["Total"]!=null && dt.Rows[n]["Total"].ToString()!="")
+					{
+						model.Total=int.Parse(dt.Rows[n]["Total"].ToString());
+					}
+					modelList.Add(model);
 				}
 			}
 			return modelList;
@@ -170,10 +187,7 @@ namespace Eva.BLL
 			//return dal.GetList(PageSize,PageIndex,strWhere);
 		//}
 
-		#endregion  BasicMethod
-		#region  ExtensionMethod
-
-		#endregion  ExtensionMethod
+		#endregion  Method
 	}
 }
 

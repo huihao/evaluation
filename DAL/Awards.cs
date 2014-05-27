@@ -1,20 +1,4 @@
-﻿/**  版本信息模板在安装目录下，可自行修改。
-* Awards.cs
-*
-* 功 能： N/A
-* 类 名： Awards
-*
-* Ver    变更日期             负责人  变更内容
-* ───────────────────────────────────
-* V0.01  2014/5/27 2:22:13   N/A    初版
-*
-* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
-*┌──────────────────────────────────┐
-*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
-*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
-*└──────────────────────────────────┘
-*/
-using System;
+﻿using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -28,7 +12,7 @@ namespace Eva.DAL
 	{
 		public Awards()
 		{}
-		#region  BasicMethod
+		#region  Method
 
 
 
@@ -39,9 +23,9 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Awards(");
-			strSql.Append("Name,Grade,Score,StudentId,AcademicYear,SchoolTerm)");
+			strSql.Append("Name,Grade,Score,StudentId,AcademicYear,SchoolTerm,IsCheck,Total)");
 			strSql.Append(" values (");
-			strSql.Append("@Name,@Grade,@Score,@StudentId,@AcademicYear,@SchoolTerm)");
+			strSql.Append("@Name,@Grade,@Score,@StudentId,@AcademicYear,@SchoolTerm,@IsCheck,@Total)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
@@ -49,13 +33,17 @@ namespace Eva.DAL
 					new SqlParameter("@Score", SqlDbType.NVarChar,50),
 					new SqlParameter("@StudentId", SqlDbType.Int,4),
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
-					new SqlParameter("@SchoolTerm", SqlDbType.Int,4)};
+					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
+					new SqlParameter("@IsCheck", SqlDbType.NVarChar,50),
+					new SqlParameter("@Total", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Grade;
 			parameters[2].Value = model.Score;
 			parameters[3].Value = model.StudentId;
 			parameters[4].Value = model.AcademicYear;
 			parameters[5].Value = model.SchoolTerm;
+			parameters[6].Value = model.IsCheck;
+			parameters[7].Value = model.Total;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -79,7 +67,9 @@ namespace Eva.DAL
 			strSql.Append("Score=@Score,");
 			strSql.Append("StudentId=@StudentId,");
 			strSql.Append("AcademicYear=@AcademicYear,");
-			strSql.Append("SchoolTerm=@SchoolTerm");
+			strSql.Append("SchoolTerm=@SchoolTerm,");
+			strSql.Append("IsCheck=@IsCheck,");
+			strSql.Append("Total=@Total");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
@@ -88,6 +78,8 @@ namespace Eva.DAL
 					new SqlParameter("@StudentId", SqlDbType.Int,4),
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
+					new SqlParameter("@IsCheck", SqlDbType.NVarChar,50),
+					new SqlParameter("@Total", SqlDbType.Int,4),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Grade;
@@ -95,7 +87,9 @@ namespace Eva.DAL
 			parameters[3].Value = model.StudentId;
 			parameters[4].Value = model.AcademicYear;
 			parameters[5].Value = model.SchoolTerm;
-			parameters[6].Value = model.Id;
+			parameters[6].Value = model.IsCheck;
+			parameters[7].Value = model.Total;
+			parameters[8].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -159,7 +153,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,Name,Grade,Score,StudentId,AcademicYear,SchoolTerm from Awards ");
+			strSql.Append("select  top 1 Id,Name,Grade,Score,StudentId,AcademicYear,SchoolTerm,IsCheck,Total from Awards ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -170,53 +164,48 @@ namespace Eva.DAL
 			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
-				return DataRowToModel(ds.Tables[0].Rows[0]);
+				if(ds.Tables[0].Rows[0]["Id"]!=null && ds.Tables[0].Rows[0]["Id"].ToString()!="")
+				{
+					model.Id=int.Parse(ds.Tables[0].Rows[0]["Id"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["Name"]!=null && ds.Tables[0].Rows[0]["Name"].ToString()!="")
+				{
+					model.Name=ds.Tables[0].Rows[0]["Name"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["Grade"]!=null && ds.Tables[0].Rows[0]["Grade"].ToString()!="")
+				{
+					model.Grade=ds.Tables[0].Rows[0]["Grade"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["Score"]!=null && ds.Tables[0].Rows[0]["Score"].ToString()!="")
+				{
+					model.Score=ds.Tables[0].Rows[0]["Score"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["StudentId"]!=null && ds.Tables[0].Rows[0]["StudentId"].ToString()!="")
+				{
+					model.StudentId=int.Parse(ds.Tables[0].Rows[0]["StudentId"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["AcademicYear"]!=null && ds.Tables[0].Rows[0]["AcademicYear"].ToString()!="")
+				{
+					model.AcademicYear=int.Parse(ds.Tables[0].Rows[0]["AcademicYear"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["SchoolTerm"]!=null && ds.Tables[0].Rows[0]["SchoolTerm"].ToString()!="")
+				{
+					model.SchoolTerm=int.Parse(ds.Tables[0].Rows[0]["SchoolTerm"].ToString());
+				}
+				if(ds.Tables[0].Rows[0]["IsCheck"]!=null && ds.Tables[0].Rows[0]["IsCheck"].ToString()!="")
+				{
+					model.IsCheck=ds.Tables[0].Rows[0]["IsCheck"].ToString();
+				}
+				if(ds.Tables[0].Rows[0]["Total"]!=null && ds.Tables[0].Rows[0]["Total"].ToString()!="")
+				{
+					model.Total=int.Parse(ds.Tables[0].Rows[0]["Total"].ToString());
+				}
+				return model;
 			}
 			else
 			{
 				return null;
 			}
-		}
-
-
-		/// <summary>
-		/// 得到一个对象实体
-		/// </summary>
-		public Eva.Model.Awards DataRowToModel(DataRow row)
-		{
-			Eva.Model.Awards model=new Eva.Model.Awards();
-			if (row != null)
-			{
-				if(row["Id"]!=null && row["Id"].ToString()!="")
-				{
-					model.Id=int.Parse(row["Id"].ToString());
-				}
-				if(row["Name"]!=null)
-				{
-					model.Name=row["Name"].ToString();
-				}
-				if(row["Grade"]!=null)
-				{
-					model.Grade=row["Grade"].ToString();
-				}
-				if(row["Score"]!=null)
-				{
-					model.Score=row["Score"].ToString();
-				}
-				if(row["StudentId"]!=null && row["StudentId"].ToString()!="")
-				{
-					model.StudentId=int.Parse(row["StudentId"].ToString());
-				}
-				if(row["AcademicYear"]!=null && row["AcademicYear"].ToString()!="")
-				{
-					model.AcademicYear=int.Parse(row["AcademicYear"].ToString());
-				}
-				if(row["SchoolTerm"]!=null && row["SchoolTerm"].ToString()!="")
-				{
-					model.SchoolTerm=int.Parse(row["SchoolTerm"].ToString());
-				}
-			}
-			return model;
 		}
 
 		/// <summary>
@@ -225,7 +214,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,Name,Grade,Score,StudentId,AcademicYear,SchoolTerm ");
+			strSql.Append("select Id,Name,Grade,Score,StudentId,AcademicYear,SchoolTerm,IsCheck,Total ");
 			strSql.Append(" FROM Awards ");
 			if(strWhere.Trim()!="")
 			{
@@ -245,7 +234,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,Name,Grade,Score,StudentId,AcademicYear,SchoolTerm ");
+			strSql.Append(" Id,Name,Grade,Score,StudentId,AcademicYear,SchoolTerm,IsCheck,Total ");
 			strSql.Append(" FROM Awards ");
 			if(strWhere.Trim()!="")
 			{
@@ -327,10 +316,7 @@ namespace Eva.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-		#endregion  BasicMethod
-		#region  ExtensionMethod
-
-		#endregion  ExtensionMethod
+		#endregion  Method
 	}
 }
 

@@ -24,6 +24,8 @@ namespace Eva.Web.Awards {
 		protected global::System.Web.UI.WebControls.TextBox txtStudentId;
 		protected global::System.Web.UI.WebControls.TextBox txtAcademicYear;
 		protected global::System.Web.UI.WebControls.TextBox txtSchoolTerm;
+		protected global::System.Web.UI.WebControls.TextBox txtIsCheck;
+		protected global::System.Web.UI.WebControls.TextBox txtTotal;
 	protected global::System.Web.UI.WebControls.Button btnSave;
 	protected global::System.Web.UI.WebControls.Button btnCancel;
 

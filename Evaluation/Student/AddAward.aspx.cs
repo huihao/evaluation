@@ -24,7 +24,7 @@ namespace Eva.Evaluation.Student
         protected void SetDate()
         {
             YearList.Items.Add(new ListItem("", ""));
-            for (int i = 1991; i < 2020; i++)
+            for (int i = 2010; i < 2014; i++)
             {
                 YearList.Items.Add(new ListItem(i.ToString(), i.ToString()));
             }
@@ -35,14 +35,14 @@ namespace Eva.Evaluation.Student
                 Termlist.Items.Add(new ListItem(i.ToString(), i.ToString()));
             }
             GradeList.Items.Add(new ListItem("", ""));
-            GradeList.Items.Add(new ListItem("国级", "1"));
+            GradeList.Items.Add(new ListItem("国级", "3"));
             GradeList.Items.Add(new ListItem("省级", "2"));
-            GradeList.Items.Add(new ListItem("市级", "3"));
+            GradeList.Items.Add(new ListItem("市级", "1"));
 
             ScoreList.Items.Add(new ListItem("", ""));
-            ScoreList.Items.Add(new ListItem("一等奖", "1"));
+            ScoreList.Items.Add(new ListItem("一等奖", "3"));
             ScoreList.Items.Add(new ListItem("二等奖", "2"));
-            ScoreList.Items.Add(new ListItem("三等奖", "3"));
+            ScoreList.Items.Add(new ListItem("三等奖", "1"));
 
 
 
@@ -50,10 +50,12 @@ namespace Eva.Evaluation.Student
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            var user = Session["user"] as Model.WebUser;
+
             string strErr = "";
             if (txtName.Text.Trim().Length == 0)
             {
-                strErr += "赛事不能为空！";
+                strErr += "成果名称不能为空！";
             }
 
             if (strErr != "")
@@ -66,6 +68,10 @@ namespace Eva.Evaluation.Student
             award.Name = txtName.Text;
             award.Grade = GradeList.SelectedItem.Text;
             award.Score = ScoreList.SelectedItem.Text;
+            award.Total = int.Parse(GradeList.SelectedItem.Value) * int.Parse(ScoreList.SelectedItem.Value);
+            award.IsCheck = "未审核";
+            //todo
+            award.StudentId = user.Id;
 
             if (bll.Add(award) != 0)
             {
