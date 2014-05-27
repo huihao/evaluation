@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/5/19 21:12:08   N/A    初版
+* V0.01  2014/5/27 2:22:14   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -28,7 +28,7 @@ namespace Eva.Model
 		#region Model
 		private int _id;
 		private string _name;
-		private decimal? _gpa;
+		private int? _credit;
 		private string _introdution;
 		/// <summary>
 		/// 
@@ -49,10 +49,10 @@ namespace Eva.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public decimal? Gpa
+		public int? Credit
 		{
-			set{ _gpa=value;}
-			get{return _gpa;}
+			set{ _credit=value;}
+			get{return _credit;}
 		}
 		/// <summary>
 		/// 

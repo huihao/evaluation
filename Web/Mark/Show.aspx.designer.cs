@@ -27,6 +27,7 @@ namespace Eva.Web.Mark {
 	protected global::System.Web.UI.WebControls.Label lblSchoolTerm;
 	protected global::System.Web.UI.WebControls.Label lblCheckStep;
 	protected global::System.Web.UI.WebControls.Label lblReason;
+	protected global::System.Web.UI.WebControls.Label lblGpa;
 
 
        

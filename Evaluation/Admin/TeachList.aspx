@@ -9,8 +9,7 @@
                 <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>主页</a>
                 <a href="#" class="current">授课列表</a>
             </div>
-            <h1>
-                授课列表</h1>
+         
         </div>
         <div class="container-fluid">
             <div class="row-fluid">

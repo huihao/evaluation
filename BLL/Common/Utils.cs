@@ -7,6 +7,31 @@ namespace Eva.BLL
 {
     public static class Utils
     {
+
+
+        public static Decimal GetGpa(int CourseId, decimal score)
+        {
+            var bllCourse = new Course();
+            int credit = Convert.ToInt16(bllCourse.GetModel(CourseId).Credit);
+            if (score<60)
+            {
+                return 0;
+            }
+            decimal Gpa = (score / 10 - 5) * credit;
+            return Gpa;
+        }
+        public static Decimal GetGpa(decimal score)
+        {
+            if (score < 60)
+            {
+                return 0;
+            }
+            return score / 10 - 5;
+
+        }
+
+
+
         public static string GetTeacherName(int id)
         {
             var bll = new WebUser();
@@ -17,7 +42,7 @@ namespace Eva.BLL
             var bll = new Course();
             return bll.GetModel(id).Name;
         }
-        
+
 
 
         public static string GetClassName(int id)
@@ -44,7 +69,7 @@ namespace Eva.BLL
         public static decimal GetCourseGpa(int id)
         {
             var bll = new Course();
-            return decimal.Parse(bll.GetModel(id).Gpa.ToString());
+            return decimal.Parse(bll.GetModel(id).Credit.ToString());
         }
 
         public static int GetCollegeIdByName(string name)
@@ -99,14 +124,14 @@ namespace Eva.BLL
         {
 
 
-            var list = new BLL.WebUser().GetModelList(" Name= '" + stuName+" '");
-                return list.Count > 0 ? Convert.ToInt32( list[0].StudentId) : -1;
-           
+            var list = new BLL.WebUser().GetModelList(" Name= '" + stuName + " '");
+            return list.Count > 0 ? Convert.ToInt32(list[0].StudentId) : -1;
+
 
         }
         public static int GetCourseIdByName(string courseName)
         {
-            var list = new BLL.Course().GetModelList(" Name= '" + courseName+" ' ");
+            var list = new BLL.Course().GetModelList(" Name= '" + courseName + " ' ");
             return list.Count > 0 ? list[0].Id : -1;
 
         }
@@ -122,7 +147,7 @@ namespace Eva.BLL
         {
             var list = new BLL.Mark().GetModelList(" StudentId= " + GetStuIdByName(stuName) + " And CourseId = " + GetCourseIdByName(courseName));
             return list.Count > 0 ? true : false;
-        }   
+        }
 
     }
 }

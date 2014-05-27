@@ -17,7 +17,7 @@ namespace Eva.Evaluation.Admin
             {
                 int id = int.Parse(Request["id"]);
                 course = bll.GetModel(id);
-                txtGpa.Text = course.Gpa.ToString();
+                txtGpa.Text = course.Credit.ToString();
                 txtName.Text = course.Name;
                 txtIntr.Text = course.Introdution;
             }
@@ -46,7 +46,7 @@ namespace Eva.Evaluation.Admin
             int id = int.Parse(Request["id"]);
             course.Id = id;
             course.Name = txtName.Text;
-            course.Gpa = Convert.ToDecimal(txtGpa.Text);
+            course.Credit = Convert.ToInt16(txtGpa.Text);
             course.Introdution = txtIntr.Text;
             if (bll.Update(course))
             {

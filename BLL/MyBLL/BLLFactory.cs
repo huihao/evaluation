@@ -193,5 +193,23 @@ namespace Eva.BLL
             }
             return AuthorityBLLInstance;
         }
+
+
+        private static Awards AwardsBLLInstance;
+        private static readonly object syncRootAwards = new Object();
+
+        public static Awards GetAwardsBLLInstance()
+        {
+            //如实例不存在，则New一个新实例，否则返回已有实例
+            if (AwardsBLLInstance == null)
+            {
+                lock (syncRootAwards)
+                {
+                    if (AwardsBLLInstance == null)
+                        AwardsBLLInstance = new Awards();
+                }
+            }
+            return AwardsBLLInstance;
+        }
     }
 }

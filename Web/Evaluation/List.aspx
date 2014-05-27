@@ -43,12 +43,12 @@
                             
 		<asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="AcademicYear" HeaderText="AcademicYear" SortExpression="AcademicYear" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Gpa" HeaderText="Gpa" SortExpression="Gpa" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="Ave" HeaderText="Ave" SortExpression="Ave" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="TeacherEvaluation" HeaderText="TeacherEvaluation" SortExpression="TeacherEvaluation" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="SelfEvaluation" HeaderText="SelfEvaluation" SortExpression="SelfEvaluation" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="TeacherId" HeaderText="TeacherId" SortExpression="TeacherId" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="SchoolTerm" HeaderText="SchoolTerm" SortExpression="SchoolTerm" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"
                                 Text="详细"  />

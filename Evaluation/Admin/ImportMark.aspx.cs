@@ -118,6 +118,7 @@ namespace Eva.Evaluation.Admin
                 mark.Score=int.Parse(dt.Rows[i]["成绩"].ToString());
                 mark.AcademicYear=int.Parse(dt.Rows[i]["学年"].ToString());
                 mark.SchoolTerm=int.Parse(dt.Rows[i]["学期"].ToString());
+                mark.Gpa = Eva.BLL.Utils.GetGpa(int.Parse(dt.Rows[i]["成绩"].ToString()));
 
                 markBll.Add(mark);
 	

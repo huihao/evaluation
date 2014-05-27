@@ -32,10 +32,6 @@ namespace Eva.Web.Evaluation
 			{
 				strErr+="AcademicYear格式错误！\\n";	
 			}
-			if(!PageValidate.IsDecimal(txtGpa.Text))
-			{
-				strErr+="Gpa格式错误！\\n";	
-			}
 			if(!PageValidate.IsDecimal(txtAve.Text))
 			{
 				strErr+="Ave格式错误！\\n";	
@@ -56,6 +52,10 @@ namespace Eva.Web.Evaluation
 			{
 				strErr+="SchoolTerm格式错误！\\n";	
 			}
+			if(!PageValidate.IsDecimal(txtTotal.Text))
+			{
+				strErr+="Total格式错误！\\n";	
+			}
 
 			if(strErr!="")
 			{
@@ -64,22 +64,22 @@ namespace Eva.Web.Evaluation
 			}
 			int StudentId=int.Parse(this.txtStudentId.Text);
 			int AcademicYear=int.Parse(this.txtAcademicYear.Text);
-			decimal Gpa=decimal.Parse(this.txtGpa.Text);
 			decimal Ave=decimal.Parse(this.txtAve.Text);
 			string TeacherEvaluation=this.txtTeacherEvaluation.Text;
 			string SelfEvaluation=this.txtSelfEvaluation.Text;
 			int TeacherId=int.Parse(this.txtTeacherId.Text);
 			int SchoolTerm=int.Parse(this.txtSchoolTerm.Text);
+			decimal Total=decimal.Parse(this.txtTotal.Text);
 
 			Eva.Model.Evaluation model=new Eva.Model.Evaluation();
 			model.StudentId=StudentId;
 			model.AcademicYear=AcademicYear;
-			model.Gpa=Gpa;
 			model.Ave=Ave;
 			model.TeacherEvaluation=TeacherEvaluation;
 			model.SelfEvaluation=SelfEvaluation;
 			model.TeacherId=TeacherId;
 			model.SchoolTerm=SchoolTerm;
+			model.Total=Total;
 
 			Eva.BLL.Evaluation bll=new Eva.BLL.Evaluation();
 			bll.Add(model);

@@ -3,8 +3,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../js/jquery.wizard.js" charset="gb2312"></script>
-    <script src="../js/matrix.js"  charset="gb2312"></script>
-    <script src="../js/matrix.wizard.js"  charset="gb2312"></script>
+    <script src="../js/matrix.js" charset="gb2312"></script>
+    <script src="../js/matrix.wizard.js" charset="gb2312"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
@@ -20,8 +20,9 @@
                         <div class="widget-content nopadding">
                             <form id="form-wizard" class="form-horizontal" method="post" action="EvaluationHandler.ashx">
                             <input id="studentId" name="studentId" type="hidden" runat="server" />
-                            <asp:Repeater ID="ItemRepeater" runat="server">
+                            <asp:Repeater ID="ItemRepeater" runat="server" OnItemDataBound="ItemRepeater_ItemDataBound">
                                 <ItemTemplate>
+                                    
                                     <div id="formwizard-<%#Eval("Id") %>" class="step">
                                         <div class="control-group">
                                             <label class="control-label">
@@ -43,6 +44,35 @@
                                             <div class="controls">
                                                 <textarea id="word<%#Eval("Id") %>" name="word<%#Eval("Id") %>" cols="20" rows="3"></textarea>
                                             </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <asp:Repeater ID="ExplainRepeater" runat="server" EnableViewState="True">
+                                                <ItemTemplate>
+                                                    <div class="control-group">
+                                                        <label class="control-label">
+                                                            赛事</label>
+                                                        <div class="controls">
+                                                            <%#Eval("Name") %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">
+                                                            级别</label>
+                                                        <div class="controls">
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">
+                                                            奖项</label>
+                                                        <div class="controls">
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <asp:Button ID="btnOK" runat="server" Text="确认" CommandName="yes" />
+                                                        <asp:Button ID="btnNo" runat="server" Text="否决" CommandName="no"/>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
                                         </div>
                                     </div>
                                 </ItemTemplate>

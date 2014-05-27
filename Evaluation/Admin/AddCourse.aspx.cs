@@ -38,7 +38,7 @@ namespace Eva.Evaluation.Admin
             }
             
             course.Name = txtName.Text;
-            course.Gpa = Convert.ToDecimal(txtGpa.Text);
+            course.Credit = Convert.ToInt16(txtGpa.Text);
             course.Introdution = txtIntr.Text;
             if (bll.Add(course)!=0)
             {

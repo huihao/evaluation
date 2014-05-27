@@ -41,6 +41,7 @@ namespace Eva.Web.Mark
 		this.lblSchoolTerm.Text=model.SchoolTerm.ToString();
 		this.lblCheckStep.Text=model.CheckStep.ToString();
 		this.lblReason.Text=model.Reason;
+		this.lblGpa.Text=model.Gpa.ToString();
 
 	}
 

@@ -65,6 +65,7 @@
                                                 <th scope="col">
                                                     成绩
                                                 </th>
+                                               
                                                 <th scope="col">
                                                     学年
                                                 </th>
@@ -89,6 +90,7 @@
                                                         <td>
                                                             <%#Eval("成绩")%>
                                                         </td>
+                                                        
                                                         <td>
                                                             <%#Eval("学年")%>
                                                         </td>

@@ -138,6 +138,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Awards.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemList.cs" />
     <Compile Include="MyDAL\Authority.cs" />

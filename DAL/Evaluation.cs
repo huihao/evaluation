@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/5/19 21:12:09   N/A    初版
+* V0.01  2014/5/27 2:22:14   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -39,27 +39,27 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Evaluation(");
-			strSql.Append("StudentId,AcademicYear,Gpa,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm)");
+			strSql.Append("StudentId,AcademicYear,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm,Total)");
 			strSql.Append(" values (");
-			strSql.Append("@StudentId,@AcademicYear,@Gpa,@Ave,@TeacherEvaluation,@SelfEvaluation,@TeacherId,@SchoolTerm)");
+			strSql.Append("@StudentId,@AcademicYear,@Ave,@TeacherEvaluation,@SelfEvaluation,@TeacherId,@SchoolTerm,@Total)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@StudentId", SqlDbType.Int,4),
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
-					new SqlParameter("@Gpa", SqlDbType.Float,8),
 					new SqlParameter("@Ave", SqlDbType.Float,8),
 					new SqlParameter("@TeacherEvaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@SelfEvaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@TeacherId", SqlDbType.Int,4),
-					new SqlParameter("@SchoolTerm", SqlDbType.Int,4)};
+					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
+					new SqlParameter("@Total", SqlDbType.Float,8)};
 			parameters[0].Value = model.StudentId;
 			parameters[1].Value = model.AcademicYear;
-			parameters[2].Value = model.Gpa;
-			parameters[3].Value = model.Ave;
-			parameters[4].Value = model.TeacherEvaluation;
-			parameters[5].Value = model.SelfEvaluation;
-			parameters[6].Value = model.TeacherId;
-			parameters[7].Value = model.SchoolTerm;
+			parameters[2].Value = model.Ave;
+			parameters[3].Value = model.TeacherEvaluation;
+			parameters[4].Value = model.SelfEvaluation;
+			parameters[5].Value = model.TeacherId;
+			parameters[6].Value = model.SchoolTerm;
+			parameters[7].Value = model.Total;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -80,31 +80,31 @@ namespace Eva.DAL
 			strSql.Append("update Evaluation set ");
 			strSql.Append("StudentId=@StudentId,");
 			strSql.Append("AcademicYear=@AcademicYear,");
-			strSql.Append("Gpa=@Gpa,");
 			strSql.Append("Ave=@Ave,");
 			strSql.Append("TeacherEvaluation=@TeacherEvaluation,");
 			strSql.Append("SelfEvaluation=@SelfEvaluation,");
 			strSql.Append("TeacherId=@TeacherId,");
-			strSql.Append("SchoolTerm=@SchoolTerm");
+			strSql.Append("SchoolTerm=@SchoolTerm,");
+			strSql.Append("Total=@Total");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@StudentId", SqlDbType.Int,4),
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
-					new SqlParameter("@Gpa", SqlDbType.Float,8),
 					new SqlParameter("@Ave", SqlDbType.Float,8),
 					new SqlParameter("@TeacherEvaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@SelfEvaluation", SqlDbType.NVarChar,-1),
 					new SqlParameter("@TeacherId", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
+					new SqlParameter("@Total", SqlDbType.Float,8),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.StudentId;
 			parameters[1].Value = model.AcademicYear;
-			parameters[2].Value = model.Gpa;
-			parameters[3].Value = model.Ave;
-			parameters[4].Value = model.TeacherEvaluation;
-			parameters[5].Value = model.SelfEvaluation;
-			parameters[6].Value = model.TeacherId;
-			parameters[7].Value = model.SchoolTerm;
+			parameters[2].Value = model.Ave;
+			parameters[3].Value = model.TeacherEvaluation;
+			parameters[4].Value = model.SelfEvaluation;
+			parameters[5].Value = model.TeacherId;
+			parameters[6].Value = model.SchoolTerm;
+			parameters[7].Value = model.Total;
 			parameters[8].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
@@ -169,7 +169,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,StudentId,AcademicYear,Gpa,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm from Evaluation ");
+			strSql.Append("select  top 1 Id,StudentId,AcademicYear,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm,Total from Evaluation ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -209,10 +209,6 @@ namespace Eva.DAL
 				{
 					model.AcademicYear=int.Parse(row["AcademicYear"].ToString());
 				}
-				if(row["Gpa"]!=null && row["Gpa"].ToString()!="")
-				{
-					model.Gpa=decimal.Parse(row["Gpa"].ToString());
-				}
 				if(row["Ave"]!=null && row["Ave"].ToString()!="")
 				{
 					model.Ave=decimal.Parse(row["Ave"].ToString());
@@ -233,6 +229,10 @@ namespace Eva.DAL
 				{
 					model.SchoolTerm=int.Parse(row["SchoolTerm"].ToString());
 				}
+				if(row["Total"]!=null && row["Total"].ToString()!="")
+				{
+					model.Total=decimal.Parse(row["Total"].ToString());
+				}
 			}
 			return model;
 		}
@@ -243,7 +243,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,StudentId,AcademicYear,Gpa,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm ");
+			strSql.Append("select Id,StudentId,AcademicYear,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm,Total ");
 			strSql.Append(" FROM Evaluation ");
 			if(strWhere.Trim()!="")
 			{
@@ -263,7 +263,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,StudentId,AcademicYear,Gpa,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm ");
+			strSql.Append(" Id,StudentId,AcademicYear,Ave,TeacherEvaluation,SelfEvaluation,TeacherId,SchoolTerm,Total ");
 			strSql.Append(" FROM Evaluation ");
 			if(strWhere.Trim()!="")
 			{

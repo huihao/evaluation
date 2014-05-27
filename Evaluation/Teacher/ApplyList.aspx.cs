@@ -37,6 +37,7 @@ namespace Eva.Evaluation.Teacher
                 
                 mark.Score = mark.Score + mark.BonusPoint;
                 mark.CheckStep = 2;
+                mark.Gpa = BLL.Utils.GetGpa(Convert.ToInt16(mark.Score));
                 if (bll.Update(mark))
                 {
                     Maticsoft.Common.MessageBox.Show(this, "已加分！");

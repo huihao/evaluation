@@ -11,8 +11,7 @@
                 <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>管理员界面</a>
                 <a href="#" class="current">成绩列表</a>
             </div>
-            <h1>
-                成绩列表</h1>
+           
         </div>
         <div class="container-fluid">
             <hr>

@@ -28,6 +28,7 @@ namespace Eva.Web.Mark {
 		protected global::System.Web.UI.WebControls.TextBox txtSchoolTerm;
 		protected global::System.Web.UI.WebControls.TextBox txtCheckStep;
 		protected global::System.Web.UI.WebControls.TextBox txtReason;
+		protected global::System.Web.UI.WebControls.TextBox txtGpa;
 	protected global::System.Web.UI.WebControls.Button btnSave;
 	protected global::System.Web.UI.WebControls.Button btnCancel;
 

@@ -28,9 +28,9 @@ namespace Eva.Web.Course
 			{
 				strErr+="Name不能为空！\\n";	
 			}
-			if(!PageValidate.IsDecimal(txtGpa.Text))
+			if(!PageValidate.IsNumber(txtCredit.Text))
 			{
-				strErr+="Gpa格式错误！\\n";	
+				strErr+="Credit格式错误！\\n";	
 			}
 			if(this.txtIntrodution.Text.Trim().Length==0)
 			{
@@ -43,12 +43,12 @@ namespace Eva.Web.Course
 				return;
 			}
 			string Name=this.txtName.Text;
-			decimal Gpa=decimal.Parse(this.txtGpa.Text);
+			int Credit=int.Parse(this.txtCredit.Text);
 			string Introdution=this.txtIntrodution.Text;
 
 			Eva.Model.Course model=new Eva.Model.Course();
 			model.Name=Name;
-			model.Gpa=Gpa;
+			model.Credit=Credit;
 			model.Introdution=Introdution;
 
 			Eva.BLL.Course bll=new Eva.BLL.Course();

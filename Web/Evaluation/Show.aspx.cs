@@ -34,12 +34,12 @@ namespace Eva.Web.Evaluation
 		this.lblId.Text=model.Id.ToString();
 		this.lblStudentId.Text=model.StudentId.ToString();
 		this.lblAcademicYear.Text=model.AcademicYear.ToString();
-		this.lblGpa.Text=model.Gpa.ToString();
 		this.lblAve.Text=model.Ave.ToString();
 		this.lblTeacherEvaluation.Text=model.TeacherEvaluation;
 		this.lblSelfEvaluation.Text=model.SelfEvaluation;
 		this.lblTeacherId.Text=model.TeacherId.ToString();
 		this.lblSchoolTerm.Text=model.SchoolTerm.ToString();
+		this.lblTotal.Text=model.Total.ToString();
 
 	}
 

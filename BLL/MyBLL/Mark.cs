@@ -10,7 +10,12 @@ namespace Eva.BLL
     /// </summary>
     public partial class Mark
     {
+
+
        
+
+
+
         public DataSet GetListByStudentId(int id, string year = null, string term = null)
         {
             string sql = " StudentID = " + id;

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -161,7 +164,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Student\AddAward.aspx" />
     <Content Include="Student\ApplyList.aspx" />
+    <Content Include="Student\AwardList.aspx" />
     <Content Include="Student\ComEva.aspx" />
     <Content Include="Student\EditApply.aspx" />
     <Content Include="Student\MarkApply.aspx" />
@@ -417,12 +422,26 @@
       <DependentUpon>Teacher.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student\AddAward.aspx.cs">
+      <DependentUpon>AddAward.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\AddAward.aspx.designer.cs">
+      <DependentUpon>AddAward.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\ApplyList.aspx.cs">
       <DependentUpon>ApplyList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Student\ApplyList.aspx.designer.cs">
       <DependentUpon>ApplyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\AwardList.aspx.cs">
+      <DependentUpon>AwardList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\AwardList.aspx.designer.cs">
+      <DependentUpon>AwardList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student\ComEva.aspx.cs">
       <DependentUpon>ComEva.aspx</DependentUpon>

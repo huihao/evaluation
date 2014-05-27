@@ -35,12 +35,12 @@ namespace Eva.Web.Evaluation
 		this.lblId.Text=model.Id.ToString();
 		this.txtStudentId.Text=model.StudentId.ToString();
 		this.txtAcademicYear.Text=model.AcademicYear.ToString();
-		this.txtGpa.Text=model.Gpa.ToString();
 		this.txtAve.Text=model.Ave.ToString();
 		this.txtTeacherEvaluation.Text=model.TeacherEvaluation;
 		this.txtSelfEvaluation.Text=model.SelfEvaluation;
 		this.txtTeacherId.Text=model.TeacherId.ToString();
 		this.txtSchoolTerm.Text=model.SchoolTerm.ToString();
+		this.txtTotal.Text=model.Total.ToString();
 
 	}
 
@@ -55,10 +55,6 @@ namespace Eva.Web.Evaluation
 			if(!PageValidate.IsNumber(txtAcademicYear.Text))
 			{
 				strErr+="AcademicYear格式错误！\\n";	
-			}
-			if(!PageValidate.IsDecimal(txtGpa.Text))
-			{
-				strErr+="Gpa格式错误！\\n";	
 			}
 			if(!PageValidate.IsDecimal(txtAve.Text))
 			{
@@ -80,6 +76,10 @@ namespace Eva.Web.Evaluation
 			{
 				strErr+="SchoolTerm格式错误！\\n";	
 			}
+			if(!PageValidate.IsDecimal(txtTotal.Text))
+			{
+				strErr+="Total格式错误！\\n";	
+			}
 
 			if(strErr!="")
 			{
@@ -89,24 +89,24 @@ namespace Eva.Web.Evaluation
 			int Id=int.Parse(this.lblId.Text);
 			int StudentId=int.Parse(this.txtStudentId.Text);
 			int AcademicYear=int.Parse(this.txtAcademicYear.Text);
-			decimal Gpa=decimal.Parse(this.txtGpa.Text);
 			decimal Ave=decimal.Parse(this.txtAve.Text);
 			string TeacherEvaluation=this.txtTeacherEvaluation.Text;
 			string SelfEvaluation=this.txtSelfEvaluation.Text;
 			int TeacherId=int.Parse(this.txtTeacherId.Text);
 			int SchoolTerm=int.Parse(this.txtSchoolTerm.Text);
+			decimal Total=decimal.Parse(this.txtTotal.Text);
 
 
 			Eva.Model.Evaluation model=new Eva.Model.Evaluation();
 			model.Id=Id;
 			model.StudentId=StudentId;
 			model.AcademicYear=AcademicYear;
-			model.Gpa=Gpa;
 			model.Ave=Ave;
 			model.TeacherEvaluation=TeacherEvaluation;
 			model.SelfEvaluation=SelfEvaluation;
 			model.TeacherId=TeacherId;
 			model.SchoolTerm=SchoolTerm;
+			model.Total=Total;
 
 			Eva.BLL.Evaluation bll=new Eva.BLL.Evaluation();
 			bll.Update(model);

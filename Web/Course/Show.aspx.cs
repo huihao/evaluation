@@ -33,7 +33,7 @@ namespace Eva.Web.Course
 		Eva.Model.Course model=bll.GetModel(Id);
 		this.lblId.Text=model.Id.ToString();
 		this.lblName.Text=model.Name;
-		this.lblGpa.Text=model.Gpa.ToString();
+		this.lblCredit.Text=model.Credit.ToString();
 		this.lblIntrodution.Text=model.Introdution;
 
 	}

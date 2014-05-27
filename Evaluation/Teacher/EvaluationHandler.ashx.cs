@@ -24,7 +24,15 @@ namespace Eva.Evaluation.Teacher
                 int id = int.Parse(context.Request["ctl00$ContentPlaceHolder1$studentId"]);
                 //int teacherId = Convert.ToInt32((context.Session["user"] as Model.WebUser).Id);
                 var eva = new Model.Evaluation();
-                eva.SchoolTerm = 1;
+                if (DateTime.Now.Month > 8 || DateTime.Now.Month < 2)
+                {
+                    eva.SchoolTerm = 1;
+                }
+                else
+                {
+                    eva.SchoolTerm = 2;
+                }
+
                 eva.AcademicYear = DateTime.Now.Year;
                 eva.StudentId = id;
                 //todo

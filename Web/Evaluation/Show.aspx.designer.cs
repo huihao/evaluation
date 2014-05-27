@@ -20,12 +20,12 @@ namespace Eva.Web.Evaluation {
         	protected global::System.Web.UI.WebControls.Label lblId;
 	protected global::System.Web.UI.WebControls.Label lblStudentId;
 	protected global::System.Web.UI.WebControls.Label lblAcademicYear;
-	protected global::System.Web.UI.WebControls.Label lblGpa;
 	protected global::System.Web.UI.WebControls.Label lblAve;
 	protected global::System.Web.UI.WebControls.Label lblTeacherEvaluation;
 	protected global::System.Web.UI.WebControls.Label lblSelfEvaluation;
 	protected global::System.Web.UI.WebControls.Label lblTeacherId;
 	protected global::System.Web.UI.WebControls.Label lblSchoolTerm;
+	protected global::System.Web.UI.WebControls.Label lblTotal;
 
 
        

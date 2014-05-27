@@ -19,7 +19,7 @@ namespace Eva.Web.Course {
     public partial class Modify {
         	protected global::System.Web.UI.WebControls.Label lblId;
 		protected global::System.Web.UI.WebControls.TextBox txtName;
-		protected global::System.Web.UI.WebControls.TextBox txtGpa;
+		protected global::System.Web.UI.WebControls.TextBox txtCredit;
 		protected global::System.Web.UI.WebControls.TextBox txtIntrodution;
 	protected global::System.Web.UI.WebControls.Button btnSave;
 	protected global::System.Web.UI.WebControls.Button btnCancel;

@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/5/19 21:12:08   N/A    初版
+* V0.01  2014/5/27 2:22:14   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -39,16 +39,16 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Course(");
-			strSql.Append("Name,Gpa,Introdution)");
+			strSql.Append("Name,Credit,Introdution)");
 			strSql.Append(" values (");
-			strSql.Append("@Name,@Gpa,@Introdution)");
+			strSql.Append("@Name,@Credit,@Introdution)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
-					new SqlParameter("@Gpa", SqlDbType.Float,8),
+					new SqlParameter("@Credit", SqlDbType.Int,4),
 					new SqlParameter("@Introdution", SqlDbType.NVarChar,-1)};
 			parameters[0].Value = model.Name;
-			parameters[1].Value = model.Gpa;
+			parameters[1].Value = model.Credit;
 			parameters[2].Value = model.Introdution;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
@@ -69,16 +69,16 @@ namespace Eva.DAL
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("update Course set ");
 			strSql.Append("Name=@Name,");
-			strSql.Append("Gpa=@Gpa,");
+			strSql.Append("Credit=@Credit,");
 			strSql.Append("Introdution=@Introdution");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
-					new SqlParameter("@Gpa", SqlDbType.Float,8),
+					new SqlParameter("@Credit", SqlDbType.Int,4),
 					new SqlParameter("@Introdution", SqlDbType.NVarChar,-1),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
-			parameters[1].Value = model.Gpa;
+			parameters[1].Value = model.Credit;
 			parameters[2].Value = model.Introdution;
 			parameters[3].Value = model.Id;
 
@@ -144,7 +144,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,Name,Gpa,Introdution from Course ");
+			strSql.Append("select  top 1 Id,Name,Credit,Introdution from Course ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -180,9 +180,9 @@ namespace Eva.DAL
 				{
 					model.Name=row["Name"].ToString();
 				}
-				if(row["Gpa"]!=null && row["Gpa"].ToString()!="")
+				if(row["Credit"]!=null && row["Credit"].ToString()!="")
 				{
-					model.Gpa=decimal.Parse(row["Gpa"].ToString());
+					model.Credit=int.Parse(row["Credit"].ToString());
 				}
 				if(row["Introdution"]!=null)
 				{
@@ -198,7 +198,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,Name,Gpa,Introdution ");
+			strSql.Append("select Id,Name,Credit,Introdution ");
 			strSql.Append(" FROM Course ");
 			if(strWhere.Trim()!="")
 			{
@@ -218,7 +218,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,Name,Gpa,Introdution ");
+			strSql.Append(" Id,Name,Credit,Introdution ");
 			strSql.Append(" FROM Course ");
 			if(strWhere.Trim()!="")
 			{

@@ -50,6 +50,7 @@
 		<asp:BoundField DataField="SchoolTerm" HeaderText="SchoolTerm" SortExpression="SchoolTerm" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="CheckStep" HeaderText="CheckStep" SortExpression="CheckStep" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="Reason" HeaderText="Reason" SortExpression="Reason" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Gpa" HeaderText="Gpa" SortExpression="Gpa" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"
                                 Text="详细"  />

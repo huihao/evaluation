@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/5/19 21:12:10   N/A    初版
+* V0.01  2014/5/27 2:22:16   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -39,9 +39,9 @@ namespace Eva.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into Mark(");
-			strSql.Append("CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason)");
+			strSql.Append("CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason,Gpa)");
 			strSql.Append(" values (");
-			strSql.Append("@CourseId,@StudentId,@EvalutionId,@Score,@BonusPoint,@AcademicYear,@SchoolTerm,@CheckStep,@Reason)");
+			strSql.Append("@CourseId,@StudentId,@EvalutionId,@Score,@BonusPoint,@AcademicYear,@SchoolTerm,@CheckStep,@Reason,@Gpa)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@CourseId", SqlDbType.Int,4),
@@ -52,7 +52,8 @@ namespace Eva.DAL
 					new SqlParameter("@AcademicYear", SqlDbType.Int,4),
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
 					new SqlParameter("@CheckStep", SqlDbType.Int,4),
-					new SqlParameter("@Reason", SqlDbType.NVarChar,50)};
+					new SqlParameter("@Reason", SqlDbType.NVarChar,50),
+					new SqlParameter("@Gpa", SqlDbType.Float,8)};
 			parameters[0].Value = model.CourseId;
 			parameters[1].Value = model.StudentId;
 			parameters[2].Value = model.EvalutionId;
@@ -62,6 +63,7 @@ namespace Eva.DAL
 			parameters[6].Value = model.SchoolTerm;
 			parameters[7].Value = model.CheckStep;
 			parameters[8].Value = model.Reason;
+			parameters[9].Value = model.Gpa;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -88,7 +90,8 @@ namespace Eva.DAL
 			strSql.Append("AcademicYear=@AcademicYear,");
 			strSql.Append("SchoolTerm=@SchoolTerm,");
 			strSql.Append("CheckStep=@CheckStep,");
-			strSql.Append("Reason=@Reason");
+			strSql.Append("Reason=@Reason,");
+			strSql.Append("Gpa=@Gpa");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@CourseId", SqlDbType.Int,4),
@@ -100,6 +103,7 @@ namespace Eva.DAL
 					new SqlParameter("@SchoolTerm", SqlDbType.Int,4),
 					new SqlParameter("@CheckStep", SqlDbType.Int,4),
 					new SqlParameter("@Reason", SqlDbType.NVarChar,50),
+					new SqlParameter("@Gpa", SqlDbType.Float,8),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.CourseId;
 			parameters[1].Value = model.StudentId;
@@ -110,7 +114,8 @@ namespace Eva.DAL
 			parameters[6].Value = model.SchoolTerm;
 			parameters[7].Value = model.CheckStep;
 			parameters[8].Value = model.Reason;
-			parameters[9].Value = model.Id;
+			parameters[9].Value = model.Gpa;
+			parameters[10].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -174,7 +179,7 @@ namespace Eva.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason from Mark ");
+			strSql.Append("select  top 1 Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason,Gpa from Mark ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -242,6 +247,10 @@ namespace Eva.DAL
 				{
 					model.Reason=row["Reason"].ToString();
 				}
+				if(row["Gpa"]!=null && row["Gpa"].ToString()!="")
+				{
+					model.Gpa=decimal.Parse(row["Gpa"].ToString());
+				}
 			}
 			return model;
 		}
@@ -252,7 +261,7 @@ namespace Eva.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason ");
+			strSql.Append("select Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason,Gpa ");
 			strSql.Append(" FROM Mark ");
 			if(strWhere.Trim()!="")
 			{
@@ -272,7 +281,7 @@ namespace Eva.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason ");
+			strSql.Append(" Id,CourseId,StudentId,EvalutionId,Score,BonusPoint,AcademicYear,SchoolTerm,CheckStep,Reason,Gpa ");
 			strSql.Append(" FROM Mark ");
 			if(strWhere.Trim()!="")
 			{

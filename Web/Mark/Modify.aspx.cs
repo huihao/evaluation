@@ -42,6 +42,7 @@ namespace Eva.Web.Mark
 		this.txtSchoolTerm.Text=model.SchoolTerm.ToString();
 		this.txtCheckStep.Text=model.CheckStep.ToString();
 		this.txtReason.Text=model.Reason;
+		this.txtGpa.Text=model.Gpa.ToString();
 
 	}
 
@@ -85,6 +86,10 @@ namespace Eva.Web.Mark
 			{
 				strErr+="Reason不能为空！\\n";	
 			}
+			if(!PageValidate.IsDecimal(txtGpa.Text))
+			{
+				strErr+="Gpa格式错误！\\n";	
+			}
 
 			if(strErr!="")
 			{
@@ -101,6 +106,7 @@ namespace Eva.Web.Mark
 			int SchoolTerm=int.Parse(this.txtSchoolTerm.Text);
 			int CheckStep=int.Parse(this.txtCheckStep.Text);
 			string Reason=this.txtReason.Text;
+			decimal Gpa=decimal.Parse(this.txtGpa.Text);
 
 
 			Eva.Model.Mark model=new Eva.Model.Mark();
@@ -114,6 +120,7 @@ namespace Eva.Web.Mark
 			model.SchoolTerm=SchoolTerm;
 			model.CheckStep=CheckStep;
 			model.Reason=Reason;
+			model.Gpa=Gpa;
 
 			Eva.BLL.Mark bll=new Eva.BLL.Mark();
 			bll.Update(model);

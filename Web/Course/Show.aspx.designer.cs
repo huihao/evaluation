@@ -19,7 +19,7 @@ namespace Eva.Web.Course {
     public partial class Show {
         	protected global::System.Web.UI.WebControls.Label lblId;
 	protected global::System.Web.UI.WebControls.Label lblName;
-	protected global::System.Web.UI.WebControls.Label lblGpa;
+	protected global::System.Web.UI.WebControls.Label lblCredit;
 	protected global::System.Web.UI.WebControls.Label lblIntrodution;
 
 

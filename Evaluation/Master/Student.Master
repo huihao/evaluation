@@ -72,6 +72,8 @@
             </li>
             <li><a href="ComEva.aspx"><i class="icon icon-signal"></i><span>综合测评查看</span></a>
             </li>
+            <li><a href="AwardList.aspx"><i class="icon icon-signal"></i><span>奖项查看</span></a>
+            </li>
             <li><a href="StuInfo.aspx"><i class="icon icon-fullscreen"></i><span>个人信息管理</span></a></li>
         </ul>
     </div>

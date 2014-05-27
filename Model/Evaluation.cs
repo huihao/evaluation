@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/5/19 21:12:08   N/A    初版
+* V0.01  2014/5/27 2:22:14   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -29,12 +29,12 @@ namespace Eva.Model
 		private int _id;
 		private int? _studentid;
 		private int? _academicyear;
-		private decimal? _gpa;
 		private decimal? _ave;
 		private string _teacherevaluation;
 		private string _selfevaluation;
 		private int? _teacherid;
 		private int? _schoolterm;
+		private decimal? _total;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -58,14 +58,6 @@ namespace Eva.Model
 		{
 			set{ _academicyear=value;}
 			get{return _academicyear;}
-		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public decimal? Gpa
-		{
-			set{ _gpa=value;}
-			get{return _gpa;}
 		}
 		/// <summary>
 		/// 
@@ -106,6 +98,14 @@ namespace Eva.Model
 		{
 			set{ _schoolterm=value;}
 			get{return _schoolterm;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public decimal? Total
+		{
+			set{ _total=value;}
+			get{return _total;}
 		}
 		#endregion Model
 

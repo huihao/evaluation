@@ -42,7 +42,7 @@
                             </asp:TemplateField> 
                             
 		<asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" ItemStyle-HorizontalAlign="Center"  /> 
-		<asp:BoundField DataField="Gpa" HeaderText="Gpa" SortExpression="Gpa" ItemStyle-HorizontalAlign="Center"  /> 
+		<asp:BoundField DataField="Credit" HeaderText="Credit" SortExpression="Credit" ItemStyle-HorizontalAlign="Center"  /> 
 		<asp:BoundField DataField="Introdution" HeaderText="Introdution" SortExpression="Introdution" ItemStyle-HorizontalAlign="Center"  /> 
                             
                             <asp:HyperLinkField HeaderText="详细" ControlStyle-Width="50" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="Show.aspx?id={0}"

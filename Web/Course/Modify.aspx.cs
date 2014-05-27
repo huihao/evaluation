@@ -34,7 +34,7 @@ namespace Eva.Web.Course
 		Eva.Model.Course model=bll.GetModel(Id);
 		this.lblId.Text=model.Id.ToString();
 		this.txtName.Text=model.Name;
-		this.txtGpa.Text=model.Gpa.ToString();
+		this.txtCredit.Text=model.Credit.ToString();
 		this.txtIntrodution.Text=model.Introdution;
 
 	}
@@ -47,9 +47,9 @@ namespace Eva.Web.Course
 			{
 				strErr+="Name不能为空！\\n";	
 			}
-			if(!PageValidate.IsDecimal(txtGpa.Text))
+			if(!PageValidate.IsNumber(txtCredit.Text))
 			{
-				strErr+="Gpa格式错误！\\n";	
+				strErr+="Credit格式错误！\\n";	
 			}
 			if(this.txtIntrodution.Text.Trim().Length==0)
 			{
@@ -63,14 +63,14 @@ namespace Eva.Web.Course
 			}
 			int Id=int.Parse(this.lblId.Text);
 			string Name=this.txtName.Text;
-			decimal Gpa=decimal.Parse(this.txtGpa.Text);
+			int Credit=int.Parse(this.txtCredit.Text);
 			string Introdution=this.txtIntrodution.Text;
 
 
 			Eva.Model.Course model=new Eva.Model.Course();
 			model.Id=Id;
 			model.Name=Name;
-			model.Gpa=Gpa;
+			model.Credit=Credit;
 			model.Introdution=Introdution;
 
 			Eva.BLL.Course bll=new Eva.BLL.Course();

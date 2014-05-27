@@ -116,10 +116,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Awards.cs" />
     <Compile Include="Common\Utils.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemList.cs" />
     <Compile Include="MyBLL\Authority.cs" />
+    <Compile Include="MyBLL\Awards.cs" />
     <Compile Include="MyBLL\BLLFactory.cs" />
     <Compile Include="MyBLL\Class.cs" />
     <Compile Include="MyBLL\College.cs" />

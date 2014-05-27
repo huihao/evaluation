@@ -21,12 +21,12 @@ namespace Eva.Web.Evaluation {
         
 		protected global::System.Web.UI.WebControls.TextBox txtStudentId;
 		protected global::System.Web.UI.WebControls.TextBox txtAcademicYear;
-		protected global::System.Web.UI.WebControls.TextBox txtGpa;
 		protected global::System.Web.UI.WebControls.TextBox txtAve;
 		protected global::System.Web.UI.WebControls.TextBox txtTeacherEvaluation;
 		protected global::System.Web.UI.WebControls.TextBox txtSelfEvaluation;
 		protected global::System.Web.UI.WebControls.TextBox txtTeacherId;
 		protected global::System.Web.UI.WebControls.TextBox txtSchoolTerm;
+		protected global::System.Web.UI.WebControls.TextBox txtTotal;
 	protected global::System.Web.UI.WebControls.Button btnSave;
 	protected global::System.Web.UI.WebControls.Button btnCancel;
 
