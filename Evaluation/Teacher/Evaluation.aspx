@@ -47,11 +47,12 @@
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label">
-                                                获奖成果</label>
                                             <div class="controls">
                                                 <ul>
                                                     <asp:Repeater ID="ExplainRepeater" runat="server" EnableViewState="True" OnItemCommand="ExplainRepeater_ItemCommand">
+                                                       <HeaderTemplate>
+                                                         获奖成果
+                                                       </HeaderTemplate>
                                                         <ItemTemplate>
                                                             <li>赛事:
                                                                 <%#Eval("Name") %>
